@@ -8,5 +8,13 @@ package catan;
 /**
  * 
  */
-public class Board implements StaticBoard {
+public class Game {
+	/**
+	 * 
+	 */
+	public Board board;
+	/**
+	 * 
+	 */
+	public Validator validator;
 }

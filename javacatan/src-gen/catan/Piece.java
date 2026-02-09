@@ -8,5 +8,5 @@ package catan;
 /**
  * 
  */
-public class Board implements StaticBoard {
+public interface Piece {
 }

@@ -8,5 +8,21 @@ package catan;
 /**
  * 
  */
-public class Board implements StaticBoard {
+public enum PlayerIDs {
+	/**
+	 * 
+	 */
+	Player10,
+	/**
+	 * 
+	 */
+	Player21,
+	/**
+	 * 
+	 */
+	Player32,
+	/**
+	 * 
+	 */
+	Player43;
 }

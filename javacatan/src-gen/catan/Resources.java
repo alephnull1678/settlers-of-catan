@@ -8,5 +8,25 @@ package catan;
 /**
  * 
  */
-public class Board implements StaticBoard {
+public enum Resources {
+	/**
+	 * 
+	 */
+	Lumber,
+	/**
+	 * 
+	 */
+	Wool,
+	/**
+	 * 
+	 */
+	Grain,
+	/**
+	 * 
+	 */
+	Rock,
+	/**
+	 * 
+	 */
+	Brick;
 }

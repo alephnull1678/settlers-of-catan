@@ -8,5 +8,25 @@ package catan;
 /**
  * 
  */
-public class Board implements StaticBoard {
+public class Node {
+	/**
+	 * 
+	 */
+	public Tile[] tiles;
+	/**
+	 * 
+	 */
+	private int nodeID;
+	/**
+	 * 
+	 */
+	private Node[] neighbours;
+	/**
+	 * 
+	 */
+	private Road road;
+	/**
+	 * 
+	 */
+	private Building building;
 }

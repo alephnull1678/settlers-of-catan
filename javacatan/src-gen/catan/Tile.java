@@ -8,5 +8,17 @@ package catan;
 /**
  * 
  */
-public class Board implements StaticBoard {
+public class Tile {
+	/**
+	 * 
+	 */
+	private Resource resource;
+	/**
+	 * 
+	 */
+	private int diceNum;
+	/**
+	 * 
+	 */
+	private int tileID;
 }
