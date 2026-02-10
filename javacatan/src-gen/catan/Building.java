@@ -9,4 +9,8 @@ package catan;
  * 
  */
 public abstract class Building implements Piece {
+	/**
+	 * 
+	 */
+	private int resourceAmount;
 }

@@ -9,4 +9,18 @@ package catan;
  * 
  */
 public class Board implements StaticBoard {
+	/**
+	 * 
+	 */
+	public Node[] node;
+	/**
+	 * 
+	 */
+	public Tile[] tile;
+
+	/**
+	 * 
+	 */
+	public void check() {
+	}
 }

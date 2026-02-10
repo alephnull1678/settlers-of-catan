@@ -9,4 +9,52 @@ package catan;
  * 
  */
 public class Player {
+	/**
+	 * 
+	 */
+	public interface Interface1 {
+	};
+
+	/**
+	 * 
+	 */
+	public interface Interface2 {
+	};
+
+	/**
+	 * 
+	 */
+	private PlayerIDs PlayerID;
+	/**
+	 * 
+	 */
+	public PlayerHand hand;
+	/**
+	 * 
+	 */
+	public PieceHandler piecehandler;
+
+	/**
+	 * 
+	 * @param Parameter1 
+	 * @return 
+	 */
+	public Action choose(Action[] Parameter1) {
+	}
+
+	/**
+	 * 
+	 * @param catalog 
+	 * @return 
+	 */
+	public boolean dealResources(ResourceCatalog catalog) {
+	}
+
+	/**
+	 * 
+	 * @param catalog 
+	 * @return 
+	 */
+	public boolean spend(ResourceCatalog catalog) {
+	}
 }

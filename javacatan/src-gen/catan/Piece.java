@@ -9,4 +9,12 @@ package catan;
  * 
  */
 public interface Piece {
+	/**
+	 * 
+	 */
+	public PlayerIDs ownerPlayerID;
+	/**
+	 * 
+	 */
+	public ResourceCatalog resourcecatalog;
 }

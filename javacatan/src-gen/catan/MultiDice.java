@@ -8,21 +8,11 @@ package catan;
 /**
  * 
  */
-public enum PlayerIDs {
+public class MultiDice implements Dice {
 	/**
 	 * 
+	 * @param Dice 
 	 */
-	Player1,
-	/**
-	 * 
-	 */
-	Player2,
-	/**
-	 * 
-	 */
-	Player3,
-	/**
-	 * 
-	 */
-	Player4;
+	public void addDice(Dice Dice) {
+	}
 }

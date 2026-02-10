@@ -8,21 +8,5 @@ package catan;
 /**
  * 
  */
-public enum PlayerIDs {
-	/**
-	 * 
-	 */
-	Player1,
-	/**
-	 * 
-	 */
-	Player2,
-	/**
-	 * 
-	 */
-	Player3,
-	/**
-	 * 
-	 */
-	Player4;
+public abstract class Class1 {
 }

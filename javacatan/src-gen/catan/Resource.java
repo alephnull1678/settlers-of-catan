@@ -8,33 +8,25 @@ package catan;
 /**
  * 
  */
-public class Node {
+public enum Resource {
 	/**
 	 * 
 	 */
-	public Tile[] tiles;
+	Lumber,
 	/**
 	 * 
 	 */
-	private int nodeID;
+	Wool,
 	/**
 	 * 
 	 */
-	private Node[] neighbours;
+	Grain,
 	/**
 	 * 
 	 */
-	private Road road;
+	Rock,
 	/**
 	 * 
 	 */
-	private Building building;
-
-	/**
-	 * 
-	 * @param diceNum 
-	 * @return 
-	 */
-	public boolean checkTiles(int diceNum) {
-	}
+	Brick;
 }

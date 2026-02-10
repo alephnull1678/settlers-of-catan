@@ -8,21 +8,10 @@ package catan;
 /**
  * 
  */
-public enum PlayerIDs {
+public interface PieceCost extends ResourceCatalog {
 	/**
 	 * 
 	 */
-	Player1,
-	/**
-	 * 
-	 */
-	Player2,
-	/**
-	 * 
-	 */
-	Player3,
-	/**
-	 * 
-	 */
-	Player4;
+	public class Class1 {
+	};
 }

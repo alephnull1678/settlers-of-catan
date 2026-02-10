@@ -8,21 +8,11 @@ package catan;
 /**
  * 
  */
-public enum PlayerIDs {
+public interface ResourceCatalog {
 	/**
 	 * 
+	 * @param resource 
+	 * @return 
 	 */
-	Player1,
-	/**
-	 * 
-	 */
-	Player2,
-	/**
-	 * 
-	 */
-	Player3,
-	/**
-	 * 
-	 */
-	Player4;
+	public int getResourceCount(Resource resource);
 }
