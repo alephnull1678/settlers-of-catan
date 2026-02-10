@@ -9,4 +9,23 @@ package catan;
  * 
  */
 public interface StaticBoard {
+	/**
+	 * 
+	 */
+	public class board {
+	};
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public PlayerID checkLongestRoad();
+
+	/**
+	 * 
+	 * @param piece 
+	 * @param node 
+	 * @return 
+	 */
+	public boolean canPlace(Piece piece, Node node);
 }

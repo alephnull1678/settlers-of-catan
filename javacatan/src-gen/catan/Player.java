@@ -24,7 +24,7 @@ public class Player {
 	/**
 	 * 
 	 */
-	private PlayerIDs PlayerID;
+	private PlayerID PlayerID;
 	/**
 	 * 
 	 */
@@ -47,7 +47,7 @@ public class Player {
 	 * @param catalog 
 	 * @return 
 	 */
-	public boolean dealResources(ResourceCatalog catalog) {
+	public boolean dealResources(Catalog catalog) {
 	}
 
 	/**
@@ -55,6 +55,14 @@ public class Player {
 	 * @param catalog 
 	 * @return 
 	 */
-	public boolean spend(ResourceCatalog catalog) {
+	public boolean spend(Catalog catalog) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 * @param buildingType 
+	 */
+	public Piece getPieceOfType(BuildingTypes buildingType) {
 	}
 }

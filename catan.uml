@@ -12,7 +12,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_-eS44ASkEfGBxYf1fTqBJA" name="Game">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zceQEAXqEfGK5P-tYZXZpg" name="board" type="__uMj8AY4EfGfDvnfcKXpVw" association="_zcXiYAXqEfGK5P-tYZXZpg"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_5tGgogXqEfGK5P-tYZXZpg" name="validator" type="_iqFu4AVkEfG4lNxHNfwBoQ" association="_5tF5kAXqEfGK5P-tYZXZpg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7cgGZASlEfGBxYf1fTqBJA" name="player" type="_A23SwASlEfGBxYf1fTqBJA" association="_7cgGYASlEfGBxYf1fTqBJA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KqkMAASmEfGBxYf1fTqBJA" name="LiteralInteger1" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KqkMAQSmEfGBxYf1fTqBJA" name="LiteralUnlimitedNatural1" value="4"/>
+      </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_BqLsUAY1EfGfDvnfcKXpVw" name="doNextRound" visibility="private"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_qN5LUAbUEfG3KN_q_NOcew" name="start"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_A23SwASlEfGBxYf1fTqBJA" name="Player">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_TRRWEAX5EfGRf-tqN1BwGw" name="PlayerID" visibility="private" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>
@@ -60,11 +65,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7cgGYgSlEfGBxYf1fTqBJA" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <name xsi:nil="true"/>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_7cgGYwSlEfGBxYf1fTqBJA" name="game" type="_-eS44ASkEfGBxYf1fTqBJA" aggregation="composite" association="_7cgGYASlEfGBxYf1fTqBJA"/>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_7cgGZASlEfGBxYf1fTqBJA" name="player" type="_A23SwASlEfGBxYf1fTqBJA" association="_7cgGYASlEfGBxYf1fTqBJA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KqkMAASmEfGBxYf1fTqBJA" name="LiteralInteger1" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KqkMAQSmEfGBxYf1fTqBJA" name="LiteralUnlimitedNatural1" value="4"/>
-      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_7cgGYwSlEfGBxYf1fTqBJA" name="game" type="_-eS44ASkEfGBxYf1fTqBJA" association="_7cgGYASlEfGBxYf1fTqBJA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_t4OtMAViEfG4lNxHNfwBoQ" name="PieceHandler">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_OPTqsAY-EfGfDvnfcKXpVw" name="sendPieceOfType"/>
@@ -112,6 +113,16 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="__vqBwAViEfG4lNxHNfwBoQ" name="StaticBoard">
       <nestedClassifier xmi:type="uml:Class" xmi:id="_b1UOYAYzEfGfDvnfcKXpVw" name="board"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_3xhFMAbQEfG3KN_q_NOcew" name="checkLongestRoad">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-ltV0AbQEfG3KN_q_NOcew" name="playerID" type="_s-W0AAVkEfG4lNxHNfwBoQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_YqzPYAbREfG3KN_q_NOcew" name="canPlace">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Zx0h0AbREfG3KN_q_NOcew" name="piece" type="_DqI6UAVjEfG4lNxHNfwBoQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_i42XwAbREfG3KN_q_NOcew" name="node" type="_xL-88AViEfG4lNxHNfwBoQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_nL-Z0AbREfG3KN_q_NOcew" name="success" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_DqI6UAVjEfG4lNxHNfwBoQ" name="Piece">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_1gB64AX4EfGRf-tqN1BwGw" name="ownerPlayerID" visibility="private" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>
@@ -181,7 +192,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_gKVRYAY0EfGfDvnfcKXpVw" name="buildingType" type="_KQC3UAVjEfG4lNxHNfwBoQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_s-W0AAVkEfG4lNxHNfwBoQ" name="PlayerIDs">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_s-W0AAVkEfG4lNxHNfwBoQ" name="PlayerID">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4kXucAYgEfGKxpR3uqh_6Q" name="Player1"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_809Z4AYgEfGKxpR3uqh_6Q" name="Player2"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9pw68AYgEfGKxpR3uqh_6Q" name="Player3"/>
@@ -378,7 +389,7 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_cF1H4AY5EfGfDvnfcKXpVw" name="createTiles" visibility="private"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_ezYd0AY6EfGfDvnfcKXpVw" name="check">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ezYd0AY6EfGfDvnfcKXpVw" name="collect">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_jdxJUAY6EfGfDvnfcKXpVw" name="playerID" type="_s-W0AAVkEfG4lNxHNfwBoQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mlcE4AY6EfGfDvnfcKXpVw" name="LiteralInteger1" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mlcE4QY6EfGfDvnfcKXpVw" name="LiteralUnlimitedNatural1" value="1"/>

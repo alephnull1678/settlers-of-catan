@@ -17,4 +17,20 @@ public class Game {
 	 * 
 	 */
 	public Validator validator;
+	/**
+	 * 
+	 */
+	public Player[] player;
+
+	/**
+	 * 
+	 */
+	private void doNextRound() {
+	}
+
+	/**
+	 * 
+	 */
+	public void start() {
+	}
 }

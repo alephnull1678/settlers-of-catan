@@ -8,7 +8,7 @@ package catan;
 /**
  * 
  */
-public class Board implements StaticBoard {
+public interface Board extends StaticBoard {
 	/**
 	 * 
 	 */
@@ -20,7 +20,25 @@ public class Board implements StaticBoard {
 
 	/**
 	 * 
+	 * @param nodes 
 	 */
-	public void check() {
-	}
+	public void createNodes(Node[] nodes);
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Node[] createNodes();
+
+	/**
+	 * 
+	 */
+	public void createTiles();
+
+	/**
+	 * 
+	 * @param playerID 
+	 * @return 
+	 */
+	public Catalog collect(PlayerIDs playerID);
 }
