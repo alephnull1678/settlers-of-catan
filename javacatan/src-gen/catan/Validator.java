@@ -12,5 +12,22 @@ public class Validator {
 	/**
 	 * 
 	 */
+	public class Class1 {
+	};
+
+	/**
+	 * 
+	 */
 	public Action[] action;
+
+	/**
+	 * 
+	 * @param board 
+	 * @param playerID 
+	 * @param resourcesOwned 
+	 * @return 
+	 * @param piecesOwned 
+	 */
+	public Action[] validate(StaticBoard board, PlayerID playerID, Catalog resourcesOwned, Catalog piecesOwned) {
+	}
 }

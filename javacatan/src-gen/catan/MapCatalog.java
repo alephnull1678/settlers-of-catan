@@ -8,10 +8,5 @@ package catan;
 /**
  * 
  */
-public interface PieceCost extends ResourceCatalog {
-	/**
-	 * 
-	 */
-	public class Class1 {
-	};
+public class MapCatalog implements Catalog {
 }

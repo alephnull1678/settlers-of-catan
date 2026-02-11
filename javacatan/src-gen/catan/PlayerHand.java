@@ -8,7 +8,7 @@ package catan;
 /**
  * 
  */
-public interface PlayerHand extends ResourceCatalog {
+public interface PlayerHand extends Catalog {
 	/**
 	 * 
 	 * @param resource 
@@ -30,12 +30,12 @@ public interface PlayerHand extends ResourceCatalog {
 	 * @param catalog 
 	 * @return 
 	 */
-	public boolean removeHand(ResourceCatalog catalog);
+	public boolean removeHand(Catalog catalog);
 
 	/**
 	 * 
 	 * @param catalog 
 	 * @return 
 	 */
-	public boolean addHand(ResourceCatalog catalog);
+	public boolean addHand(Catalog catalog);
 }

@@ -8,5 +8,5 @@ package catan;
 /**
  * 
  */
-public interface Interface1 extends ResourceCatalog {
+public class HardWiredBoard implements Board {
 }

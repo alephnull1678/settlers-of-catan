@@ -8,25 +8,21 @@ package catan;
 /**
  * 
  */
-public enum Resources {
+public enum PlayerID {
 	/**
 	 * 
 	 */
-	Lumber,
+	Player1,
 	/**
 	 * 
 	 */
-	Wool,
+	Player2,
 	/**
 	 * 
 	 */
-	Grain,
+	Player3,
 	/**
 	 * 
 	 */
-	Rock,
-	/**
-	 * 
-	 */
-	Brick;
+	Player4;
 }

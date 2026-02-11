@@ -8,5 +8,5 @@ package catan;
 /**
  * 
  */
-public class MapResourceCatalog implements ResourceCatalog {
+public class T {
 }

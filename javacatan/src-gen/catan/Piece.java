@@ -12,9 +12,15 @@ public interface Piece {
 	/**
 	 * 
 	 */
-	public PlayerIDs ownerPlayerID;
+	public PlayerID ownerPlayerID;
 	/**
 	 * 
 	 */
-	public ResourceCatalog resourcecatalog;
+	public Catalog catalog;
+
+	/**
+	 * 
+	 * @param playerID 
+	 */
+	public void getOwnerPlayerID(PlayerID playerID);
 }

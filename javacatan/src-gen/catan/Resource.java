@@ -12,19 +12,19 @@ public enum Resource {
 	/**
 	 * 
 	 */
-	Lumber,
+	Wood,
 	/**
 	 * 
 	 */
-	Wool,
+	Sheep,
 	/**
 	 * 
 	 */
-	Grain,
+	Wheat,
 	/**
 	 * 
 	 */
-	Rock,
+	Ore,
 	/**
 	 * 
 	 */

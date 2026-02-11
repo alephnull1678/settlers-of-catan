@@ -8,5 +8,17 @@ package catan;
 /**
  * 
  */
-public class MapPieceCost {
+public enum BuildingTypes {
+	/**
+	 * 
+	 */
+	ROAD,
+	/**
+	 * 
+	 */
+	SETTLEMENT,
+	/**
+	 * 
+	 */
+	CITY;
 }

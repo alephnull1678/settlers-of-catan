@@ -9,4 +9,16 @@ package catan;
  * 
  */
 public class PieceHandler {
+	/**
+	 * 
+	 */
+	public void sendPieceOfType() {
+	}
+
+	/**
+	 * 
+	 * @param piece 
+	 */
+	public void usePiece(Piece piece) {
+	}
 }

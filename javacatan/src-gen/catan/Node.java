@@ -24,7 +24,7 @@ public class Node {
 	/**
 	 * 
 	 */
-	private Road road;
+	private Road[] road;
 	/**
 	 * 
 	 */

@@ -40,5 +40,5 @@ public interface Board extends StaticBoard {
 	 * @param playerID 
 	 * @return 
 	 */
-	public Catalog collect(PlayerIDs playerID);
+	public Catalog collect(PlayerID playerID);
 }

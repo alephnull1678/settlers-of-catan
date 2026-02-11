@@ -8,11 +8,11 @@ package catan;
 /**
  * 
  */
-public interface ResourceCatalog {
+public interface Catalog<T> {
 	/**
 	 * 
-	 * @param resource 
+	 * @param unit 
 	 * @return 
 	 */
-	public int getResourceCount(Resource resource);
+	public int getCount(T unit);
 }

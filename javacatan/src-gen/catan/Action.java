@@ -9,4 +9,17 @@ package catan;
  * 
  */
 public class Action {
+	/**
+	 * 
+	 * @return 
+	 */
+	public Node[] getNode() {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Building getPiece() {
+	}
 }
