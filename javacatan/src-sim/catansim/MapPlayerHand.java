@@ -11,16 +11,16 @@ public class MapPlayerHand implements PlayerHand {
 
   
     @Override
-    public boolean addCard(Resource resource, Integer count) {
-        if (resource == null || count == null || count <= 0) return false;
+    public boolean addCard(Resource resource, int count) {
+        if (resource == null || count <= 0) return false;
         return catalog.add(resource, count);
     }
 
  
     //Returns false if the player does not have enough.
     @Override
-    public boolean removeCard(Resource resource, Integer count) {
-        if (resource == null || count == null || count <= 0) return false;
+    public boolean removeCard(Resource resource, int count) {
+        if (resource == null || count <= 0) return false;
         return catalog.remove(resource, count);
     }
 

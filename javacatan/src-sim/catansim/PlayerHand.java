@@ -3,9 +3,9 @@ package catansim;
 
 public interface PlayerHand {
 	
-    boolean addCard(Resource resource, Integer count);
+    boolean addCard(Resource resource, int count);
     
-    boolean removeCard(Resource resource, Integer count);
+    boolean removeCard(Resource resource, int count);
     
     boolean removeHand(Catalog<Resource> catalog);
     
