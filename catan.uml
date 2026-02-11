@@ -109,7 +109,6 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_tdUlgAX0EfGK5P-tYZXZpg" name="tileID" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Hb0msAYoEfGKxpR3uqh_6Q" name="catalog" type="_E-f2gASlEfGBxYf1fTqBJA" association="_Hbw8UAYoEfGKxpR3uqh_6Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="__vqBwAViEfG4lNxHNfwBoQ" name="StaticBoard">
       <nestedClassifier xmi:type="uml:Class" xmi:id="_b1UOYAYzEfGfDvnfcKXpVw" name="board"/>
@@ -358,13 +357,6 @@
       </eAnnotations>
       <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_GRGAUgYlEfGKxpR3uqh_6Q" name="player" type="_A23SwASlEfGBxYf1fTqBJA" aggregation="composite" association="_GRFZQAYlEfGKxpR3uqh_6Q"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_Hbw8UAYoEfGKxpR3uqh_6Q" memberEnd="_HbyxggYoEfGKxpR3uqh_6Q _Hb0msAYoEfGKxpR3uqh_6Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HbyxgAYoEfGKxpR3uqh_6Q" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HbyxgQYoEfGKxpR3uqh_6Q" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <name xsi:nil="true"/>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_HbyxggYoEfGKxpR3uqh_6Q" name="tile" type="_zIGrYAViEfG4lNxHNfwBoQ" aggregation="composite" association="_Hbw8UAYoEfGKxpR3uqh_6Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="__uMj8AY4EfGfDvnfcKXpVw" name="Board">
       <generalization xmi:type="uml:Generalization" xmi:id="_QuzIwAY6EfGfDvnfcKXpVw" general="__vqBwAViEfG4lNxHNfwBoQ"/>

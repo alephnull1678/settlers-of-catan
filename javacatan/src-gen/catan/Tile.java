@@ -21,8 +21,4 @@ public class Tile {
 	 * 
 	 */
 	private int tileID;
-	/**
-	 * 
-	 */
-	public Catalog catalog;
 }
