@@ -4,65 +4,127 @@
 
 package catansim;
 
+import java.util.Random;
+
+
 /************************************************************/
 /**
  * 
  */
 public class Player {
-	/**
-	 * 
-	 */
-	public interface Interface1 {
-	};
+	
+	
+	private final PlayerID playerID;
+    private final PieceHandler pieceHandler;
+    private final PlayerHand playerHand;
 
-	/**
-	 * 
-	 */
-	public interface Interface2 {
-	};
+    private final Random rng = new Random();
+    
+    private int vp = 0;
 
-	/**
-	 * 
-	 */
-	private PlayerID PlayerID;
-	/**
-	 * 
-	 */
-	public PlayerHand hand;
-	/**
-	 * 
-	 */
-	public PieceHandler piecehandler;
 
-	/**
-	 * 
-	 * @param Parameter1 
-	 * @return 
-	 */
-	public Action choose(Action[] Parameter1) {
-	}
+    
+    public Player(PlayerID playerID) {
+        if (playerID == null) throw new IllegalArgumentException("playerID cannot be null");
+        this.playerID = playerID;
+        this.pieceHandler = new PieceHandler();
+        this.playerHand = new MapPlayerHand();
+    }
+    
+    
+    //Getters
+    public PlayerID getPlayerID() {
+        return playerID;
+    }
+    
+    
+    
+    //PICKING RANDOM ACTION from list of actions
+    public Action chooseAction(Action[] actions) {
+        if (actions == null || actions.length == 0) return null;
+        return actions[rng.nextInt(actions.length)];
+    }
+    
+    
+    //DEAL RESOURCE
+    public void dealResources(Catalog<Resource> gained) {
+        if (gained == null) throw new IllegalArgumentException("gained cannot be null");
+        playerHand.addHand(gained);
+    }
+    
+    
+    //CONSUME PIECE
+    //Handles the logic to determine what to take and refund from pieceHandler.
+    //If it's a city, refund a settlement since it's an upgrade.
+    public Piece consumePiece(Piece piece) {
+        if (piece == null) throw new IllegalArgumentException("piece cannot be null");
+        return consumePiece(piece.getType());
+    }
+    
+    //Overloaded version
+    public Piece consumePiece(BuildingTypes type) {
+        if (type == null) throw new IllegalArgumentException("type cannot be null");
 
-	/**
-	 * 
-	 * @param catalog 
-	 * @return 
-	 */
-	public boolean dealResources(Catalog catalog) {
-	}
+        Piece toPlace = pieceHandler.usePiece(type);
+        if (toPlace == null) return null;
+        
+        //Remove resources
+        boolean paid = playerHand.removeHand(type.getCost());
+        if (!paid) {
+            pieceHandler.refundPiece(type);
+            return null;
+        }
 
-	/**
-	 * 
-	 * @param catalog 
-	 * @return 
-	 */
-	public boolean spend(Catalog catalog) {
-	}
+        //City placement implies settlement upgrade
+        if (type == BuildingTypes.CITY) {
+            pieceHandler.refundPiece(BuildingTypes.SETTLEMENT);
+        }
 
-	/**
-	 * 
-	 * @return 
-	 * @param buildingType 
-	 */
-	public Piece getPieceOfType(BuildingTypes buildingType) {
-	}
+        return toPlace;
+    }
+    
+    //For setup
+    public Piece consumeFreePiece(BuildingTypes type) {
+        if (type == null) throw new IllegalArgumentException("type cannot be null");
+        return pieceHandler.usePiece(type);
+    }
+    
+    //Get read-only catalog of pieces
+    public Catalog<BuildingTypes> getPieceCatalog() {
+
+        Catalog<BuildingTypes> catalog = new MapCatalog<BuildingTypes>();
+
+        for (BuildingTypes type : BuildingTypes.values()) {
+            catalog.add(type, pieceHandler.getAvailable(type));
+        }
+
+        return catalog.snapshot();
+    }
+    
+    //Get read-only catalog of resources
+    public Catalog<Resource> getResourceCatalog() {
+        return ((Catalog) playerHand).snapshot();
+    }
+    
+    
+    
+    //Getters and mutators for VP
+    public int getVP() {
+        return vp;
+    }
+
+    public void addVP(int amount) {
+        if (amount < 0) throw new IllegalArgumentException("amount cannot be negative");
+        vp += amount;
+    }
+
+    public void removeVP(int amount) {
+        if (amount < 0) throw new IllegalArgumentException("amount cannot be negative");
+        if (amount > vp) throw new IllegalArgumentException("cannot remove more VP than player has");
+        vp -= amount;
+    }
+    
+
+    
+    
 }
