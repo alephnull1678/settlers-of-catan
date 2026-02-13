@@ -12,11 +12,11 @@ public interface Board extends StaticBoard {
 	/**
 	 * 
 	 */
-	public Node[] node;
+	private Node[] nodes;
 	/**
 	 * 
 	 */
-	public Tile[] tile;
+	private Tile[] tiles;
 
 	/**
 	 * 

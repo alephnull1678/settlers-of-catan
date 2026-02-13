@@ -24,11 +24,17 @@ public class Node {
 	/**
 	 * 
 	 */
-	private Road[] road;
+	private Road[] roads = null;
 	/**
 	 * 
 	 */
-	private Building building;
+	private Building building = null;
+	
+	public Node(int nodeID, Node[] neighbours, Tile[] tiles) {
+		this.tiles = tiles;
+		this.nodeID = nodeID;
+		this.neighbours = neighbours;
+	}
 
 	/**
 	 * 
@@ -36,5 +42,26 @@ public class Node {
 	 * @return 
 	 */
 	public boolean checkTiles(int diceNum) {
+		
+	}
+	
+	public Node[] getNeighbours() {
+		return neighbours;
+	}
+	
+	public Building getBuilding() {
+		return building;
+	}
+	
+	public Road[] getConnectedRoads() {
+		return roads;
+	}
+
+	public void placeBuilding(Building building) {
+		this.building = building;
+	}
+	
+	public void addRoad(Road road) {
+		roads[roads.length] = road; // add the road to the end of the list
 	}
 }
