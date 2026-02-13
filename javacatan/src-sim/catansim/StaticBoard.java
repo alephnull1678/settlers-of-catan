@@ -9,6 +9,7 @@ package catansim;
  * 
  */
 public interface StaticBoard {
+	
 	/**
 	 * 
 	 */
@@ -20,12 +21,20 @@ public interface StaticBoard {
 	 * @return 
 	 */
 	public PlayerID checkLongestRoad();
-
+	
 	/**
 	 * 
-	 * @param piece 
+	 * @param road 
 	 * @param node 
 	 * @return 
 	 */
-	public boolean canPlace(Piece piece, Node node);
+	public boolean canPlace(BuildingTypes placedbuildingType, PlayerID playerID, Node nodeStart, Node nodeEnd);
+	
+	/**
+	 * 
+	 * @param road 
+	 * @param node 
+	 * @return 
+	 */
+	public boolean canPlace(BuildingTypes placedbuildingType, PlayerID playerID, Node nodeToPlaceOn);
 }

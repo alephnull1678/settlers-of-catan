@@ -8,37 +8,28 @@ package catansim;
 /**
  * 
  */
-public interface Board extends StaticBoard {
+public abstract class Board implements StaticBoard {
 	/**
 	 * 
 	 */
-	public Node[] node;
+	private Node[] nodes;
 	/**
 	 * 
 	 */
-	public Tile[] tile;
-
-	/**
-	 * 
-	 * @param nodes 
-	 */
-	public void createNodes(Node[] nodes);
+	private Tile[] tiles;
 
 	/**
 	 * 
 	 * @return 
 	 */
-	public Node[] createNodes();
-
-	/**
-	 * 
-	 */
-	public void createTiles();
+	public Node[] getNodes() {
+		return nodes;
+	}
 
 	/**
 	 * 
 	 * @param playerID 
 	 * @return 
 	 */
-	public Catalog collect(PlayerID playerID);
+	public abstract Catalog collect(PlayerID playerID);
 }
