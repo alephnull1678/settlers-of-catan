@@ -1,82 +1,101 @@
-// --------------------------------------------------------
-// Manual implementation
-// --------------------------------------------------------
-
 package catansim;
 
-/************************************************************/
-/**
- * 
- */
 public class Node {
-	/**
-	 * 
-	 */
-	private Tile[] tiles;
-	/**
-	 * 
-	 */
-	private int nodeID;
-	/**
-	 * 
-	 */
-	private Node[] neighbors;
-	/**
-	 * 
-	 */
-	private Road[] roads = null;
-	/**
-	 * 
-	 */
-	private Building building = null;
-	
-	private int tileCount = 0;
-	
-	public Node(int nodeID, Tile[] tiles) {
-		this.tiles = tiles;
-		this.neighbors = new Node[3];
-		this.nodeID = nodeID;
-	}
 
-	/**
-	 * 
-	 * @param diceNum 
-	 * @return 
-	 */
-	public Tile[] getTiles() {
-		return tiles;
-	}
-	
-	public void addTile(Tile tile) {
-        if (tileCount < 3) {
-            tiles[tileCount] = tile;
-            tileCount++;
-        } else {
-            throw new IllegalStateException("Node already has 3 tiles.");
-        }
+    // Maximum values for Catan board geometry
+    private static final int MAX_TILES = 3;
+    private static final int MAX_NEIGHBORS = 3;
+    private static final int MAX_ROADS = 3;
+
+    private final int nodeID;
+
+    private Tile[] tiles = new Tile[MAX_TILES];
+    private int tileCount = 0;
+
+    private Node[] neighbors = new Node[MAX_NEIGHBORS];
+    private int neighborCount = 0;
+
+    private Road[] roads = new Road[MAX_ROADS];
+    private int roadCount = 0;
+
+    private Building building = null;
+
+    // --------------------------------------------------
+    // Constructor
+    // --------------------------------------------------
+
+    public Node(int nodeID) {
+        this.nodeID = nodeID;
     }
-	
-	public Node[] getNeighbours() {
-		return neighbors;
-	}
-	
-	public Building getBuilding() {
-		return building;
-	}
-	
-	public Road[] getConnectedRoads() {
-		return roads;
-	}
 
-	public void placeBuilding(Building building) {
-		this.building = building;
-	}
-	
-	public void addRoad(Road road) {
-		roads[roads.length] = road; // add the road to the end of the list
-	}
-	
-	public void connectNode(Node node) {
-		neighbors[neighbors.length] = node;
-	}
+    // --------------------------------------------------
+    // Tile Handling
+    // --------------------------------------------------
+
+    public void addTile(Tile tile) {
+        if (tileCount >= MAX_TILES) {
+            throw new IllegalStateException(
+                "Node " + nodeID + " already has 3 tiles."
+            );
+        }
+        tiles[tileCount++] = tile;
+    }
+
+    public Tile[] getTiles() {
+        return tiles;
+    }
+
+    // --------------------------------------------------
+    // Neighbor Handling
+    // --------------------------------------------------
+
+    public void connectNode(Node node) {
+        if (neighborCount >= MAX_NEIGHBORS) {
+            throw new IllegalStateException(
+                "Node " + nodeID + " already has 3 neighbors."
+            );
+        }
+        neighbors[neighborCount++] = node;
+    }
+
+    public Node[] getNeighbours() {
+        return neighbors;
+    }
+
+    // --------------------------------------------------
+    // Road Handling
+    // --------------------------------------------------
+
+    public void addRoad(Road road) {
+        if (roadCount >= MAX_ROADS) {
+            throw new IllegalStateException(
+                "Node " + nodeID + " already has 3 roads."
+            );
+        }
+        roads[roadCount++] = road;
+    }
+
+    public Road[] getConnectedRoads() {
+        return roads;
+    }
+
+    // --------------------------------------------------
+    // Building Handling
+    // --------------------------------------------------
+
+    public void placeBuilding(Building building) {
+        this.building = building;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    // --------------------------------------------------
+    // Utility
+    // --------------------------------------------------
+
+    public int getNodeID() {
+        return nodeID;
+    }
 }

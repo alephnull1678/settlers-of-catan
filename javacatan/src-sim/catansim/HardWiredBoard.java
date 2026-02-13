@@ -16,23 +16,6 @@ public class HardWiredBoard extends Board {
 	
 	private int longestRoadLength = 0;
 	
-	private void connect(Node[] nodes, int a, int b) {
-	    nodes[a].connectNode(nodes[b]);
-	    nodes[b].connectNode(nodes[a]);
-	}
-
-	private void assignTileToNodes(Tile tile, Node[] nodes, int... nodeIDs) {
-	    for (int id : nodeIDs) {
-	        Tile[] nodeTiles = nodes[id].getTiles();
-	        for (int i = 0; i < nodeTiles.length; i++) {
-	            if (nodeTiles[i] == null) {
-	                nodeTiles[i] = tile;
-	                break;
-	            }
-	        }
-	    }
-	}
-	
 	public HardWiredBoard() {
 
 	    // --------------------------------------------------
@@ -72,7 +55,7 @@ public class HardWiredBoard extends Board {
 	    Node[] nodes = new Node[54];
 
 	    for (int i = 0; i < 54; i++) {
-	        nodes[i] = new Node(i, new Tile[3]);
+	        nodes[i] = new Node(i);
 	    }
 
 	    // --------------------------------------------------
