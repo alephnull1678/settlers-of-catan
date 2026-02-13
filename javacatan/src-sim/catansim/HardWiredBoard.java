@@ -334,84 +334,123 @@ public class HardWiredBoard implements Board {
 
 
 	private boolean canPlaceBuilding(BuildingTypes buildingType, PlayerID playerID, Node node) {
-		// check if placing a city on settlement or settlement on settlement
-		if (node.getBuilding() == null && buildingType == BuildingTypes.CITY) {
-			return false;
-		} else if (buildingType == BuildingTypes.CITY && node.getBuilding().getOwnerPlayerID() != playerID) {
-			return false;
-		} else if (buildingType == BuildingTypes.SETTLEMENT && node.getBuilding() != null) {
-			return false;
-		}
-		
-		boolean hasRoad = true;
-		
-		// check for nearby road
-		for (Road road : node.getConnectedRoads()) {
-			if (road == null) continue;
-			if (road.getOwnerPlayerID() == playerID) {
-				hasRoad = true;
-				break;
-			} else {
-				hasRoad = false;
-			}
-		}
-		
-		if (!hasRoad) {
-			return false; // no player road nearby
-		}
-		
-		// check if can place piece based on if nearby node has a settlement
-		for (Node curNode : node.getNeighbours()) {
-			if (curNode.getBuilding() == null) {
-				continue;
-			} else {
-				return false; // (settlement a node away)
-			}
-		}
-		
-		return true;
+
+	    // -------------------------
+	    // CITY RULES
+	    // -------------------------
+	    if (buildingType == BuildingTypes.CITY) {
+
+	        if (node.getBuilding() == null) return false;
+
+	        return node.getBuilding().getOwnerPlayerID() == playerID;
+	    }
+
+	    // -------------------------
+	    // SETTLEMENT RULES
+	    // -------------------------
+	    if (buildingType == BuildingTypes.SETTLEMENT) {
+
+	        // Cannot build on occupied node
+	        if (node.getBuilding() != null) return false;
+
+	        // Distance rule: no adjacent settlements
+	        for (Node neighbour : node.getNeighbours()) {
+	            if (neighbour.getBuilding() != null) {
+	                return false;
+	            }
+	        }
+
+	        // Check if player already has any settlement/city
+	        boolean playerHasBuilding = false;
+
+	        for (Node n : getNodes()) {
+	            if (n.getBuilding() != null &&
+	                n.getBuilding().getOwnerPlayerID() == playerID) {
+	                playerHasBuilding = true;
+	                break;
+	            }
+	        }
+
+	        // If this is NOT the first settlement,
+	        // it must connect to player's road
+	        if (playerHasBuilding) {
+	            boolean connectedToRoad = false;
+
+	            for (Road road : node.getConnectedRoads()) {
+	                if (road != null &&
+	                    road.getOwnerPlayerID() == playerID) {
+	                    connectedToRoad = true;
+	                    break;
+	                }
+	            }
+
+	            if (!connectedToRoad) return false;
+	        }
+
+	        return true;
+	    }
+
+	    return false;
 	}
+
 	
 	private boolean canPlaceRoad(PlayerID playerID, Node nodeStart, Node nodeEnd) {
-	    boolean hasConnectedRoad = false;
-	    
-	    for (Road curRoad : nodeStart.getConnectedRoads()) { // check that there is a root road
-	    	if (curRoad == null) continue;
-	        if (curRoad.getOwnerPlayerID() == playerID) {
-	        	hasConnectedRoad = true;
+
+	    // Must be neighbours
+	    boolean isNeighbour = false;
+	    for (Node neighbour : nodeStart.getNeighbours()) {
+	        if (neighbour == nodeEnd) {
+	            isNeighbour = true;
 	            break;
 	        }
 	    }
-	    
-	    if (!hasConnectedRoad) {
-	        return false;
-	    }
-	    
-	    boolean isNeighbor = true; 
-	    
-	    for (Node neighbor : nodeStart.getNeighbours()) { // check if nodes are neighbors
-	    	if (neighbor == nodeEnd) {
-	    		isNeighbor = true;
-	    		break;
-	    	} else {
-	    		isNeighbor = false;
-	    	}
-	    }
-	    
-	    if (!isNeighbor) {
-	    	return false;
-	    }
+	    if (!isNeighbour) return false;
 
-	    for (Road startNodeRoad : nodeStart.getConnectedRoads()) { // must be last operation (O(n^2)) checks if roads already exist
-	        for (Road endNodeRoad : nodeEnd.getConnectedRoads()) {
-	            if (startNodeRoad == endNodeRoad) {
-	                return false; // road already exists
+	    // Road must not already exist
+	    for (Road startRoad : nodeStart.getConnectedRoads()) {
+	        for (Road endRoad : nodeEnd.getConnectedRoads()) {
+	            if (startRoad != null && startRoad == endRoad) {
+	                return false;
 	            }
 	        }
 	    }
-	    
+
+	    // Must connect to player infrastructure
+	    boolean connected = false;
+
+	    // Connected to player's building?
+	    if (nodeStart.getBuilding() != null &&
+	        nodeStart.getBuilding().getOwnerPlayerID() == playerID) {
+	        connected = true;
+	    }
+
+	    if (nodeEnd.getBuilding() != null &&
+	        nodeEnd.getBuilding().getOwnerPlayerID() == playerID) {
+	        connected = true;
+	    }
+
+	    // Connected to player's road?
+	    for (Road road : nodeStart.getConnectedRoads()) {
+	        if (road != null &&
+	            road.getOwnerPlayerID() == playerID) {
+	            connected = true;
+	            break;
+	        }
+	    }
+
+	    for (Road road : nodeEnd.getConnectedRoads()) {
+	        if (road != null &&
+	            road.getOwnerPlayerID() == playerID) {
+	            connected = true;
+	            break;
+	        }
+	    }
+
+	    if (!connected) return false;
+
 	    return true;
 	}
+
 	
 	public boolean canPlace(BuildingTypes placedbuildingType, PlayerID playerID, Node nodeStart, Node nodeEnd) {
 		return canPlaceRoad(playerID, nodeStart, nodeEnd);
