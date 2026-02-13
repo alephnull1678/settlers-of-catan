@@ -9,7 +9,6 @@ package catansim;
  * 
  */
 public class Tile {
-	
 	/**
 	 * 
 	 */
@@ -18,10 +17,16 @@ public class Tile {
 	 * 
 	 */
 	private int diceNum;
+	/**
+	 * 
+	 */
+	private int tileID;
 	
 	
-	public Tile(Resource resource, int diceNum) {
+	public Tile(Resource resource, int diceNum, int tileID) {
 		this.resource = resource;
+		this.diceNum = diceNum;
+		this.tileID = tileID;
 	}
 	
 	public int getDiceNum() {
