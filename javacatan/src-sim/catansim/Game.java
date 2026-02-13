@@ -81,6 +81,7 @@ public class Game {
             roundNumber++;
 
             int diceNum = dice.roll();
+            System.out.println("DICE ROLL: " + diceNum);
 
             //Resource collection phase: collect for EVERY player
             // If dice == 7, do nothing
@@ -88,6 +89,7 @@ public class Game {
                 for (Player p : players) {
                     PlayerID pid = p.getPlayerID();
                     Catalog<Resource> gained = board.collect(diceNum, pid);
+                   
                     p.dealResources(gained.snapshot()); // snapshot = immutable copy
                 }
             }
@@ -158,9 +160,10 @@ public class Game {
             // Setup: for settlements we must use setup rules (no road/resource/piece checks).
             if (type == BuildingTypes.SETTLEMENT) {
                 valid = getValidSetupSettlements(staticBoard, pid);
-            } else {
-                // Fallback for other types during setup (unlikely) — bypass resources/pieces by passing null
-                valid = validator.getValidActions(staticBoard, pid, null, null);
+            }
+            else
+            {
+            	valid = validator.getValidActions(staticBoard, pid, null, piecesOwned);
             }
         }
 
@@ -257,6 +260,7 @@ public class Game {
         }
 
         longestRoadHolder = newHolder;
+        System.out.println("Longest Road Award has been transferred to " + newHolder);
     }
 
     private Player getPlayer(PlayerID id) {

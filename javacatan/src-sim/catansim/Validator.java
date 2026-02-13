@@ -13,6 +13,7 @@ public class Validator {
 	) {
 	    if (board == null) throw new IllegalArgumentException("board cannot be null");
 	    if (playerID == null) throw new IllegalArgumentException("playerID cannot be null");
+	    if (piecesOwned == null) throw new IllegalArgumentException("piecesOwned cannot be null");
 
 	    List<Action> actions = new ArrayList<>();
 

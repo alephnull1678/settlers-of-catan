@@ -22,7 +22,7 @@ public class Demonstrator {
         };
 
         //Run game
-        int maxRounds = 100;
+        int maxRounds = 8000;
         Game game = new Game(players, board, validator, dice, maxRounds);
         game.run();
     }

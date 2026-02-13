@@ -243,16 +243,162 @@ public class HardWiredBoard implements Board {
 	    nodes[0].connectNode(nodes[1]);
 	    nodes[0].connectNode(nodes[5]);
 
-	    // --------------------------------------------------
-	    // 4️⃣ ASSIGN CENTER TILE (Tile ID 0)
-	    // --------------------------------------------------
+		 // --------------------------------------------------
+		 // HARD-WIRED TILES
+		 // --------------------------------------------------
+	
+		 // TILE 13
+		 nodes[42].addTile(tiles[13]);
+		 nodes[40].addTile(tiles[13]);
+		 nodes[18].addTile(tiles[13]);
+		 nodes[17].addTile(tiles[13]);
+		 nodes[39].addTile(tiles[13]);
+		 nodes[41].addTile(tiles[13]);
+	
+		 // TILE 14
+		 nodes[44].addTile(tiles[14]);
+		 nodes[43].addTile(tiles[14]);
+		 nodes[21].addTile(tiles[14]);
+		 nodes[16].addTile(tiles[14]);
+		 nodes[18].addTile(tiles[14]);
+		 nodes[40].addTile(tiles[14]);
+	
+		 // TILE 15
+		 nodes[45].addTile(tiles[15]);
+		 nodes[47].addTile(tiles[15]);
+		 nodes[46].addTile(tiles[15]);
+		 nodes[19].addTile(tiles[15]);
+		 nodes[21].addTile(tiles[15]);
+		 nodes[43].addTile(tiles[15]);
+	
+		 // TILE 12
+		 nodes[39].addTile(tiles[12]);
+		 nodes[17].addTile(tiles[12]);
+		 nodes[15].addTile(tiles[12]);
+		 nodes[14].addTile(tiles[12]);
+		 nodes[37].addTile(tiles[12]);
+		 nodes[38].addTile(tiles[12]);
+	
+		 // TILE 4
+		 nodes[18].addTile(tiles[4]);
+		 nodes[16].addTile(tiles[4]);
+		 nodes[5].addTile(tiles[4]);
+		 nodes[4].addTile(tiles[4]);
+		 nodes[15].addTile(tiles[4]);
+		 nodes[17].addTile(tiles[4]);
+	
+		 // TILE 5
+		 nodes[21].addTile(tiles[5]);
+		 nodes[19].addTile(tiles[5]);
+		 nodes[20].addTile(tiles[5]);
+		 nodes[0].addTile(tiles[5]);
+		 nodes[5].addTile(tiles[5]);
+		 nodes[16].addTile(tiles[5]);
+	
+		 // TILE 16
+		 nodes[46].addTile(tiles[16]);
+		 nodes[48].addTile(tiles[16]);
+		 nodes[49].addTile(tiles[16]);
+		 nodes[22].addTile(tiles[16]);
+		 nodes[20].addTile(tiles[16]);
+		 nodes[19].addTile(tiles[16]);
+	
+		 // TILE 11
+		 nodes[37].addTile(tiles[11]);
+		 nodes[14].addTile(tiles[11]);
+		 nodes[13].addTile(tiles[11]);
+		 nodes[34].addTile(tiles[11]);
+		 nodes[35].addTile(tiles[11]);
+		 nodes[36].addTile(tiles[11]);
+	
+		 // TILE 3
+		 nodes[15].addTile(tiles[3]);
+		 nodes[4].addTile(tiles[3]);
+		 nodes[3].addTile(tiles[3]);
+		 nodes[12].addTile(tiles[3]);
+		 nodes[13].addTile(tiles[3]);
+		 nodes[14].addTile(tiles[3]);
+	
+		 // TILE 0 (CENTER)
+		 nodes[5].addTile(tiles[0]);
+		 nodes[0].addTile(tiles[0]);
+		 nodes[1].addTile(tiles[0]);
+		 nodes[2].addTile(tiles[0]);
+		 nodes[3].addTile(tiles[0]);
+		 nodes[4].addTile(tiles[0]);
+	
+		 // TILE 6
+		 nodes[20].addTile(tiles[6]);
+		 nodes[22].addTile(tiles[6]);
+		 nodes[23].addTile(tiles[6]);
+		 nodes[6].addTile(tiles[6]);
+		 nodes[1].addTile(tiles[6]);
+		 nodes[0].addTile(tiles[6]);
+	
+		 // TILE 17
+		 nodes[49].addTile(tiles[17]);
+		 nodes[50].addTile(tiles[17]);
+		 nodes[51].addTile(tiles[17]);
+		 nodes[52].addTile(tiles[17]);
+		 nodes[23].addTile(tiles[17]);
+		 nodes[22].addTile(tiles[17]);
+	
+		 // TILE 10
+		 nodes[34].addTile(tiles[10]);
+		 nodes[13].addTile(tiles[10]);
+		 nodes[12].addTile(tiles[10]);
+		 nodes[11].addTile(tiles[10]);
+		 nodes[32].addTile(tiles[10]);
+		 nodes[33].addTile(tiles[10]);
+	
+		 // TILE 2
+		 nodes[2].addTile(tiles[2]);
+		 nodes[9].addTile(tiles[2]);
+		 nodes[10].addTile(tiles[2]);
+		 nodes[11].addTile(tiles[2]);
+		 nodes[12].addTile(tiles[2]);
+		 nodes[3].addTile(tiles[2]);
+	
+		 // TILE 1
+		 nodes[1].addTile(tiles[1]);
+		 nodes[6].addTile(tiles[1]);
+		 nodes[7].addTile(tiles[1]);
+		 nodes[8].addTile(tiles[1]);
+		 nodes[9].addTile(tiles[1]);
+		 nodes[2].addTile(tiles[1]);
+	
+		 // TILE 18
+		 nodes[23].addTile(tiles[18]);
+		 nodes[52].addTile(tiles[18]);
+		 nodes[53].addTile(tiles[18]);
+		 nodes[24].addTile(tiles[18]);
+		 nodes[7].addTile(tiles[18]);
+		 nodes[6].addTile(tiles[18]);
+	
+		 // TILE 9
+		 nodes[11].addTile(tiles[9]);
+		 nodes[10].addTile(tiles[9]);
+		 nodes[29].addTile(tiles[9]);
+		 nodes[30].addTile(tiles[9]);
+		 nodes[31].addTile(tiles[9]);
+		 nodes[32].addTile(tiles[9]);
+	
+		 // TILE 8
+		 nodes[9].addTile(tiles[8]);
+		 nodes[8].addTile(tiles[8]);
+		 nodes[27].addTile(tiles[8]);
+		 nodes[28].addTile(tiles[8]);
+		 nodes[29].addTile(tiles[8]);
+		 nodes[10].addTile(tiles[8]);
+	
+		 // TILE 7
+		 nodes[7].addTile(tiles[7]);
+		 nodes[24].addTile(tiles[7]);
+		 nodes[25].addTile(tiles[7]);
+		 nodes[26].addTile(tiles[7]);
+		 nodes[27].addTile(tiles[7]);
+		 nodes[8].addTile(tiles[7]);
 
-	    nodes[0].addTile(tiles[0]);
-	    nodes[1].addTile(tiles[0]);
-	    nodes[5].addTile(tiles[0]);
-	    nodes[6].addTile(tiles[0]);
-	    nodes[16].addTile(tiles[0]);
-	    nodes[18].addTile(tiles[0]);
 	}
 
 	
@@ -467,7 +613,7 @@ public class HardWiredBoard implements Board {
 		for (Node curNode : getNodes()) {
 			if (curNode.getBuilding() != null) {
 				if (curNode.getBuilding().getOwnerPlayerID() == playerID) {
-					for (Tile tile : curNode.getTiles()) { 
+					for (Tile tile : curNode.getTiles()) {
 						if (tile.getDiceNum() == diceNum) {
 							buildingCollection.add(tile.getResource(), curNode.getBuilding().getResourceAmount());
 						}

@@ -49,6 +49,13 @@ public class Player {
     //DEAL RESOURCE
     public void dealResources(Catalog<Resource> gained) {
         if (gained == null) throw new IllegalArgumentException("gained cannot be null");
+        
+        System.out.println(playerID + "'s resoures:");
+        
+        for (Resource r: Resource.values())
+        {
+        	System.out.println(r + ": " + playerHand.getCount(r));
+        }
         playerHand.addHand(gained);
     }
     
@@ -61,6 +68,7 @@ public class Player {
 
         Piece toPlace = pieceHandler.usePiece(type);
         if (toPlace == null) return null;
+        	
         
         //Remove resources
         boolean paid = playerHand.removeHand(type.getCost());
