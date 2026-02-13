@@ -7,12 +7,10 @@ public enum BuildingTypes {
             .add(Resource.WOOD, 1)
             .add(Resource.BRICK, 1)
     ) {
-        @Override
-        public Piece createPiece() {
-            return new Road();
+        public Piece createPiece(PlayerID owner) {
+            return new Road(owner);
         }
 
-        @Override
         public int maxCount() {
             return 15;
         }
@@ -25,12 +23,11 @@ public enum BuildingTypes {
             .add(Resource.SHEEP, 1)
             .add(Resource.WHEAT, 1)
     ) {
-        @Override
-        public Piece createPiece() {
-            return new Settlement();
+        public Piece createPiece(PlayerID owner) {
+            return new Settlement(owner);
         }
 
-        @Override
+        
         public int maxCount() {
             return 5;
         }
@@ -41,12 +38,12 @@ public enum BuildingTypes {
             .add(Resource.ORE, 3)
             .add(Resource.WHEAT, 2)
     ) {
-        @Override
-        public Piece createPiece() {
-            return new City();
+        
+        public Piece createPiece(PlayerID owner) {
+            return new City(owner);
         }
 
-        @Override
+        
         public int maxCount() {
             return 4;
         }
@@ -66,7 +63,7 @@ public enum BuildingTypes {
         return cost;
     }
 
-    public abstract Piece createPiece();
+    public abstract Piece createPiece(PlayerID owner);
     public abstract int maxCount();
 
     // --------------------------------------------------

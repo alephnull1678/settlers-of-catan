@@ -118,7 +118,7 @@ public class Game {
 
         List<Action> filtered = new ArrayList<>();
         for (Action a : valid) {
-            if (a.getType() == type) {
+            if (a.getPieceType() == type) {
                 filtered.add(a);
             }
         }
@@ -152,7 +152,7 @@ public class Game {
             return;
         }
 
-        BuildingTypes type = chosen.getType();
+        BuildingTypes type = chosen.getPieceType();
         Node[] nodes = chosen.getNodes();
 
         //Consume returns the Piece instance to place
@@ -163,7 +163,9 @@ public class Game {
         }
 
 
-        board.place(nodes, type, piece);
+        //Bit of code smell here but only two types of piece so it's inconsequential
+        if (piece.getType() == BuildingTypes.ROAD) board.placePiece((Road)piece, pid, nodes[0], nodes[1]);
+        else board.placePiece((Building)piece, pid, nodes[0]);
 
         //Update VP
         if (type != BuildingTypes.ROAD) {

@@ -10,6 +10,13 @@ package catansim;
  */
 public interface StaticBoard {
 	
+	
+	/**
+	 * 
+	 * @return 
+	 */
+	public Node[] getNodes();
+	
 	/**
 	 * 
 	 */

@@ -10,11 +10,11 @@ package catansim;
 public class Settlement extends Building {
 	
 	/**
-	 * Constructor for settlment
+	 * Constructor for settlement
 	 * @param owner The player who owns the settlement
 	 */
 	public Settlement(PlayerID owner) {
-		super(node, owner);
+		super(owner);
 		setResourceAmount(1);
 	}
 	

@@ -69,8 +69,8 @@ public class Validator {
             BuildingTypes type,
             List<Action> out
     ) {
-        for (Node a : board.getAllNodes()) {
-            for (Node b : board.getAdjacentNodes(a)) {
+        for (Node a : board.getNodes()) {
+            for (Node b : a.getNeighbours()) {
 
                 // Avoid duplicates if adjacency is symmetric
                 // Replace getNodeID() with whatever ID your Node has
