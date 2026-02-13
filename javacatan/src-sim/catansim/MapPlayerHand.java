@@ -1,3 +1,7 @@
+// --------------------------------------------------------
+// Manually Implemented
+// --------------------------------------------------------
+
 package catansim;
 
 public class MapPlayerHand implements PlayerHand {
