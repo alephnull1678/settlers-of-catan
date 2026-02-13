@@ -45,10 +45,18 @@ public abstract class Board implements StaticBoard {
 	public abstract void placePiece(Building building, PlayerID playerID, Node node);
 
 	/**
-	 * 
+	 * @param diceNum 
 	 * @param playerID 
 	 * @return 
 	 */
-	public abstract Catalog collect(int diceNum, PlayerID playerID);
+	public abstract Catalog<Resource> collect(int diceNum, PlayerID playerID);
+	
+	/**
+	 * 
+	 * @param playerID 
+	 * @param node 
+	 * @return 
+	 */
+	public abstract Catalog<Resource> collectFirst(PlayerID playerID, Node node);
 
 }

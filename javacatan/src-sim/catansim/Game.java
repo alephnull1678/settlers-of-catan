@@ -95,7 +95,7 @@ public class Game {
         Action settlement = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.SETTLEMENT);
         Piece sPiece = player.consumeFreePiece(BuildingTypes.SETTLEMENT);
 
-        board.place(settlement.getNodes(), BuildingTypes.SETTLEMENT, sPiece);
+        board.placePiece((Building)sPiece, pid, settlement.getNodes()[0]);
         player.addVP(1);
 
         printAction(pid, "Setup: " + describeAction(BuildingTypes.SETTLEMENT, settlement.getNodes()));
@@ -104,7 +104,7 @@ public class Game {
         Action road = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.ROAD);
         Piece rPiece = player.consumeFreePiece(BuildingTypes.ROAD);
 
-        board.place(road.getNodes(), BuildingTypes.ROAD, rPiece);
+        board.placePiece((Road)rPiece, pid, settlement.getNodes()[0], settlement.getNodes()[1]);
         updateLongestRoadAward();
 
         printAction(pid, "Setup: " + describeAction(BuildingTypes.ROAD, road.getNodes()));

@@ -13,7 +13,6 @@ import java.util.EnumMap;
  */
 public class PieceHandler {
 	
-	private final PlayerID owner;
 	
 	//Max for each piece type
 	public static final int MAX_ROADS = 15;
@@ -30,7 +29,6 @@ public class PieceHandler {
             new EnumMap<>(BuildingTypes.class);
     
     public PieceHandler(PlayerID owner) {
-    	this.owner = owner;
     	for (BuildingTypes type : BuildingTypes.values()) {
 
             int max = type.maxCount();

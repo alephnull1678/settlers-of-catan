@@ -27,7 +27,7 @@ public class Player {
     public Player(PlayerID playerID) {
         if (playerID == null) throw new IllegalArgumentException("playerID cannot be null");
         this.playerID = playerID;
-        this.pieceHandler = new PieceHandler();
+        this.pieceHandler = new PieceHandler(playerID);
         this.playerHand = new MapPlayerHand();
     }
     
@@ -97,7 +97,7 @@ public class Player {
     
     //Get read-only catalog of resources
     public Catalog<Resource> getResourceCatalog() {
-        return ((Catalog) playerHand).snapshot();
+        return ((Catalog<Resource>) playerHand).snapshot();
     }
     
     

@@ -56,7 +56,7 @@ public class Validator {
             List<Action> out
     ) {
         //Type is SETTLEMENT or CITY
-        for (Node n : board.getAllNodes()) {
+        for (Node n : board.getNodes()) {
             if (board.canPlace(type, playerID, n)) {
                 out.add(new Action(n, type));
             }
