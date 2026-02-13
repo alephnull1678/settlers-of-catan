@@ -183,9 +183,32 @@ public class HardWiredBoard extends Board {
 	}
 
 	@Override
-	public Catalog collect(PlayerID playerID) {
-		// TODO Auto-generated method stub
-		return null;
+	public Catalog<Resource> collect(int diceNum, PlayerID playerID) {
+		Catalog<Resource> buildingCollection = new MapCatalog<Resource>();
+		
+		for (Node curNode : getNodes()) {
+			if (curNode.getBuilding() != null) {
+				if (curNode.getBuilding().getOwnerPlayerID() == playerID) {
+					for (Tile tile : curNode.getTiles()) {
+						if (tile.getDiceNum() == diceNum) {
+							buildingCollection.add(tile.getResource(), curNode.getBuilding().getResourceAmount());
+						}
+					}
+				}
+			}
+		}
+		
+		return buildingCollection;
+	}
+	
+	public Catalog<Resource> collectFirst(PlayerID playerID, Node node) {
+		Catalog<Resource> buildingCollection = new MapCatalog<Resource>();
+		
+		for (Tile tile : node.getTiles()) {
+			buildingCollection.add(tile.getResource(), node.getBuilding().getResourceAmount());
+		}
+		
+		return buildingCollection;
 	}
 	
 	public void placePiece(Road road, PlayerID playerID, Node nodeOne, Node nodeTwo) {

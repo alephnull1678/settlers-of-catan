@@ -31,5 +31,5 @@ public abstract class Board implements StaticBoard {
 	 * @param playerID 
 	 * @return 
 	 */
-	public abstract Catalog collect(PlayerID playerID);
+	public abstract Catalog collect(int diceNum, PlayerID playerID);
 }

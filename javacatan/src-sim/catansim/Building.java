@@ -9,7 +9,7 @@ package catansim;
  */
 public abstract class Building implements Piece {
 	
-	protected PlayerID owner;
+	private PlayerID owner;
 	private int resourceAmount;
 	
 	/**

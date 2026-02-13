@@ -12,7 +12,7 @@ public class Node {
 	/**
 	 * 
 	 */
-	public Tile[] tiles;
+	private Tile[] tiles;
 	/**
 	 * 
 	 */
@@ -41,8 +41,8 @@ public class Node {
 	 * @param diceNum 
 	 * @return 
 	 */
-	public boolean checkTiles(int diceNum) {
-		
+	public Tile[] getTiles() {
+		return tiles;
 	}
 	
 	public Node[] getNeighbours() {

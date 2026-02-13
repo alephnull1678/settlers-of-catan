@@ -4,6 +4,10 @@
 
 package catan;
 
+import catansim.Catalog;
+import catansim.PlayerID;
+import catansim.Resource;
+
 /************************************************************/
 /**
  * 
@@ -40,5 +44,5 @@ public interface Board extends StaticBoard {
 	 * @param playerID 
 	 * @return 
 	 */
-	public Catalog collect(PlayerID playerID);
+	public Catalog<Resource> collect(int diceNum, PlayerID playerID);
 }
