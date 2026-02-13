@@ -1,5 +1,7 @@
 package catansim;
 
+import java.util.Arrays;
+
 public class Node {
 
     // Maximum values for Catan board geometry
@@ -59,7 +61,7 @@ public class Node {
     }
 
     public Node[] getNeighbours() {
-        return neighbors;
+    	return Arrays.copyOf(neighbors, neighborCount);
     }
 
     // --------------------------------------------------

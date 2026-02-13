@@ -63,9 +63,28 @@ public class MapPlayerHand implements PlayerHand {
     }
 
   
-    //Helper method (add to UML)
-    //lets you inspect how many of a resource the player has.
-    public int getCount(Resource resource) {
-        return catalog.getCount(resource);
+    
+    
+    //Override methods to satisfy Catalog implementation
+    @Override
+    public int getCount(Resource unit) {
+        return catalog.getCount(unit);
+    }
+
+    @Override
+    public boolean add(Resource unit, int amount) {
+    	if (unit == null || amount <= 0) return false;
+        catalog.add(unit, amount);
+        return true;
+    }
+
+    @Override
+    public boolean remove(Resource unit, int count) {
+        return catalog.remove(unit, count);
+    }
+
+    @Override
+    public Catalog<Resource> snapshot() {
+        return catalog.snapshot();
     }
 }

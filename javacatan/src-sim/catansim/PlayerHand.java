@@ -1,7 +1,7 @@
 
 package catansim;
 
-public interface PlayerHand {
+public interface PlayerHand extends Catalog<Resource> {
 	
     boolean addCard(Resource resource, int count);
     

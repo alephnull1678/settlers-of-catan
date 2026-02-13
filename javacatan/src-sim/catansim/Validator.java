@@ -82,4 +82,32 @@ public class Validator {
             }
         }
     }
+    
+    
+    
+    public List<Action> getAllActionsFromNode(Node node) {
+        if (node == null) throw new IllegalArgumentException("node cannot be null");
+
+        List<Action> actions = new ArrayList<>();
+
+        // ------------------
+        // Building actions
+        // ------------------
+        actions.add(new Action(node, BuildingTypes.SETTLEMENT));
+        actions.add(new Action(node, BuildingTypes.CITY));
+
+        // ------------------
+        // Road actions
+        // ------------------
+        for (Node neighbour : node.getNeighbours()) {
+            if (neighbour == null) continue;
+
+            actions.add(new Action(
+                    node, neighbour,
+                    BuildingTypes.ROAD
+            ));
+        }
+
+        return actions;
+    }
 }

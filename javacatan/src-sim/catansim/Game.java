@@ -92,7 +92,7 @@ public class Game {
         Catalog<BuildingTypes> piecesOwned = player.getPieceCatalog();
 
         //Settlement
-        Action settlement = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.SETTLEMENT);
+        Action settlement = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.SETTLEMENT, null);
         Piece sPiece = player.consumeFreePiece(BuildingTypes.SETTLEMENT);
 
         board.placePiece((Building)sPiece, pid, settlement.getNodes()[0]);
@@ -101,20 +101,21 @@ public class Game {
         printAction(pid, "Setup: " + describeAction(BuildingTypes.SETTLEMENT, settlement.getNodes()));
 
         //Road
-        Action road = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.ROAD);
+        Action road = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.ROAD, settlement.getNodes()[0]);
         Piece rPiece = player.consumeFreePiece(BuildingTypes.ROAD);
 
-        board.placePiece((Road)rPiece, pid, settlement.getNodes()[0], settlement.getNodes()[1]);
+        board.placePiece((Road)rPiece, pid, road.getNodes()[0], road.getNodes()[1]);
         updateLongestRoadAward();
 
         printAction(pid, "Setup: " + describeAction(BuildingTypes.ROAD, road.getNodes()));
     }
 
-    private Action chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<BuildingTypes> piecesOwned, BuildingTypes type) {
+    private Action chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<BuildingTypes> piecesOwned, BuildingTypes type, Node sourceNode) {
         PlayerID pid = player.getPlayerID();
 
-        
-        List<Action> valid = validator.getValidActions(staticBoard, pid, null, piecesOwned);
+        List<Action> valid;
+        if (sourceNode != null) valid = validator.getAllActionsFromNode(sourceNode);
+        else valid = validator.getValidActions(staticBoard, pid, null, piecesOwned);
 
         List<Action> filtered = new ArrayList<>();
         for (Action a : valid) {

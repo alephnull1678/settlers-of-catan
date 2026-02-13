@@ -97,7 +97,7 @@ public class Player {
     
     //Get read-only catalog of resources
     public Catalog<Resource> getResourceCatalog() {
-        return ((Catalog<Resource>) playerHand).snapshot();
+        return playerHand.snapshot();
     }
     
     
