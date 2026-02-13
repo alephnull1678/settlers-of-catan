@@ -13,13 +13,13 @@ public class Action {
 	 * 
 	 * @return 
 	 */
-	public Node[] getNode() {
+	public Node[] getNodes() {
 	}
 
 	/**
 	 * 
 	 * @return 
 	 */
-	public Building getPiece() {
+	public BuildingTypes getPieceType() {
 	}
 }

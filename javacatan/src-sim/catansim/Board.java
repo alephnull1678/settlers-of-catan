@@ -25,6 +25,30 @@ public abstract class Board implements StaticBoard {
 	public Node[] getNodes() {
 		return nodes;
 	}
+	
+	/**
+	 * 
+	 * @return 
+	 */
+	public place getNodes() {
+		return nodes;
+	}
+	
+	/**
+	 * @param road The road piece being placed.
+	 * @param playerID The player who owns the road.
+	 * @param nodeOne One endpoint node of the road.
+	 * @param nodeTwo The other endpoint node of the road.
+	 */
+	public void placePiece(Road road, PlayerID playerID, Node nodeOne, Node nodeTwo);
+	
+	/**
+	 *
+	 * @param building The building piece being placed.
+	 * @param playerID The player who owns the building.
+	 * @param node The node where the building is placed.
+	 */
+	public void placePiece(Building building, PlayerID playerID, Node node);
 
 	/**
 	 * 
@@ -32,4 +56,5 @@ public abstract class Board implements StaticBoard {
 	 * @return 
 	 */
 	public abstract Catalog collect(int diceNum, PlayerID playerID);
+
 }

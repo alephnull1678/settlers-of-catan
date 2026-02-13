@@ -24,8 +24,17 @@ public interface StaticBoard {
 	/**
 	 * 
 	 * @param piece 
-	 * @param node 
+	 * @param nodeToPlaceOn 
 	 * @return 
 	 */
-	public boolean canPlace(Piece piece, Node node);
+	public boolean canPlace(Piece piece, Node nodeToPlaceOn);
+
+	/**
+	 * 
+	 * @param piece 
+	 * @param nodeStart 
+	 * @param nodeEnd 
+	 * @return 
+	 */
+	public boolean canPlace(Piece piece, Node nodeStart, Node nodeEnd);
 }

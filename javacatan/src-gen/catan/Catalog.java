@@ -11,8 +11,32 @@ package catan;
 public interface Catalog<T> {
 	/**
 	 * 
+	 */
+	public PieceHandler piecehandler;
+
+	/**
+	 * 
 	 * @param unit 
 	 * @return 
 	 */
 	public int getCount(T unit);
+
+	/**
+	 * 
+	 * @param unit 
+	 * @param count 
+	 */
+	public void add(T unit, int count);
+
+	/**
+	 * 
+	 * @param unit 
+	 * @param count 
+	 */
+	public void remove(T unit, int count);
+
+	/**
+	 * 
+	 */
+	public void snapshot();
 }

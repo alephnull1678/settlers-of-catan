@@ -4,10 +4,6 @@
 
 package catan;
 
-import catansim.Catalog;
-import catansim.PlayerID;
-import catansim.Resource;
-
 /************************************************************/
 /**
  * 
@@ -16,11 +12,11 @@ public interface Board extends StaticBoard {
 	/**
 	 * 
 	 */
-	private Node[] nodes;
+	public Node[] node;
 	/**
 	 * 
 	 */
-	private Tile[] tiles;
+	public Tile[] tile;
 
 	/**
 	 * 
@@ -30,19 +26,31 @@ public interface Board extends StaticBoard {
 
 	/**
 	 * 
+	 * @param playerID 
 	 * @return 
 	 */
-	public Node[] createNodes();
+	public Catalog collect(PlayerID playerID);
 
 	/**
 	 * 
+	 * @param road 
+	 * @param playerID 
+	 * @param nodeOne 
+	 * @param nodeTwo 
 	 */
-	public void createTiles();
+	public void placePiece(Road road, PlayerID playerID, Node nodeOne, Node nodeTwo);
+
+	/**
+	 * 
+	 * @param building 
+	 * @param playerID 
+	 */
+	public void placePiece(Building building, PlayerID playerID);
 
 	/**
 	 * 
 	 * @param playerID 
-	 * @return 
+	 * @param node 
 	 */
-	public Catalog<Resource> collect(int diceNum, PlayerID playerID);
+	public void collectFirst(PlayerID playerID, Node node);
 }
