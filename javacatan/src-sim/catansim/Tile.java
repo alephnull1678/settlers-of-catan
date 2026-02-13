@@ -36,4 +36,8 @@ public class Tile {
 	public Resource getResource() {
 		return resource;
 	}
+	
+	public int getTileID() {
+		return tileID;
+	}
 }
