@@ -38,6 +38,37 @@ public class Game {
         if (maxRounds > MAX_ROUNDS_LIMIT) maxRounds = MAX_ROUNDS_LIMIT;
         this.maxRounds = maxRounds;
     }
+    
+    /**
+     * Return all settlement Actions that are legal under SETUP rules:
+     * - node not occupied
+     * - distance rule enforced (no adjacent buildings)
+     * This deliberately ignores road connectivity and piece/resource counts.
+     */
+    private List<Action> getValidSetupSettlements(StaticBoard staticBoard, PlayerID pid) {
+        List<Action> actions = new ArrayList<>();
+
+        for (Node n : staticBoard.getNodes()) {
+            // cannot build on occupied node
+            if (n.getBuilding() != null) continue;
+
+            // distance rule: no adjacent settlements/cities
+            boolean adjacentHasBuilding = false;
+            for (Node neighbour : n.getNeighbours()) {
+                if (neighbour.getBuilding() != null) {
+                    adjacentHasBuilding = true;
+                    break;
+                }
+            }
+            if (adjacentHasBuilding) continue;
+
+            // This is allowed in setup
+            actions.add(new Action(n, BuildingTypes.SETTLEMENT));
+        }
+
+        return actions;
+    }
+
 
     public void run() {
         //SETUP PHASE
@@ -118,9 +149,22 @@ public class Game {
         PlayerID pid = player.getPlayerID();
 
         List<Action> valid;
-        if (sourceNode != null) valid = validator.getAllActionsFromNode(sourceNode);
-        else valid = validator.getValidActions(staticBoard, pid, null, piecesOwned);
 
+        if (sourceNode != null) {
+            // When a source node is provided (i.e. choose a road from the just-placed settlement),
+            // use existing "all actions from node" helper in the validator.
+            valid = validator.getAllActionsFromNode(sourceNode);
+        } else {
+            // Setup: for settlements we must use setup rules (no road/resource/piece checks).
+            if (type == BuildingTypes.SETTLEMENT) {
+                valid = getValidSetupSettlements(staticBoard, pid);
+            } else {
+                // Fallback for other types during setup (unlikely) — bypass resources/pieces by passing null
+                valid = validator.getValidActions(staticBoard, pid, null, null);
+            }
+        }
+
+        // Filter to requested piece type (defensive; getValidSetupSettlements already returns only settlements).
         List<Action> filtered = new ArrayList<>();
         for (Action a : valid) {
             if (a.getPieceType() == type) {
@@ -128,8 +172,22 @@ public class Game {
             }
         }
 
-        return player.chooseAction(filtered.toArray(new Action[0]));
+        // Optional debug — remove when happy
+        System.out.println("chooseSetupAction: total valid=" + valid.size() + " filtered=" + filtered.size() + " for " + type + " player=" + pid);
+
+        Action[] options = filtered.toArray(new Action[0]);
+        Action chosen = player.chooseAction(options);
+
+        // Defensive check: if player returns null, fail fast with an explanatory message
+        if (chosen == null) {
+            // Good to throw here rather than NPE later, makes debugging immediate
+            throw new IllegalStateException("Player " + pid + " chose no action during setup for type " + type
+                    + ". availableOptions=" + filtered.size());
+        }
+
+        return chosen;
     }
+
 
     // ===============================
     // Normal Turn Logic

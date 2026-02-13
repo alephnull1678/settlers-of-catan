@@ -13,7 +13,6 @@ public class Validator {
 	) {
 	    if (board == null) throw new IllegalArgumentException("board cannot be null");
 	    if (playerID == null) throw new IllegalArgumentException("playerID cannot be null");
-	    if (piecesOwned == null) throw new IllegalArgumentException("piecesOwned cannot be null");
 
 	    List<Action> actions = new ArrayList<>();
 
@@ -23,7 +22,7 @@ public class Validator {
 	        if (resourcesOwned != null && !canAfford(type, resourcesOwned)) continue;
 
 	        // 2) pieces?
-	        if (piecesOwned.getCount(type) <= 0) continue;
+	        if (piecesOwned != null && piecesOwned.getCount(type) <= 0) continue;
 
 	        // 3) board allows it?
 	        if (type == BuildingTypes.ROAD) {
