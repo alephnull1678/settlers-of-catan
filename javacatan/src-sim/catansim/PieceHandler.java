@@ -13,6 +13,8 @@ import java.util.EnumMap;
  */
 public class PieceHandler {
 	
+	private final PlayerID owner;
+	
 	//Max for each piece type
 	public static final int MAX_ROADS = 15;
     public static final int MAX_SETTLEMENTS = 5;
@@ -27,7 +29,8 @@ public class PieceHandler {
     private final EnumMap<BuildingTypes, Integer> avail =
             new EnumMap<>(BuildingTypes.class);
     
-    public PieceHandler() {
+    public PieceHandler(PlayerID owner) {
+    	this.owner = owner;
     	for (BuildingTypes type : BuildingTypes.values()) {
 
             int max = type.maxCount();
@@ -35,7 +38,7 @@ public class PieceHandler {
             Piece[] arr = new Piece[max];
 
             for (int i = 0; i < max; i++) {
-                arr[i] = type.createPiece();
+                arr[i] = type.createPiece(owner);
             }
 
             buckets.put(type, arr);

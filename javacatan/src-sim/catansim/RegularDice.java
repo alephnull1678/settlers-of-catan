@@ -4,7 +4,7 @@
 
 package catansim;
 
-import java.util.Random
+import java.util.Random;
 
 /*
  * Implementation of regular two six-sided dice.

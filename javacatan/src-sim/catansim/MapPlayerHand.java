@@ -3,7 +3,7 @@ package catansim;
 public class MapPlayerHand implements PlayerHand {
 
     // Composition: a player hand "has a" catalog of resources
-    private final MapCatalog catalog;
+    private final Catalog catalog;
 
     public MapPlayerHand() {
         this.catalog = new MapCatalog();

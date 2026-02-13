@@ -72,7 +72,7 @@ public enum BuildingTypes {
 
     private static final class CostSpec {
 
-        private final MapCatalog<Resource> mutable = new MapCatalog<>();
+        private final Catalog<Resource> mutable = new MapCatalog<>();
 
         CostSpec add(Resource r, int n) {
             mutable.add(r, n);
