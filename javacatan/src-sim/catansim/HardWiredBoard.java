@@ -261,7 +261,7 @@ public class HardWiredBoard implements Board {
 	    int maxLength = 0;
 
 	    for (Road road : node.getConnectedRoads()) {
-
+	    	if (road == null) continue;
 	        if (road.getOwnerPlayerID() != playerID) {
 	            continue;
 	        }
@@ -347,6 +347,7 @@ public class HardWiredBoard implements Board {
 		
 		// check for nearby road
 		for (Road road : node.getConnectedRoads()) {
+			if (road == null) continue;
 			if (road.getOwnerPlayerID() == playerID) {
 				hasRoad = true;
 				break;
@@ -373,8 +374,9 @@ public class HardWiredBoard implements Board {
 	
 	private boolean canPlaceRoad(PlayerID playerID, Node nodeStart, Node nodeEnd) {
 	    boolean hasConnectedRoad = false;
-
+	    
 	    for (Road curRoad : nodeStart.getConnectedRoads()) { // check that there is a root road
+	    	if (curRoad == null) continue;
 	        if (curRoad.getOwnerPlayerID() == playerID) {
 	        	hasConnectedRoad = true;
 	            break;
@@ -426,7 +428,7 @@ public class HardWiredBoard implements Board {
 		for (Node curNode : getNodes()) {
 			if (curNode.getBuilding() != null) {
 				if (curNode.getBuilding().getOwnerPlayerID() == playerID) {
-					for (Tile tile : curNode.getTiles()) {
+					for (Tile tile : curNode.getTiles()) { 
 						if (tile.getDiceNum() == diceNum) {
 							buildingCollection.add(tile.getResource(), curNode.getBuilding().getResourceAmount());
 						}

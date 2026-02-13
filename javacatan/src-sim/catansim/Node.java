@@ -44,7 +44,8 @@ public class Node {
     }
 
     public Tile[] getTiles() {
-        return tiles;
+    	return Arrays.copyOf(tiles, tileCount);
+
     }
 
     // --------------------------------------------------
