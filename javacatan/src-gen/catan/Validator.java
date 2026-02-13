@@ -28,6 +28,6 @@ public class Validator {
 	 * @return 
 	 * @param piecesOwned 
 	 */
-	public Action[] validate(StaticBoard board, PlayerID playerID, Catalog resourcesOwned, Catalog piecesOwned) {
+	public Action[] getValidActions(StaticBoard board, PlayerID playerID, Catalog resourcesOwned, Catalog piecesOwned) {
 	}
 }

@@ -56,12 +56,6 @@ public class Player {
     //CONSUME PIECE
     //Handles the logic to determine what to take and refund from pieceHandler.
     //If it's a city, refund a settlement since it's an upgrade.
-    public Piece consumePiece(Piece piece) {
-        if (piece == null) throw new IllegalArgumentException("piece cannot be null");
-        return consumePiece(piece.getType());
-    }
-    
-    //Overloaded version
     public Piece consumePiece(BuildingTypes type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
 

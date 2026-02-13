@@ -2,5 +2,5 @@
 package catansim;
 
 public enum Resource {
-	Wood, Sheep, Wheat, Ore, Brick;
+	WOOD, SHEEP, WHEAT, ORE, BRICK;
 }

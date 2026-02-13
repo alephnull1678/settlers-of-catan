@@ -52,17 +52,23 @@ public class Player {
 
 	/**
 	 * 
-	 * @param catalog 
-	 * @return 
-	 */
-	public boolean spend(Catalog catalog) {
-	}
-
-	/**
-	 * 
 	 * @return 
 	 * @param buildingType 
 	 */
 	public Piece getPieceOfType(BuildingTypes buildingType) {
+	}
+
+	/**
+	 * 
+	 * @param buildingType 
+	 */
+	public void consumePiece(BuildingTypes buildingType) {
+	}
+
+	/**
+	 * 
+	 * @param buildingType 
+	 */
+	public void consumeFreePiece(BuildingTypes buildingType) {
 	}
 }
