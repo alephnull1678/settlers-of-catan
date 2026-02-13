@@ -8,25 +8,7 @@ package catansim;
 /**
  * 
  */
-public abstract class Board implements StaticBoard {
-	/**
-	 * 
-	 */
-	private Node[] nodes;
-	/**
-	 * 
-	 */
-	private Tile[] tiles;
-	
-	
-	/**
-	 * 
-	 * @return 
-	 */
-	public Node[] getNodes() {
-		return nodes;
-	}
-
+public interface Board extends StaticBoard {
 	
 	/**
 	 * @param road The road piece being placed.
@@ -34,7 +16,7 @@ public abstract class Board implements StaticBoard {
 	 * @param nodeOne One endpoint node of the road.
 	 * @param nodeTwo The other endpoint node of the road.
 	 */
-	public abstract void placePiece(Road road, PlayerID playerID, Node nodeOne, Node nodeTwo);
+	public void placePiece(Road road, PlayerID playerID, Node nodeOne, Node nodeTwo);
 	
 	/**
 	 *
@@ -42,14 +24,14 @@ public abstract class Board implements StaticBoard {
 	 * @param playerID The player who owns the building.
 	 * @param node The node where the building is placed.
 	 */
-	public abstract void placePiece(Building building, PlayerID playerID, Node node);
+	public void placePiece(Building building, PlayerID playerID, Node node);
 
 	/**
 	 * @param diceNum 
 	 * @param playerID 
 	 * @return 
 	 */
-	public abstract Catalog<Resource> collect(int diceNum, PlayerID playerID);
+	public Catalog<Resource> collect(int diceNum, PlayerID playerID);
 	
 	/**
 	 * 
@@ -57,6 +39,6 @@ public abstract class Board implements StaticBoard {
 	 * @param node 
 	 * @return 
 	 */
-	public abstract Catalog<Resource> collectFirst(PlayerID playerID, Node node);
+	public Catalog<Resource> collectFirst(PlayerID playerID, Node node);
 
 }

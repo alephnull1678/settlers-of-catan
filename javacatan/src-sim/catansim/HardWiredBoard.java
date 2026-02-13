@@ -9,19 +9,36 @@ package catansim;
 /**
  * 
  */
-public class HardWiredBoard extends Board {
+public class HardWiredBoard implements Board {
+	
+	/**
+	 * 
+	 */
+	private Node[] nodes;
+	/**
+	 * 
+	 */
+	private Tile[] tiles;
+	
+	/**
+	 * 
+	 * @return 
+	 */
+	public Node[] getNodes() {
+		return nodes;
+	}
+
 	
 	private PlayerID longestRoadHolder = null;
 	
 	private int longestRoadLength = 0;
 	
 	public HardWiredBoard() {
-
 	    // --------------------------------------------------
 	    // 1️⃣ CREATE TILES (MATCHING IMAGE EXACTLY)
 	    // --------------------------------------------------
-
-	    Tile[] tiles = new Tile[19];
+		
+	    tiles = new Tile[19];
 
 	    tiles[13] = new Tile(Resource.BRICK, 9, 13);
 	    tiles[14] = new Tile(Resource.BRICK, 8, 14);
@@ -51,7 +68,7 @@ public class HardWiredBoard extends Board {
 	    // 2️⃣ CREATE NODES
 	    // --------------------------------------------------
 
-	    Node[] nodes = new Node[54];
+	    nodes = new Node[54];
 
 	    for (int i = 0; i < 54; i++) {
 	        nodes[i] = new Node(i);
@@ -318,9 +335,11 @@ public class HardWiredBoard extends Board {
 
 	private boolean canPlaceBuilding(BuildingTypes buildingType, PlayerID playerID, Node node) {
 		// check if placing a city on settlement or settlement on settlement
-		if (node.getBuilding() != null || buildingType == BuildingTypes.CITY) {
+		if (node.getBuilding() == null && buildingType == BuildingTypes.CITY) {
 			return false;
-		} else if (buildingType == BuildingTypes.SETTLEMENT && node.getBuilding().getOwnerPlayerID() != playerID) {
+		} else if (buildingType == BuildingTypes.CITY && node.getBuilding().getOwnerPlayerID() != playerID) {
+			return false;
+		} else if (buildingType == BuildingTypes.SETTLEMENT && node.getBuilding() != null) {
 			return false;
 		}
 		
