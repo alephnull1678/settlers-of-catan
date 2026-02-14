@@ -22,7 +22,7 @@ public class City extends Building {
 	 * Returns the type of this piece.
 	 */
 	@Override
-	public BuildingTypes getType() {
-		return BuildingTypes.CITY;
+	public PieceTypes getType() {
+		return PieceTypes.CITY;
 	}
 }

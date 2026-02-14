@@ -35,7 +35,7 @@ public interface StaticBoard {
 	 * @param node 
 	 * @return 
 	 */
-	public boolean canPlace(BuildingTypes placedbuildingType, PlayerID playerID, Node nodeStart, Node nodeEnd);
+	public boolean canPlace(PieceTypes placedbuildingType, PlayerID playerID, Node nodeStart, Node nodeEnd);
 	
 	/**
 	 * 
@@ -43,5 +43,5 @@ public interface StaticBoard {
 	 * @param node 
 	 * @return 
 	 */
-	public boolean canPlace(BuildingTypes placedbuildingType, PlayerID playerID, Node nodeToPlaceOn);
+	public boolean canPlace(PieceTypes placedbuildingType, PlayerID playerID, Node nodeToPlaceOn);
 }

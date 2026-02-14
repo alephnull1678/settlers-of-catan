@@ -22,14 +22,14 @@ public class PieceHandler {
     //We are going to use a stack pointer in an array so we don't have to actually
     //dereference the pieces when we give them away.
     //We will also be using an EnumMap to avoid switch statements
-    private final EnumMap<BuildingTypes, Piece[]> buckets =
-            new EnumMap<>(BuildingTypes.class);
+    private final EnumMap<PieceTypes, Piece[]> buckets =
+            new EnumMap<>(PieceTypes.class);
     
-    private final EnumMap<BuildingTypes, Integer> avail =
-            new EnumMap<>(BuildingTypes.class);
+    private final EnumMap<PieceTypes, Integer> avail =
+            new EnumMap<>(PieceTypes.class);
     
     public PieceHandler(PlayerID owner) {
-    	for (BuildingTypes type : BuildingTypes.values()) {
+    	for (PieceTypes type : PieceTypes.values()) {
 
             int max = type.maxCount();
 
@@ -47,7 +47,7 @@ public class PieceHandler {
     
     
     //"POP" one piece of type
-    public Piece usePiece(BuildingTypes type) {
+    public Piece usePiece(PieceTypes type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
 
         int a = avail.get(type);
@@ -60,7 +60,7 @@ public class PieceHandler {
     }
     
     //"PUSH" piece back
-    public void refundPiece(BuildingTypes type) {
+    public void refundPiece(PieceTypes type) {
     	if (type == null) throw new IllegalArgumentException("type cannot be null");
         Piece[] arr = buckets.get(type);
         int a = avail.get(type);
@@ -73,7 +73,7 @@ public class PieceHandler {
     
     
     //Get count of a resource
-    public int getAvailable(BuildingTypes type) {
+    public int getAvailable(PieceTypes type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
         return avail.get(type);
     }

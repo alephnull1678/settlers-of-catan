@@ -13,7 +13,7 @@ public class Validator {
 	        StaticBoard board,
 	        PlayerID playerID,
 	        Catalog<Resource> resourcesOwned,
-	        Catalog<BuildingTypes> piecesOwned
+	        Catalog<PieceTypes> piecesOwned
 	) {
 	    if (board == null) throw new IllegalArgumentException("board cannot be null");
 	    if (playerID == null) throw new IllegalArgumentException("playerID cannot be null");
@@ -21,7 +21,7 @@ public class Validator {
 
 	    List<Action> actions = new ArrayList<>();
 
-	    for (BuildingTypes type : BuildingTypes.values()) {
+	    for (PieceTypes type : PieceTypes.values()) {
 
 	        // 1) resources? (only check if provided)
 	        if (resourcesOwned != null && !canAfford(type, resourcesOwned)) continue;
@@ -30,7 +30,7 @@ public class Validator {
 	        if (piecesOwned != null && piecesOwned.getCount(type) <= 0) continue;
 
 	        // 3) board allows it?
-	        if (type == BuildingTypes.ROAD) {
+	        if (type == PieceTypes.ROAD) {
 	            addValidRoadActions(board, playerID, type, actions);
 	        } else {
 	            addValidBuildingActions(board, playerID, type, actions);
@@ -41,7 +41,7 @@ public class Validator {
 	}
 
 
-    private boolean canAfford(BuildingTypes type, Catalog<Resource> resourcesOwned) {
+    private boolean canAfford(PieceTypes type, Catalog<Resource> resourcesOwned) {
         Catalog<Resource> cost = type.getCost();
 
         for (Resource r : Resource.values()) {
@@ -56,7 +56,7 @@ public class Validator {
     private void addValidBuildingActions(
             StaticBoard board,
             PlayerID playerID,
-            BuildingTypes type,
+            PieceTypes type,
             List<Action> out
     ) {
         //Type is SETTLEMENT or CITY
@@ -70,7 +70,7 @@ public class Validator {
     private void addValidRoadActions(
             StaticBoard board,
             PlayerID playerID,
-            BuildingTypes type,
+            PieceTypes type,
             List<Action> out
     ) {
         for (Node a : board.getNodes()) {
@@ -81,7 +81,7 @@ public class Validator {
                 if (a.getNodeID() >= b.getNodeID()) continue;
 
                 if (board.canPlace(type, playerID, a, b)) {
-                    out.add(new Action(a, b, BuildingTypes.ROAD));
+                    out.add(new Action(a, b, PieceTypes.ROAD));
                 }
             }
         }
@@ -97,8 +97,8 @@ public class Validator {
         // ------------------
         // Building actions
         // ------------------
-        actions.add(new Action(node, BuildingTypes.SETTLEMENT));
-        actions.add(new Action(node, BuildingTypes.CITY));
+        actions.add(new Action(node, PieceTypes.SETTLEMENT));
+        actions.add(new Action(node, PieceTypes.CITY));
 
         // ------------------
         // Road actions
@@ -108,7 +108,7 @@ public class Validator {
 
             actions.add(new Action(
                     node, neighbour,
-                    BuildingTypes.ROAD
+                    PieceTypes.ROAD
             ));
         }
 
