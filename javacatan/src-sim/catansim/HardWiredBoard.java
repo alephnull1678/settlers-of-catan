@@ -479,15 +479,15 @@ public class HardWiredBoard implements Board {
 	}
 
 
-	private boolean canPlaceBuilding(BuildingTypes buildingType, PlayerID playerID, Node node) {
+	private boolean canPlaceBuilding(PieceTypes buildingType, PlayerID playerID, Node node) {
 
 	    // -------------------------
 	    // CITY RULES
 	    // -------------------------
-	    if (buildingType == BuildingTypes.CITY) {
+	    if (buildingType == PieceTypes.CITY) {
 
 	        if (node.getBuilding() == null) return false;
-	        if (node.getBuilding().getType() == BuildingTypes.CITY) return false; // no city on city
+	        if (node.getBuilding().getType() == PieceTypes.CITY) return false; // no city on city
 
 	        return node.getBuilding().getOwnerPlayerID() == playerID;
 	    }
@@ -495,7 +495,7 @@ public class HardWiredBoard implements Board {
 	    // -------------------------
 	    // SETTLEMENT RULES
 	    // -------------------------
-	    if (buildingType == BuildingTypes.SETTLEMENT) {
+	    if (buildingType == PieceTypes.SETTLEMENT) {
 
 	        // Cannot build on occupied node
 	        if (node.getBuilding() != null) return false;
@@ -598,11 +598,11 @@ public class HardWiredBoard implements Board {
 	}
 
 	
-	public boolean canPlace(BuildingTypes placedbuildingType, PlayerID playerID, Node nodeStart, Node nodeEnd) {
+	public boolean canPlace(PieceTypes placedbuildingType, PlayerID playerID, Node nodeStart, Node nodeEnd) {
 		return canPlaceRoad(playerID, nodeStart, nodeEnd);
 	}
 	
-	public boolean canPlace(BuildingTypes placedbuildingType, PlayerID playerID, Node nodeToPlaceOn) {
+	public boolean canPlace(PieceTypes placedbuildingType, PlayerID playerID, Node nodeToPlaceOn) {
 		return canPlaceBuilding(placedbuildingType, playerID, nodeToPlaceOn);
 	}
 

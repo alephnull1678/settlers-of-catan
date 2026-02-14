@@ -31,7 +31,7 @@ public class Road implements Piece {
 	 * Returns the type of this piece. 
 	 */
 	@Override
-	public BuildingTypes getType() {
-		return BuildingTypes.ROAD;
+	public PieceTypes getType() {
+		return PieceTypes.ROAD;
 	}
 }

@@ -57,7 +57,7 @@ public class Player {
     //CONSUME PIECE
     //Handles the logic to determine what to take and refund from pieceHandler.
     //If it's a city, refund a settlement since it's an upgrade.
-    public Piece consumePiece(BuildingTypes type) {
+    public Piece consumePiece(PieceTypes type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
 
         Piece toPlace = pieceHandler.usePiece(type);
@@ -72,25 +72,25 @@ public class Player {
         }
 
         //City placement implies settlement upgrade
-        if (type == BuildingTypes.CITY) {
-            pieceHandler.refundPiece(BuildingTypes.SETTLEMENT);
+        if (type == PieceTypes.CITY) {
+            pieceHandler.refundPiece(PieceTypes.SETTLEMENT);
         }
 
         return toPlace;
     }
     
     //For setup
-    public Piece consumeFreePiece(BuildingTypes type) {
+    public Piece consumeFreePiece(PieceTypes type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
         return pieceHandler.usePiece(type);
     }
     
     //Get read-only catalog of pieces
-    public Catalog<BuildingTypes> getPieceCatalog() {
+    public Catalog<PieceTypes> getPieceCatalog() {
 
-        Catalog<BuildingTypes> catalog = new MapCatalog<BuildingTypes>();
+        Catalog<PieceTypes> catalog = new MapCatalog<PieceTypes>();
 
-        for (BuildingTypes type : BuildingTypes.values()) {
+        for (PieceTypes type : PieceTypes.values()) {
             catalog.add(type, pieceHandler.getAvailable(type));
         }
 

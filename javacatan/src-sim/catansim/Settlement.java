@@ -22,7 +22,7 @@ public class Settlement extends Building {
 	 * Returns the type of this piece.
 	 */
 	@Override
-	public BuildingTypes getType() {
-		return BuildingTypes.SETTLEMENT;
+	public PieceTypes getType() {
+		return PieceTypes.SETTLEMENT;
 	}
 }

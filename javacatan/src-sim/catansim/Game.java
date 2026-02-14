@@ -63,7 +63,7 @@ public class Game {
             if (adjacentHasBuilding) continue;
 
             // This is allowed in setup
-            actions.add(new Action(n, BuildingTypes.SETTLEMENT));
+            actions.add(new Action(n, PieceTypes.SETTLEMENT));
         }
 
         return actions;
@@ -102,7 +102,13 @@ public class Game {
 
             //End-of-round VP print
             printVictoryPoints();
+            
+            
+            
         }
+        
+        //Print winner
+        if (getWinner() != null) System.out.println(getWinner().getPlayerID() + " wins!");
     }
 
     // ===============================
@@ -126,28 +132,28 @@ public class Game {
     private void doOneSetupTurn(Player player, StaticBoard staticBoard) {
         PlayerID pid = player.getPlayerID();
 
-        Catalog<BuildingTypes> piecesOwned = player.getPieceCatalog();
+        Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
 
         //Settlement
-        Action settlement = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.SETTLEMENT, null);
-        Piece sPiece = player.consumeFreePiece(BuildingTypes.SETTLEMENT);
+        Action settlement = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.SETTLEMENT, null);
+        Piece sPiece = player.consumeFreePiece(PieceTypes.SETTLEMENT);
 
         board.placePiece((Building)sPiece, pid, settlement.getNodes()[0]);
         player.addVP(1);
 
-        printAction(pid, "Setup: " + describeAction(BuildingTypes.SETTLEMENT, settlement.getNodes()));
+        printAction(pid, "Setup: " + describeAction(PieceTypes.SETTLEMENT, settlement.getNodes()));
 
         //Road
-        Action road = chooseSetupAction(player, staticBoard, piecesOwned, BuildingTypes.ROAD, settlement.getNodes()[0]);
-        Piece rPiece = player.consumeFreePiece(BuildingTypes.ROAD);
+        Action road = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.ROAD, settlement.getNodes()[0]);
+        Piece rPiece = player.consumeFreePiece(PieceTypes.ROAD);
 
         board.placePiece((Road)rPiece, pid, road.getNodes()[0], road.getNodes()[1]);
         updateLongestRoadAward();
 
-        printAction(pid, "Setup: " + describeAction(BuildingTypes.ROAD, road.getNodes()));
+        printAction(pid, "Setup: " + describeAction(PieceTypes.ROAD, road.getNodes()));
     }
 
-    private Action chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<BuildingTypes> piecesOwned, BuildingTypes type, Node sourceNode) {
+    private Action chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<PieceTypes> piecesOwned, PieceTypes type, Node sourceNode) {
         PlayerID pid = player.getPlayerID();
 
         List<Action> valid;
@@ -158,7 +164,7 @@ public class Game {
             valid = validator.getAllActionsFromNode(sourceNode);
         } else {
             // Setup: for settlements we must use setup rules (no road/resource/piece checks).
-            if (type == BuildingTypes.SETTLEMENT) {
+            if (type == PieceTypes.SETTLEMENT) {
                 valid = getValidSetupSettlements(staticBoard, pid);
             }
             else
@@ -197,7 +203,7 @@ public class Game {
         StaticBoard staticBoard = (StaticBoard) board;
 
         Catalog<Resource> resourcesOwned = player.getResourceCatalog();
-        Catalog<BuildingTypes> piecesOwned = player.getPieceCatalog();
+        Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
 
         List<Action> valid = validator.getValidActions(staticBoard, pid, resourcesOwned, piecesOwned);
 
@@ -212,7 +218,7 @@ public class Game {
             return;
         }
 
-        BuildingTypes type = chosen.getPieceType();
+        PieceTypes type = chosen.getPieceType();
         Node[] nodes = chosen.getNodes();
 
         //Consume returns the Piece instance to place
@@ -224,16 +230,16 @@ public class Game {
 
 
         //Bit of code smell here but only two types of piece so it's inconsequential
-        if (piece.getType() == BuildingTypes.ROAD) board.placePiece((Road)piece, pid, nodes[0], nodes[1]);
+        if (piece.getType() == PieceTypes.ROAD) board.placePiece((Road)piece, pid, nodes[0], nodes[1]);
         else board.placePiece((Building)piece, pid, nodes[0]);
 
         //Update VP
-        if (type != BuildingTypes.ROAD) {
+        if (type != PieceTypes.ROAD) {
             player.addVP(1);
         }
 
         //Longest road can change after roads are placed
-        if (type == BuildingTypes.ROAD) updateLongestRoadAward();
+        if (type == PieceTypes.ROAD) updateLongestRoadAward();
 
         printAction(pid, describeAction(type, nodes));
     }
@@ -287,18 +293,18 @@ public class Game {
         System.out.println(sb.toString().trim());
     }
 
-    private String describeAction(BuildingTypes type, Node[] nodes) {
+    private String describeAction(PieceTypes type, Node[] nodes) {
         if (nodes == null) return "Placed " + type;
 
-        if (type == BuildingTypes.ROAD && nodes.length >= 2) {
+        if (type == PieceTypes.ROAD && nodes.length >= 2) {
             return "Built ROAD between " + nodeLabel(nodes[0]) + " and " + nodeLabel(nodes[1]);
         }
 
-        if (type == BuildingTypes.SETTLEMENT) {
+        if (type == PieceTypes.SETTLEMENT) {
             return "Built SETTLEMENT at " + nodeLabel(nodes[0]);
         }
 
-        if (type == BuildingTypes.CITY) {
+        if (type == PieceTypes.CITY) {
             return "Upgraded to CITY at " + nodeLabel(nodes[0]);
         }
 

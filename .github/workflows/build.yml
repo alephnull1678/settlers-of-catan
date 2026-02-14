@@ -1,0 +1,42 @@
+name: SonarQube
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Build and analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Compile (javac)
+        run: |
+          SRC_DIR="javacatan/src-sim"
+          OUT_DIR="javacatan/bin"
+          mkdir -p "$OUT_DIR"
+
+          FILES=$(find "$SRC_DIR" -name "*.java")
+          if [ -z "$FILES" ]; then
+            echo "No .java files found under $SRC_DIR"
+            exit 1
+          fi
+
+          javac -encoding UTF-8 -d "$OUT_DIR" $FILES
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

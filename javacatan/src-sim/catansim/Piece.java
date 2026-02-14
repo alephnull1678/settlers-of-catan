@@ -16,5 +16,5 @@ public interface Piece {
 	/**
 	 * Returns the type of this piece. 
 	 */
-	BuildingTypes getType();
+	PieceTypes getType();
 }

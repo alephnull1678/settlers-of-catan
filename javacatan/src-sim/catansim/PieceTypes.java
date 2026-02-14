@@ -4,7 +4,7 @@
 
 package catansim;
 
-public enum BuildingTypes {
+public enum PieceTypes {
 
     ROAD(
         new CostSpec()
@@ -59,7 +59,7 @@ public enum BuildingTypes {
 
     private final Catalog<Resource> cost;
 
-    BuildingTypes(CostSpec spec) {
+    PieceTypes(CostSpec spec) {
         this.cost = spec.toCatalogSnapshot();
     }
 
