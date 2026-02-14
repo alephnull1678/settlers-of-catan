@@ -106,9 +106,6 @@ public class Game {
             
             
         }
-        
-        //Print winner
-        if (getWinner() != null) System.out.println(getWinner().getPlayerID() + " wins!");
     }
 
     // ===============================
