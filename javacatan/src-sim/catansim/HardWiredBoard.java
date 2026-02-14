@@ -35,7 +35,7 @@ public class HardWiredBoard implements Board {
 	
 	public HardWiredBoard() {
 	    // --------------------------------------------------
-	    // 1️⃣ CREATE TILES (MATCHING IMAGE EXACTLY)
+	    // CREATE TILES (MATCHING IMAGE FROM REQ.)
 	    // --------------------------------------------------
 		
 	    tiles = new Tile[19];
@@ -65,7 +65,7 @@ public class HardWiredBoard implements Board {
 	    tiles[7]  = new Tile(Resource.WHEAT, 3, 7);
 
 	    // --------------------------------------------------
-	    // 2️⃣ CREATE NODES
+	    // CREATE NODES
 	    // --------------------------------------------------
 
 	    nodes = new Node[54];
@@ -75,7 +75,7 @@ public class HardWiredBoard implements Board {
 	    }
 
 	    // --------------------------------------------------
-	    // 3️⃣ MANUAL NODE WIRING (MATCH IMAGE)
+	    // MANUAL NODE WIRING
 	    // --------------------------------------------------
 
 	    nodes[42].connectNode(nodes[41]);
@@ -487,6 +487,7 @@ public class HardWiredBoard implements Board {
 	    if (buildingType == BuildingTypes.CITY) {
 
 	        if (node.getBuilding() == null) return false;
+	        if (node.getBuilding().getType() == BuildingTypes.CITY) return false; // no city on city
 
 	        return node.getBuilding().getOwnerPlayerID() == playerID;
 	    }
@@ -499,7 +500,7 @@ public class HardWiredBoard implements Board {
 	        // Cannot build on occupied node
 	        if (node.getBuilding() != null) return false;
 
-	        // Distance rule: no adjacent settlements
+	        // Cannot have nearby nodes
 	        for (Node neighbour : node.getNeighbours()) {
 	            if (neighbour.getBuilding() != null) {
 	                return false;
@@ -517,8 +518,7 @@ public class HardWiredBoard implements Board {
 	            }
 	        }
 
-	        // If this is NOT the first settlement,
-	        // it must connect to player's road
+	        // must connect to players road
 	        if (playerHasBuilding) {
 	            boolean connectedToRoad = false;
 
@@ -542,7 +542,7 @@ public class HardWiredBoard implements Board {
 	
 	private boolean canPlaceRoad(PlayerID playerID, Node nodeStart, Node nodeEnd) {
 
-	    // Must be neighbours
+	    // Must be neighbors
 	    boolean isNeighbour = false;
 	    for (Node neighbour : nodeStart.getNeighbours()) {
 	        if (neighbour == nodeEnd) {

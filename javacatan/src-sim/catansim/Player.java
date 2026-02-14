@@ -1,5 +1,5 @@
 // --------------------------------------------------------
-// Manually Implemented
+// Manual Implementation
 // --------------------------------------------------------
 
 package catansim;
@@ -50,12 +50,6 @@ public class Player {
     public void dealResources(Catalog<Resource> gained) {
         if (gained == null) throw new IllegalArgumentException("gained cannot be null");
         
-        System.out.println(playerID + "'s resoures:");
-        
-        for (Resource r: Resource.values())
-        {
-        	System.out.println(r + ": " + playerHand.getCount(r));
-        }
         playerHand.addHand(gained);
     }
     
