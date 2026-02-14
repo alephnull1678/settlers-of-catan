@@ -119,6 +119,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_E87ogAlAEfGrqdLqALbD6A" name="connectNode">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KLDTMAlAEfGrqdLqALbD6A" name="node" type="_xL-88AViEfG4lNxHNfwBoQ"/>
+      </ownedOperation>
       <nestedClassifier xmi:type="uml:DataType" xmi:id="_-o2vUAXyEfGK5P-tYZXZpg" name="int"/>
       <nestedClassifier xmi:type="uml:PrimitiveType" xmi:id="_Oi38AAXzEfGK5P-tYZXZpg" name="int"/>
     </packagedElement>
@@ -195,6 +198,13 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6qu_MAY6EfGfDvnfcKXpVw" name="LiteralUnlimitedNatural1" value="*"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_gzJNwAZIEfGfDvnfcKXpVw" name="piecesOwned" type="_E-f2gASlEfGBxYf1fTqBJA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_e-jz0Ak_EfGrqdLqALbD6A" name="getAllActionsFromNode">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_gZ37QAk_EfGrqdLqALbD6A" name="node" type="_xL-88AViEfG4lNxHNfwBoQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kmwycAk_EfGrqdLqALbD6A" name="actions" type="_oY8IEAVkEfG4lNxHNfwBoQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8kaeYAk_EfGrqdLqALbD6A" name="LiteralInteger1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8kbFcAk_EfGrqdLqALbD6A" name="LiteralUnlimitedNatural1" value="*"/>
+        </ownedParameter>
       </ownedOperation>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_orTd0AY9EfGfDvnfcKXpVw" name="Class1"/>
     </packagedElement>

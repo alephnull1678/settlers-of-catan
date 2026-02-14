@@ -30,4 +30,12 @@ public class Validator {
 	 */
 	public Action[] getValidActions(StaticBoard board, PlayerID playerID, Catalog resourcesOwned, Catalog piecesOwned) {
 	}
+
+	/**
+	 * 
+	 * @param node 
+	 * @return 
+	 */
+	public Action[] getAllActionsFromNode(Node node) {
+	}
 }

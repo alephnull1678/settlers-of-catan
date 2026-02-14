@@ -37,4 +37,11 @@ public class Node {
 	 */
 	public boolean checkTiles(int diceNum) {
 	}
+
+	/**
+	 * 
+	 * @param node 
+	 */
+	public void connectNode(Node node) {
+	}
 }
