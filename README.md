@@ -1,1 +1,3 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alephnull1678_settlers-of-catan&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alephnull1678_settlers-of-catan)
+
+Simplistic Java simulation of Catan made in Eclipse using Papyrus Software Designer.
