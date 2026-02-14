@@ -40,7 +40,7 @@ public class Demonstrator {
         //Note that due to this simulation not implementing trading, development cards, etc. there is a possibility that the players may choose to place their starting settlements in areas where
         //they do not receive the necessary resources to place any pieces down. In this case, rounds may often reach the maxRounds threshold without a winner. This is to be expected.
         
-        int maxRounds = 8000;
+        int maxRounds = 8192;
         Game game = new Game(players, board, validator, dice, maxRounds);
         game.run();
     }
