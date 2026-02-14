@@ -11,11 +11,6 @@ package catan;
 public interface Catalog<T> {
 	/**
 	 * 
-	 */
-	public PieceHandler piecehandler;
-
-	/**
-	 * 
 	 * @param unit 
 	 * @return 
 	 */

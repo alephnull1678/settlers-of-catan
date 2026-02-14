@@ -11,6 +11,11 @@ package catan;
 public class MultiDice implements Dice {
 	/**
 	 * 
+	 */
+	public Dice dice;
+
+	/**
+	 * 
 	 * @param Dice 
 	 */
 	public void addDice(Dice Dice) {

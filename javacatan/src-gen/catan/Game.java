@@ -21,6 +21,10 @@ public class Game {
 	 * 
 	 */
 	public Player[] player;
+	/**
+	 * 
+	 */
+	public Dice dice;
 
 	/**
 	 * 
