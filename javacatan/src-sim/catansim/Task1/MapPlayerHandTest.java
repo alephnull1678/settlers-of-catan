@@ -1,6 +1,9 @@
 package catansim.Task1;
 
 import static org.junit.Assert.*;
+
+import java.util.Map;
+
 import org.junit.Test;
 
 import catansim.MapPlayerHand;
@@ -84,5 +87,22 @@ public class MapPlayerHandTest {
 
         assertEquals("Wood should remain unchanged", 2, hand.getCount(Resource.WOOD));
         assertEquals("Brick should remain unchanged", 1, hand.getCount(Resource.BRICK));
+    }
+
+    // Tests that addHand correctly adds multiple resources from another catalog
+    @Test
+    public void test_addHand_multipleResources() {
+
+        MapPlayerHand hand = new MapPlayerHand();
+
+        MapCatalog<Resource> incoming = new MapCatalog<>();
+        incoming.add(Resource.WOOD, 2);
+        incoming.add(Resource.BRICK, 1);
+
+        boolean added = hand.addHand(incoming);
+
+        assertTrue("addHand should succeed when given a valid catalog", added);
+        assertEquals("Wood should be added to the hand", 2, hand.getCount(Resource.WOOD));
+        assertEquals("Brick should be added to the hand", 1, hand.getCount(Resource.BRICK));
     }
 }
