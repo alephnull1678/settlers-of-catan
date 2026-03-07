@@ -26,4 +26,18 @@ public class PieceHandlerTest {
 
         assertEquals("Cities should start at maximum", PieceHandler.MAX_CITIES, handler.getAvailable(PieceTypes.CITY));
     }
+
+    // Tests that using a piece decreases the available count by one
+    @Test
+    public void test_usePiece_decreasesCount() {
+
+        PieceHandler handler = new PieceHandler(PlayerID.BLUE);
+
+        int before = handler.getAvailable(PieceTypes.ROAD);
+
+        Piece piece = handler.usePiece(PieceTypes.ROAD);
+
+        assertNotNull("usePiece should return a piece when availbile", piece);
+        assertEquals("Available road count shoulder decrease by one", before - 1, handler.getAvailable(PieceTypes.ROAD));
+    }
 }
