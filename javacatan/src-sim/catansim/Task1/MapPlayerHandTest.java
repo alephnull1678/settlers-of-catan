@@ -38,7 +38,7 @@ public class MapPlayerHandTest {
         assertFalse("Adding null resources should fail", added);
     }
 
-    // Test successful removal of cards when the player has enough resources
+    // Tests successful removal of cards when the player has enough resources
     @Test
     public void test_removeCard_success() {
 
@@ -50,5 +50,19 @@ public class MapPlayerHandTest {
 
         assertTrue("Remove should succeed when enough resources exist", removed);
         assertEquals("Resource count should decrease after removal`", 1, hand.getCount(Resource.BRICK));
+    }
+
+    // Tests that removal fails when attempting to remove more resources then available
+    @Test
+    public void test_removecard_failure_whenNotEnough() {
+
+        MapPlayerHand hand = new MapPlayerHand();
+
+        hand.addCard(Resource.ORE, 1);
+
+        boolean removed = hand.removeCard(Resource.ORE, 3);
+
+        assertFalse("Remove should fail when insufficient resources", removed);
+        assertEquals("Resource count should remain unchanged", 1, hand.getCount(Resource.ORE));
     }
 }
