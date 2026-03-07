@@ -16,8 +16,10 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KqkMAQSmEfGBxYf1fTqBJA" name="LiteralUnlimitedNatural1" value="4"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_CRROYgiOEfGwgKLZBoPIFQ" name="dice" type="_uncdAAX5EfGRf-tqN1BwGw" association="_CRQnUAiOEfGwgKLZBoPIFQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_t4Udkxp7EfGhR_rpMFG30w" name="visualizer" type="_Rtx6cBp7EfGhR_rpMFG30w" association="_t4T2gBp7EfGhR_rpMFG30w"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_BqLsUAY1EfGfDvnfcKXpVw" name="doNextRound" visibility="private"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_qN5LUAbUEfG3KN_q_NOcew" name="start"/>
+      <nestedClassifier xmi:type="uml:PrimitiveType" xmi:id="_MSL0cBp7EfGhR_rpMFG30w" name="PrimitiveType1"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_A23SwASlEfGBxYf1fTqBJA" name="Player">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_TRRWEAX5EfGRf-tqN1BwGw" name="PlayerID" visibility="private" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>
@@ -318,6 +320,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_THzewAX-EfGRf-tqN1BwGw" name="LiteralUnlimitedNatural1" value="*"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_lYCQ0Bp2EfGhR_rpMFG30w" name="robberTile" visibility="private" type="_zIGrYAViEfG4lNxHNfwBoQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_e_3bkhp7EfGhR_rpMFG30w" name="visualizer" type="_Rtx6cBp7EfGhR_rpMFG30w" association="_e_20gBp7EfGhR_rpMFG30w"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ENA4oAY5EfGfDvnfcKXpVw" name="createNodes">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_GJz8gAY5EfGfDvnfcKXpVw" name="nodes" type="_xL-88AViEfG4lNxHNfwBoQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HcDngAY5EfGfDvnfcKXpVw" name="LiteralInteger1" value="1"/>
@@ -459,6 +462,26 @@
       </eAnnotations>
       <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_dUSIsBppEfGtXtTo0_BenA" name="playerhand" type="_MjmZwBppEfGtXtTo0_BenA" association="_dURhoBppEfGtXtTo0_BenA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_NBX1sBp7EfGhR_rpMFG30w" name="GamePythonVisualizer">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XJc48Bp7EfGhR_rpMFG30w" client="_NBX1sBp7EfGhR_rpMFG30w" supplier="_Rtx6cBp7EfGhR_rpMFG30w" contract="_Rtx6cBp7EfGhR_rpMFG30w">
+        <name xsi:nil="true"/>
+      </interfaceRealization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Rtx6cBp7EfGhR_rpMFG30w" name="Visualizer"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_e_20gBp7EfGhR_rpMFG30w" memberEnd="_e_3bkhp7EfGhR_rpMFG30w _e_3bkxp7EfGhR_rpMFG30w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_e_3bkBp7EfGhR_rpMFG30w" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_e_3bkRp7EfGhR_rpMFG30w" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_e_3bkxp7EfGhR_rpMFG30w" name="board" type="__uMj8AY4EfGfDvnfcKXpVw" association="_e_20gBp7EfGhR_rpMFG30w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_t4T2gBp7EfGhR_rpMFG30w" memberEnd="_t4Udkhp7EfGhR_rpMFG30w _t4Udkxp7EfGhR_rpMFG30w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t4UdkBp7EfGhR_rpMFG30w" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t4UdkRp7EfGhR_rpMFG30w" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_t4Udkhp7EfGhR_rpMFG30w" name="game" type="_-eS44ASkEfGBxYf1fTqBJA" association="_t4T2gBp7EfGhR_rpMFG30w"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FKB-oASFEfGlO7CguFpanQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FKFB8ASFEfGlO7CguFpanQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
