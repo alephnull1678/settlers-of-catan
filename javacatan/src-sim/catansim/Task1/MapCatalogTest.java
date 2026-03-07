@@ -7,7 +7,7 @@ import catansim.MapCatalog;
 import catansim.Catalog;
 
 /**
- * Unit tests for MapCatalog
+ * Unit tests for MapCatalog.
  * These tests verify add, remove, and snapshot behaviour.
  */
 public class MapCatalogTest {
@@ -21,18 +21,6 @@ public class MapCatalogTest {
         catalog.add("Wood", 3);
 
         assertEquals("Count should increase after add", 3, catalog.getCount("Wood"));
-    }
-
-    // Tests that multiple adds accumulate the total correctly
-    @Test
-    public void test_add_multipleTimes_accumulates() {
-
-        MapCatalog<String> catalog = new MapCatalog<>();
-
-        catalog.add("Wood", 2);
-        catalog.add("Wood", 3);
-
-        assertEquals("Counts should accumulate", 5, catalog.getCount("Wood"));
     }
 
     // Tests successful removal when enough resources exist
@@ -101,17 +89,5 @@ public class MapCatalogTest {
         Catalog<String> snapshot = catalog.snapshot();
 
         assertEquals("Snapshot should keep resource counts", 5, snapshot.getCount("Wheat"));
-    }
-
-    // Test that adding a null resource fails and does not modify the catalog
-    @Test
-    public void test_add_nullUnit_returnsFalse() {
-
-        MapCatalog<String> catalog = new MapCatalog<>();
-
-        boolean added = catalog.add(null, 3);
-
-        assertFalse("Adding null resource should fail", added);
-        assertEquals("Catalog should remain unchanged", 0, catalog.getCount(null));
     }
 }

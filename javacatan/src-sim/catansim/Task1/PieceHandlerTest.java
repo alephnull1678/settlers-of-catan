@@ -10,7 +10,8 @@ import catansim.PlayerID;
 
 /**
  * Unit tests for PieceHandler.
- * 
+ * These tests verify intialization, piece usage,
+ * and refund behaviour
  */
 public class PieceHandlerTest {
 
@@ -37,7 +38,22 @@ public class PieceHandlerTest {
 
         Piece piece = handler.usePiece(PieceTypes.ROAD);
 
-        assertNotNull("usePiece should return a piece when availbile", piece);
-        assertEquals("Available road count shoulder decrease by one", before - 1, handler.getAvailable(PieceTypes.ROAD));
+        assertNotNull("usePiece should return a piece when available", piece);
+        assertEquals("Available road count should decrease by one", before - 1, handler.getAvailable(PieceTypes.ROAD));
+    }
+
+    // Tests that refunding a piece restores the available count
+    @Test
+    public void test_refundPiece_restoresCount() {
+
+        PieceHandler handler = new PieceHandler(PlayerID.BLUE);
+
+        handler.usePiece(PieceTypes.SETTLEMENT);
+
+        int afterUse = handler.getAvailable(PieceTypes.SETTLEMENT);
+
+        handler.refundPiece(PieceTypes.SETTLEMENT);
+
+        assertEquals("Refunding a piece should increase available count by one", afterUse + 1, handler.getAvailable(PieceTypes.SETTLEMENT));
     }
 }
