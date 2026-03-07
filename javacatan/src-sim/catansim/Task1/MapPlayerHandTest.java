@@ -23,4 +23,15 @@ public class MapPlayerHandTest {
 
         assertEquals("Player should have 2 wood after adding", 2, hand.getCount(Resource.WOOD));
     }
+
+    // Tests that addCard rejects invalid input (null resource)
+    @Test
+    public void test_addCard_invalidInput_returnsFalse() {
+
+        MapPlayerHand hand = new MapPlayerHand();
+
+        boolean added = hand.addCard(null, 2);
+
+        assertFalse("Adding null resources should fail", added);
+    }
 }
