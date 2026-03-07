@@ -102,4 +102,16 @@ public class MapCatalogTest {
 
         assertEquals("Snapshot should keep resource counts", 5, snapshot.getCount("Wheat"));
     }
+
+    // Test that adding a null resource fails and does not modify the catalog
+    @Test
+    public void test_add_nullUnit_returnsFalse() {
+
+        MapCatalog<String> catalog = new MapCatalog<>();
+
+        boolean added = catalog.add(null, 3);
+
+        assertFalse("Adding null resource should fail", added);
+        assertEquals("Catalog should remain unchanged", 0, catalog.getCount(null));
+    }
 }
