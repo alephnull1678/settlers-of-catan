@@ -44,4 +44,16 @@ public class MapCatalogTest {
         assertTrue(removed);
         assertEquals(2, catalog.getCount("Brick"));
     }
+
+    @Test
+    public void test_remove_failure_whenNotEnough() {
+
+        MapCatalog<String> catalog = new MapCatalog<>();
+
+        catalog.add("Ore", 1);
+
+        boolean removed = catalog.remove("Ore", 3);
+
+        assertEquals(1, catalog.getCount("Ore"));
+    }
 }
