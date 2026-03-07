@@ -6,8 +6,13 @@ import org.junit.Test;
 import catansim.MapCatalog;
 import catansim.Catalog;
 
+/**
+ * Unit tests for MapCatalog
+ * These tests verify add, remove, and snapshot behaviour.
+ */
 public class MapCatalogTest {
 
+    // Tests that adding resources increases the stored count
     @Test
     public void test_add_increasesCount() {
 
@@ -18,6 +23,7 @@ public class MapCatalogTest {
         assertEquals("Count should increase after add", 3, catalog.getCount("Wood"));
     }
 
+    // Tests that multiple adds accumulate the total correctly
     @Test
     public void test_add_multipleTimes_accumulates() {
 
@@ -29,6 +35,7 @@ public class MapCatalogTest {
         assertEquals("Counts should accumulate", 5, catalog.getCount("Wood"));
     }
 
+    // Tests successful removal when enough resources exist
     @Test
     public void test_remove_success() {
 
@@ -42,6 +49,7 @@ public class MapCatalogTest {
         assertEquals("Count should decrease", 2, catalog.getCount("Brick"));
     }
 
+    // Tests removal failure when trying to remove more resources than available
     @Test
     public void test_remove_failure_whenNotEnough() {
 
@@ -55,14 +63,13 @@ public class MapCatalogTest {
         assertEquals("Count should remain unchanged", 1, catalog.getCount("Ore"));
     }
 
+    // Boundary test: removing the exact amount should leave the count at zero
     @Test
     public void test_remove_exactAmount_removesEntry() {
 
         MapCatalog<String> catalog = new MapCatalog<>();
 
         catalog.add("Sheep", 3);
-
-        catalog.remove("Sheep", 3);
         
         boolean removed = catalog.remove("Sheep", 3);
 
@@ -70,6 +77,7 @@ public class MapCatalogTest {
         assertEquals("Removing exact amount should result in zero", 0, catalog.getCount("Sheep"));
     }
 
+    // tests that snapshot returns a read only catalog
     @Test(expected = UnsupportedOperationException.class)
     public void test_snapshot_isReadOnly() {
 
@@ -82,6 +90,7 @@ public class MapCatalogTest {
         snapshot.add("Wood", 1);
     }
 
+    // Tests that snapshot keeps the resource count from the original catalog
     @Test
     public void test_snapshot_preservesCounts() {
 
