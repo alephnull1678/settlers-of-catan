@@ -1,6 +1,9 @@
 package catansim.Task1;
 
 import static org.junit.Assert.*;
+
+import java.util.Map;
+
 import org.junit.Test;
 
 import catansim.MapPlayerHand;
@@ -33,5 +36,19 @@ public class MapPlayerHandTest {
         boolean added = hand.addCard(null, 2);
 
         assertFalse("Adding null resources should fail", added);
+    }
+
+    // Test successful removal of cards when the player has enough resources
+    @Test
+    public void test_removeCard_success() {
+
+        MapPlayerHand hand = new MapPlayerHand();
+
+        hand.addCard(Resource.BRICK, 3);
+
+        boolean removed = hand.removeCard(Resource.BRICK, 2);
+
+        assertTrue("Remove should succeed when enough resources exist", removed);
+        assertEquals("Resource count should decrease after removal`", 1, hand.getCount(Resource.BRICK));
     }
 }
