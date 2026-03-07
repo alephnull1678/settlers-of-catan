@@ -1,10 +1,6 @@
 package catansim.Task1;
 
 import static org.junit.Assert.*;
-
-import java.beans.Transient;
-import java.util.Map;
-
 import org.junit.Test;
 
 import catansim.MapCatalog;
@@ -54,7 +50,8 @@ public class MapCatalogTest {
         catalog.add("Ore", 1);
 
         boolean removed = catalog.remove("Ore", 3);
-
+        
+        assertFalse(removed);
         assertEquals(1, catalog.getCount("Ore"));
     }
 
