@@ -33,6 +33,10 @@ public class Player {
 	 * 
 	 */
 	public PieceHandler piecehandler;
+	/**
+	 * 
+	 */
+	public PlayerID playerid;
 
 	/**
 	 * 
@@ -55,20 +59,20 @@ public class Player {
 	 * @return 
 	 * @param buildingType 
 	 */
-	public Piece getPieceOfType(BuildingTypes buildingType) {
+	public Piece getPieceOfType(PieceTypes buildingType) {
 	}
 
 	/**
 	 * 
 	 * @param buildingType 
 	 */
-	public void consumePiece(BuildingTypes buildingType) {
+	public void consumePiece(PieceTypes buildingType) {
 	}
 
 	/**
 	 * 
 	 * @param buildingType 
 	 */
-	public void consumeFreePiece(BuildingTypes buildingType) {
+	public void consumeFreePiece(PieceTypes buildingType) {
 	}
 }

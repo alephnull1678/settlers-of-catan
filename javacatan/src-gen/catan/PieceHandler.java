@@ -11,17 +11,22 @@ package catan;
 public class PieceHandler {
 	/**
 	 * 
+	 */
+	public Catalog catalog;
+
+	/**
+	 * 
 	 * @param buildingType 
 	 * @return 
 	 */
-	public Piece sendPieceOfType(BuildingTypes buildingType) {
+	public Piece sendPieceOfType(PieceTypes buildingType) {
 	}
 
 	/**
 	 * 
 	 * @param piece 
 	 */
-	public void usePiece(Piece piece) {
+	public void usePiece(PieceTypes piece) {
 	}
 
 	/**
@@ -29,5 +34,12 @@ public class PieceHandler {
 	 * @param piece 
 	 */
 	public void refundPiece(Piece piece) {
+	}
+
+	/**
+	 * 
+	 * @param Piece 
+	 */
+	public void refundPiece(PieceTypes Piece) {
 	}
 }

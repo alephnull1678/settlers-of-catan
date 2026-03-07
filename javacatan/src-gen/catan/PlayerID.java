@@ -12,17 +12,17 @@ public enum PlayerID {
 	/**
 	 * 
 	 */
-	Player1,
+	BLUE,
 	/**
 	 * 
 	 */
-	Player2,
+	RED,
 	/**
 	 * 
 	 */
-	Player3,
+	GREEN,
 	/**
 	 * 
 	 */
-	Player4;
+	YELLOW;
 }

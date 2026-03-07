@@ -11,6 +11,11 @@ package catan;
 public interface PlayerHand extends Catalog {
 	/**
 	 * 
+	 */
+	public Resource resource;
+
+	/**
+	 * 
 	 * @param resource 
 	 * @param count 
 	 * @return 

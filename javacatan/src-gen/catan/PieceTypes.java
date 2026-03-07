@@ -8,19 +8,17 @@ package catan;
 /**
  * 
  */
-public interface Piece {
+public enum PieceTypes {
 	/**
 	 * 
 	 */
-	public PlayerID ownerPlayerID;
+	ROAD,
 	/**
 	 * 
 	 */
-	public PieceTypes piecetypes;
-
+	SETTLEMENT,
 	/**
 	 * 
-	 * @param playerID 
 	 */
-	public void getOwnerPlayerID(PlayerID playerID);
+	CITY;
 }
