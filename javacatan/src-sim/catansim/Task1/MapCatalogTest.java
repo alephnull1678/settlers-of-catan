@@ -3,6 +3,7 @@ package catansim.Task1;
 import static org.junit.Assert.*;
 
 import java.beans.Transient;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -55,5 +56,29 @@ public class MapCatalogTest {
         boolean removed = catalog.remove("Ore", 3);
 
         assertEquals(1, catalog.getCount("Ore"));
+    }
+
+    @Test
+    public void test_remove_exactAmount_removesEntry() {
+
+        MapCatalog<String> catalog = new MapCatalog<>();
+
+        catalog.add("Sheep", 3);
+
+        catalog.remove("Sheep", 3);
+
+        assertEquals(0, catalog.getCount("Sheep"));
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void test_snapshopt_isReadOnly() {
+
+        MapCatalog<String> catalog = new MapCatalog<>();
+
+        catalog.add("Wood", 2);
+
+        Catalog<String> snapshot = catalog.snapshot();
+
+        snapshot.add("Wood", 1);
     }
 }
