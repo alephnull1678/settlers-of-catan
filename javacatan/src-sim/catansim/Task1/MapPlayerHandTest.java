@@ -65,4 +65,26 @@ public class MapPlayerHandTest {
         assertFalse("Remove should fail when insufficient resources", removed);
         assertEquals("Resource count should remain unchanged", 1, hand.getCount(Resource.ORE));
     }
+
+    // Tests that removeHand fails when the player lacks required resources
+    // and that the player's hand remains unchanged 
+    @Test
+    public void test_removeHand_atomicFailure() {
+
+        MapPlayerHand hand = new MapPlayerHand();
+
+        hand.addCard(Resource.WOOD, 2);
+        hand.addCard(Resource.BRICK, 1);
+
+        MapCatalog<Resource> cost = new MapCatalog<>();
+        cost.add(Resource.WOOD, 2);
+        cost.add(Resource.BRICK, 3);
+
+        boolean removed = hand.removeHand(cost);
+
+        assertFalse("removeHand should fail if any resource is insufficient", removed);
+
+        assertEquals("Wood should remain unchanged", 2, hand.getCount(Resource.WOOD));
+        assertEquals("Brick should remain unchanged", 1, hand.getCount(Resource.BRICK));
+    }
 }
