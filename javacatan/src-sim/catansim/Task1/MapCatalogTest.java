@@ -81,4 +81,16 @@ public class MapCatalogTest {
 
         snapshot.add("Wood", 1);
     }
+
+    @Test
+    public void test_snapshot_preservesCounts() {
+
+        MapCatalog<String> catalog = new MapCatalog<>();
+
+        catalog.add("Wheat", 5);
+
+        Catalog<String> snapshot = catalog.snapshot();
+
+        assertEquals(5, snapshot.getCount("Wheat"));
+    }
 }
