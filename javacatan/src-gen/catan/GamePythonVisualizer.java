@@ -9,4 +9,18 @@ package catan;
  * 
  */
 public class GamePythonVisualizer implements Visualizer {
+	/**
+	 * 
+	 */
+	public Game game;
+	/**
+	 * 
+	 */
+	public StaticBoard staticboard;
+
+	/**
+	 * 
+	 */
+	private void render() {
+	}
 }

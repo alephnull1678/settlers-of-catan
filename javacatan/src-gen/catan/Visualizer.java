@@ -9,4 +9,8 @@ package catan;
  * 
  */
 public interface Visualizer {
+	/**
+	 * 
+	 */
+	public void onStateChanged();
 }

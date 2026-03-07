@@ -37,4 +37,17 @@ public class Game {
 	 */
 	public void start() {
 	}
+
+	/**
+	 * 
+	 * @param visualizer 
+	 */
+	public void addVisualizer(Visualizer visualizer) {
+	}
+
+	/**
+	 * 
+	 */
+	private void notifyVisualizers() {
+	}
 }
