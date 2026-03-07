@@ -9,4 +9,9 @@ package catan;
  * 
  */
 public class HardWiredBoard implements Board {
+	/**
+	 * 
+	 */
+	private void createBoardHardWired() {
+	}
 }

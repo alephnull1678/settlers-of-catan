@@ -28,15 +28,15 @@ public class Player {
 	/**
 	 * 
 	 */
-	public PlayerHand hand;
-	/**
-	 * 
-	 */
 	public PieceHandler piecehandler;
 	/**
 	 * 
 	 */
 	public PlayerID playerid;
+	/**
+	 * 
+	 */
+	public PlayerHand playerhand;
 
 	/**
 	 * 

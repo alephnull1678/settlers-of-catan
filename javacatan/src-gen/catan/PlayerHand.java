@@ -8,11 +8,15 @@ package catan;
 /**
  * 
  */
-public interface PlayerHand extends Catalog {
+public class PlayerHand {
 	/**
 	 * 
 	 */
 	public Resource resource;
+	/**
+	 * 
+	 */
+	public Catalog catalog;
 
 	/**
 	 * 
@@ -20,7 +24,8 @@ public interface PlayerHand extends Catalog {
 	 * @param count 
 	 * @return 
 	 */
-	public boolean addCard(Resource resource, int count);
+	public boolean addCard(Resource resource, int count) {
+	}
 
 	/**
 	 * 
@@ -28,19 +33,37 @@ public interface PlayerHand extends Catalog {
 	 * @param count 
 	 * @return 
 	 */
-	public boolean removeCard(Resource resource, int count);
+	public boolean removeCard(Resource resource, int count) {
+	}
 
 	/**
 	 * 
 	 * @param catalog 
 	 * @return 
 	 */
-	public boolean removeHand(Catalog catalog);
+	public boolean addHand(Catalog catalog) {
+	}
 
 	/**
 	 * 
 	 * @param catalog 
 	 * @return 
 	 */
-	public boolean addHand(Catalog catalog);
+	public boolean removeHand(Catalog catalog) {
+	}
+
+	/**
+	 * 
+	 * @param unit 
+	 * @return 
+	 */
+	public int getCount(Resource unit) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Catalog snapshot() {
+	}
 }
