@@ -17,7 +17,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_d781kASEEfGlO7CguFpanQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1772918289271">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1772921099656">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']"/>
         <target xmi:type="uml:Model" href="catan.uml#_d6y_AASEEfGlO7CguFpanQ"/>
       </ownedRepresentationDescriptors>
@@ -1499,8 +1499,8 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_dPCOoQiJEfGwgKLZBoPIFQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_dPCOogiJEfGwgKLZBoPIFQ" fontName="Segoe UI"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dPCOowiJEfGwgKLZBoPIFQ" points="[0, -13, -239, -120]$[23, -13, -216, -120]$[100, -13, -139, -120]$[100, 107, -139, 0]$[239, 107, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dPgIsAiJEfGwgKLZBoPIFQ" id="(1.0,0.9939024390243902)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dPCOowiJEfGwgKLZBoPIFQ" points="[3, 10, -239, -107]$[26, -3, -216, -120]$[103, -3, -139, -120]$[103, 117, -139, 0]$[242, 117, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dPgIsAiJEfGwgKLZBoPIFQ" id="(0.9885931558935361,0.9329268292682927)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dPgIsQiJEfGwgKLZBoPIFQ" id="(0.0,0.09259259259259259)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_CSrjoAiOEfGwgKLZBoPIFQ" type="4001" element="_CRfQ0AiOEfGwgKLZBoPIFQ" source="_-fxfkASkEfGBxYf1fTqBJA" target="_uoipMAX5EfGRf-tqN1BwGw">

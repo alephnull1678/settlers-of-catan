@@ -17,6 +17,10 @@ public interface Board extends StaticBoard {
 	 * 
 	 */
 	public Tile[] tile;
+	/**
+	 * 
+	 */
+	public Tile robberTile;
 
 	/**
 	 * 
@@ -53,4 +57,10 @@ public interface Board extends StaticBoard {
 	 * @param node 
 	 */
 	public void collectFirst(PlayerID playerID, Node node);
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public PlayerID moveRobber();
 }
