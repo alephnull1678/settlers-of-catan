@@ -317,6 +317,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_THy3sAX-EfGRf-tqN1BwGw" name="LiteralInteger1" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_THzewAX-EfGRf-tqN1BwGw" name="LiteralUnlimitedNatural1" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_lYCQ0Bp2EfGhR_rpMFG30w" name="robberTile" visibility="private" type="_zIGrYAViEfG4lNxHNfwBoQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ENA4oAY5EfGfDvnfcKXpVw" name="createNodes">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_GJz8gAY5EfGfDvnfcKXpVw" name="nodes" type="_xL-88AViEfG4lNxHNfwBoQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HcDngAY5EfGfDvnfcKXpVw" name="LiteralInteger1" value="1"/>
@@ -343,6 +344,9 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_vmua0AiNEfGwgKLZBoPIFQ" name="collectFirst">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_xHwIsAiNEfGwgKLZBoPIFQ" name="playerID" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_yqtJMAiNEfGwgKLZBoPIFQ" name="node" type="_xL-88AViEfG4lNxHNfwBoQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QgLRIBp2EfGhR_rpMFG30w" name="moveRobber">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_YuqVgBp2EfGhR_rpMFG30w" name="playerID" type="_s-W0AAVkEfG4lNxHNfwBoQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_rY-BIAZBEfGfDvnfcKXpVw" name="PieceTypes">
