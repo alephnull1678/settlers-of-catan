@@ -31,4 +31,17 @@ public class MapCatalogTest {
 
         assertEquals(5, catalog.getCount("Wood"));
     }
+
+    @Test
+    public void test_remove_success() {
+
+        MapCatalog<String> catalog = new MapCatalog<>();
+
+        catalog.add("Brick", 4);
+
+        boolean removed = catalog.remove("Brick", 2);
+
+        assertTrue(removed);
+        assertEquals(2, catalog.getCount("Brick"));
+    }
 }
