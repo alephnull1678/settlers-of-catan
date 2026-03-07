@@ -214,10 +214,10 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_s-W0AAVkEfG4lNxHNfwBoQ" name="PlayerID">
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4kXucAYgEfGKxpR3uqh_6Q" name="Player1"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_809Z4AYgEfGKxpR3uqh_6Q" name="Player2"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9pw68AYgEfGKxpR3uqh_6Q" name="Player3"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-VoicAYgEfGKxpR3uqh_6Q" name="Player4"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4kXucAYgEfGKxpR3uqh_6Q" name="BLUE"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_809Z4AYgEfGKxpR3uqh_6Q" name="RED"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9pw68AYgEfGKxpR3uqh_6Q" name="GREEN"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-VoicAYgEfGKxpR3uqh_6Q" name="YELLOW"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_te58UAVkEfG4lNxHNfwBoQ" name="Resource">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ARnG8AYhEfGKxpR3uqh_6Q" name="Wood"/>

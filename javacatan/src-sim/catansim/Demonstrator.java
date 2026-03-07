@@ -24,10 +24,10 @@ public class Demonstrator {
 
         //Create players
         Player[] players = new Player[] {
-                new Player(PlayerID.Player1),
-                new Player(PlayerID.Player2),
-                new Player(PlayerID.Player3),
-                new Player(PlayerID.Player4)
+                new Player(PlayerID.BLUE),
+                new Player(PlayerID.RED),
+                new Player(PlayerID.YELLOW),
+                new Player(PlayerID.GREEN)
         };
 
         //Run the game. The game will end either when a Player reaches 10 victory points or the game reaches the max number of rounds as assigned by maxRounds.

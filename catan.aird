@@ -17,7 +17,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_d781kASEEfGlO7CguFpanQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1771032922979">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1772910540303">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']"/>
         <target xmi:type="uml:Model" href="catan.uml#_d6y_AASEEfGlO7CguFpanQ"/>
       </ownedRepresentationDescriptors>
@@ -2699,7 +2699,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Enumeration']/@subContainerMappings[name='CD_EnumerationLiteralsCompartment']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Enumeration']/@subContainerMappings[name='CD_EnumerationLiteralsCompartment']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_4kYVgAYgEfGKxpR3uqh_6Q" name="Player1">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_4kYVgAYgEfGKxpR3uqh_6Q" name="BLUE">
           <target xmi:type="uml:EnumerationLiteral" href="catan.uml#_4kXucAYgEfGKxpR3uqh_6Q"/>
           <semanticElements xmi:type="uml:EnumerationLiteral" href="catan.uml#_4kXucAYgEfGKxpR3uqh_6Q"/>
           <ownedStyle xmi:type="diagram:Square" uid="_4kY8kAYgEfGKxpR3uqh_6Q" labelSize="9" labelAlignment="LEFT" color="195,215,221">
@@ -2707,7 +2707,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Enumeration']/@subContainerMappings[name='CD_EnumerationLiteralsCompartment']/@subNodeMappings[name='CD_EnumerationLiteralLabelNode']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_80-A8AYgEfGKxpR3uqh_6Q" name="Player2">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_80-A8AYgEfGKxpR3uqh_6Q" name="RED">
           <target xmi:type="uml:EnumerationLiteral" href="catan.uml#_809Z4AYgEfGKxpR3uqh_6Q"/>
           <semanticElements xmi:type="uml:EnumerationLiteral" href="catan.uml#_809Z4AYgEfGKxpR3uqh_6Q"/>
           <ownedStyle xmi:type="diagram:Square" uid="_80-oAAYgEfGKxpR3uqh_6Q" labelSize="9" labelAlignment="LEFT" color="195,215,221">
@@ -2715,7 +2715,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Enumeration']/@subContainerMappings[name='CD_EnumerationLiteralsCompartment']/@subNodeMappings[name='CD_EnumerationLiteralLabelNode']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_9pw68QYgEfGKxpR3uqh_6Q" name="Player3">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_9pw68QYgEfGKxpR3uqh_6Q" name="GREEN">
           <target xmi:type="uml:EnumerationLiteral" href="catan.uml#_9pw68AYgEfGKxpR3uqh_6Q"/>
           <semanticElements xmi:type="uml:EnumerationLiteral" href="catan.uml#_9pw68AYgEfGKxpR3uqh_6Q"/>
           <ownedStyle xmi:type="diagram:Square" uid="_9pxiAAYgEfGKxpR3uqh_6Q" labelSize="9" labelAlignment="LEFT" color="195,215,221">
@@ -2723,7 +2723,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Enumeration']/@subContainerMappings[name='CD_EnumerationLiteralsCompartment']/@subNodeMappings[name='CD_EnumerationLiteralLabelNode']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_-VpJgAYgEfGKxpR3uqh_6Q" name="Player4">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_-VpJgAYgEfGKxpR3uqh_6Q" name="YELLOW">
           <target xmi:type="uml:EnumerationLiteral" href="catan.uml#_-VoicAYgEfGKxpR3uqh_6Q"/>
           <semanticElements xmi:type="uml:EnumerationLiteral" href="catan.uml#_-VoicAYgEfGKxpR3uqh_6Q"/>
           <ownedStyle xmi:type="diagram:Square" uid="_-VpwkAYgEfGKxpR3uqh_6Q" labelSize="9" labelAlignment="LEFT" color="195,215,221">
