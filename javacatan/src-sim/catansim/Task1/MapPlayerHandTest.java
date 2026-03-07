@@ -1,9 +1,6 @@
 package catansim.Task1;
 
 import static org.junit.Assert.*;
-
-import java.util.Map;
-
 import org.junit.Test;
 
 import catansim.MapPlayerHand;
@@ -12,7 +9,8 @@ import catansim.Resource;
 
 /**
  * Unit tests for MapPlayerHand.
- * These tests verify adding cards, removing cards
+ * These tests verify adding cards, removing cards,
+ * and hand removal behaviour
  */
 public class MapPlayerHandTest {
     
@@ -49,12 +47,12 @@ public class MapPlayerHandTest {
         boolean removed = hand.removeCard(Resource.BRICK, 2);
 
         assertTrue("Remove should succeed when enough resources exist", removed);
-        assertEquals("Resource count should decrease after removal`", 1, hand.getCount(Resource.BRICK));
+        assertEquals("Resource count should decrease after removal", 1, hand.getCount(Resource.BRICK));
     }
 
     // Tests that removal fails when attempting to remove more resources then available
     @Test
-    public void test_removecard_failure_whenNotEnough() {
+    public void test_removeCard_failure_whenNotEnough() {
 
         MapPlayerHand hand = new MapPlayerHand();
 
