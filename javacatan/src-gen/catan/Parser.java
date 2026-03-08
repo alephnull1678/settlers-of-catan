@@ -8,10 +8,11 @@ package catan;
 /**
  * 
  */
-public class Action {
+public class Parser {
 	/**
 	 * 
+	 * @param a 
 	 */
-	public void getActionType() {
+	public static void parse(Action a) {
 	}
 }

@@ -8,10 +8,5 @@ package catan;
 /**
  * 
  */
-public class Action {
-	/**
-	 * 
-	 */
-	public void getActionType() {
-	}
+public enum Enumeration1 {
 }

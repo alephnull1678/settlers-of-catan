@@ -8,10 +8,18 @@ package catan;
 /**
  * 
  */
-public class Action {
+public class BuildAction extends Action {
 	/**
 	 * 
+	 * @return 
 	 */
-	public void getActionType() {
+	public Node getNodes() {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public PieceTypes getPieceType() {
 	}
 }

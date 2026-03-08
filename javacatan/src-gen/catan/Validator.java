@@ -27,8 +27,10 @@ public class Validator {
 	 * @param resourcesOwned 
 	 * @return 
 	 * @param piecesOwned 
+	 * @param state 
 	 */
-	public Action[] getValidActions(StaticBoard board, PlayerID playerID, Catalog resourcesOwned, Catalog piecesOwned) {
+	public Action[] getValidActions(StaticBoard board, PlayerID playerID, Catalog resourcesOwned, Catalog piecesOwned,
+			GameStates state) {
 	}
 
 	/**
@@ -37,5 +39,14 @@ public class Validator {
 	 * @return 
 	 */
 	public Action[] getAllActionsFromNode(Node node) {
+	}
+
+	/**
+	 * 
+	 * @param a 
+	 * @param listOfActions 
+	 * @return 
+	 */
+	public boolean isValid(Action a, Action[] listOfActions) {
 	}
 }
