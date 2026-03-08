@@ -8,6 +8,7 @@ import catansim.*;
 // Behaviors to be tested:
 // 		1: Connect to tiles
 //		2: Hold buildings
+//		3: Nodes attach to nodes
 public class NodeTest {
 	
 	// 1: Test that node does not allow more than 3 tiles
@@ -31,6 +32,30 @@ public class NodeTest {
 		node.placeBuilding(settlement); //Places building on node
 		
 		assertEquals(settlement, node.getBuilding()); //Check that node has building 
+	}
+	
+	// 3: Test that a node stores it connection to another node
+	@Test
+	public void testNodeStoresNeibhoursNode() {
+		// Creating Nodes
+		Node a = new Node(1);
+		Node b = new Node(2);
+		
+		// Connect Nodes (a --> b)
+		a.connectNode(b);
+		
+		// Get list of neighbor/connected nodes
+		Node[] neighbours = a.getNeighbours();
+		
+		// Checks if the neighbor node is there
+		boolean found = false;
+		for (Node n : neighbours) {
+			if(n == b) {
+				found = true;
+			}
+			
+		}
+		assertTrue(found);
 	}
 
 }
