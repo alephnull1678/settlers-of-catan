@@ -8,10 +8,17 @@ package catan;
 /**
  * 
  */
-public class Action {
+public enum GameStates {
 	/**
 	 * 
 	 */
-	public void getActionType() {
-	}
+	WAITING_FOR_ROLL,
+	/**
+	 * 
+	 */
+	NEW_TURN,
+	/**
+	 * 
+	 */
+	PLAYER_ACTING;
 }

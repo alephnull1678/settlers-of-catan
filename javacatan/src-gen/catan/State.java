@@ -8,10 +8,23 @@ package catan;
 /**
  * 
  */
-public class Action {
+public class State {
 	/**
 	 * 
 	 */
-	public void getActionType() {
+	public GameStates gamestates;
+
+	/**
+	 * 
+	 * @param state 
+	 */
+	public void getCurrentState(GameStates state) {
+	}
+
+	/**
+	 * 
+	 * @param a 
+	 */
+	public void read(Action a) {
 	}
 }

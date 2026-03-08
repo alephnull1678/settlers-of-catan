@@ -25,6 +25,10 @@ public class Game {
 	 * 
 	 */
 	public Dice dice;
+	/**
+	 * 
+	 */
+	public State state;
 
 	/**
 	 * 
