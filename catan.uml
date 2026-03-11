@@ -26,7 +26,7 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_AGi2oBp-EfGvsrbesE-g3A" name="notifyVisualizers" visibility="private"/>
       <nestedClassifier xmi:type="uml:PrimitiveType" xmi:id="_MSL0cBp7EfGhR_rpMFG30w" name="PrimitiveType1"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_A23SwASlEfGBxYf1fTqBJA" name="Player">
+    <packagedElement xmi:type="uml:Class" xmi:id="_A23SwASlEfGBxYf1fTqBJA" name="Player" isAbstract="true">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_TRRWEAX5EfGRf-tqN1BwGw" name="PlayerID" visibility="private" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_GRGnYAYlEfGKxpR3uqh_6Q" name="piecehandler" type="_t4OtMAViEfG4lNxHNfwBoQ" aggregation="composite" association="_GRFZQAYlEfGKxpR3uqh_6Q"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_KNFEwBpdEfGtXtTo0_BenA" name="playerid" type="_s-W0AAVkEfG4lNxHNfwBoQ" association="_KNEdsBpdEfGtXtTo0_BenA"/>
@@ -565,6 +565,12 @@
       </eAnnotations>
       <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_SGva8RqlEfGvsrbesE-g3A" name="player" type="_A23SwASlEfGBxYf1fTqBJA" association="_SGuz4BqlEfGvsrbesE-g3A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zkogIBzsEfGAgPgAP_v3zg" name="AgentPlayer">
+      <generalization xmi:type="uml:Generalization" xmi:id="_44bVABzsEfGAgPgAP_v3zg" general="_A23SwASlEfGBxYf1fTqBJA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0-mjwBzsEfGAgPgAP_v3zg" name="HumanPlayer">
+      <generalization xmi:type="uml:Generalization" xmi:id="_55OqsBzsEfGAgPgAP_v3zg" general="_A23SwASlEfGBxYf1fTqBJA"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FKB-oASFEfGlO7CguFpanQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FKFB8ASFEfGlO7CguFpanQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
