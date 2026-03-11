@@ -119,17 +119,19 @@ public class Game {
     private void doInitialPlacements() {
         StaticBoard staticBoard = (StaticBoard) board;
 
+        // First setup round: no starting resources
         for (Player p : players) {
-            doOneSetupTurn(p, staticBoard);
+            doOneSetupTurn(p, staticBoard, false);
         }
 
+        // Second setup round: give starting resources from the settlement
         for (int i = players.length - 1; i >= 0; i--) {
-            doOneSetupTurn(players[i], staticBoard);
+            doOneSetupTurn(players[i], staticBoard, true);
         }
     }
 
     //Setup turns also use FSM (build settlement to build road)
-    private void doOneSetupTurn(Player player, StaticBoard staticBoard) {
+    private void doOneSetupTurn(Player player, StaticBoard staticBoard, boolean giveStartingResources) {
     	
     	waitForSetupGo(player);
     	
@@ -143,9 +145,15 @@ public class Game {
         board.placePiece((Building) sPiece, pid, settlement.getNodes()[0]);
         player.addVP(1);
 
+        // SECOND setup settlement grants starting resources
+        if (giveStartingResources) {
+            Catalog<Resource> gained = board.collectFirst(pid, settlement.getNodes()[0]);
+            player.dealResources(gained.snapshot());
+        }
+
         printAction(pid, "Setup: " + describeAction(PieceTypes.SETTLEMENT, settlement.getNodes()));
         stateMachine.read(settlement);
-        notifyVisualizer();   // NEW
+        notifyVisualizer();
 
 
         BuildAction road = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.ROAD, settlement.getNodes()[0]);
@@ -156,7 +164,7 @@ public class Game {
 
         printAction(pid, "Setup: " + describeAction(PieceTypes.ROAD, road.getNodes()));
         stateMachine.read(road);
-        notifyVisualizer();   // NEW
+        notifyVisualizer();
     }
 
     private BuildAction chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<PieceTypes> piecesOwned,
