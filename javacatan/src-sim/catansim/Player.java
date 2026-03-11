@@ -11,14 +11,13 @@ import java.util.Random;
 /**
  * 
  */
-public class Player {
+public abstract class Player {
 	
 	
 	private final PlayerID playerID;
     private final PieceHandler pieceHandler;
     private final PlayerHand playerHand;
 
-    private final Random rng = new Random();
     
     private int vp = 0;
 
@@ -40,10 +39,7 @@ public class Player {
     
     
     //PICKING RANDOM ACTION from list of actions
-    public Action chooseAction(Action[] actions) {
-        if (actions == null || actions.length == 0) return null;
-        return actions[rng.nextInt(actions.length)];
-    }
+    public abstract Action chooseAction(Action[] actions);
     
     
     //DEAL RESOURCE
