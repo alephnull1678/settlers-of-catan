@@ -17,22 +17,25 @@ public class Game {
     private final Board board;
     private final Validator validator;
     private final Dice dice;
+    private final StateMachine stateMachine;
 
     private final int maxRounds;              // from config "turns"
     private int roundNumber = 0;
 
     private PlayerID longestRoadHolder = null;
 
-    public Game(Player[] players, Board board, Validator validator, Dice dice, int maxRounds) {
+    public Game(Player[] players, Board board, Validator validator, Dice dice, StateMachine stateMachine, int maxRounds) {
         if (players == null || players.length == 0) throw new IllegalArgumentException("players cannot be null/empty");
         if (board == null) throw new IllegalArgumentException("board cannot be null");
         if (validator == null) throw new IllegalArgumentException("validator cannot be null");
         if (dice == null) throw new IllegalArgumentException("dice cannot be null");
+        if (stateMachine == null) throw new IllegalArgumentException("stateMachine cannot be null");
 
         this.players = players;
         this.board = board;
         this.validator = validator;
         this.dice = dice;
+        this.stateMachine = stateMachine;
 
         if (maxRounds < 1) maxRounds = 1;
         if (maxRounds > MAX_ROUNDS_LIMIT) maxRounds = MAX_ROUNDS_LIMIT;
@@ -63,7 +66,7 @@ public class Game {
             if (adjacentHasBuilding) continue;
 
             // This is allowed in setup
-            actions.add(new Action(n, PieceTypes.SETTLEMENT));
+            actions.add(new BuildAction(ActionTypes.BUILD, n, PieceTypes.SETTLEMENT));
         }
 
         return actions;
@@ -80,21 +83,7 @@ public class Game {
         while (roundNumber < maxRounds && getWinner() == null) {
             roundNumber++;
 
-            int diceNum = dice.roll();
-            System.out.println("DICE ROLL: " + diceNum);
-
-            //Resource collection phase: collect for EVERY player
-            // If dice == 7, do nothing
-            if (diceNum != 7) {
-                for (Player p : players) {
-                    PlayerID pid = p.getPlayerID();
-                    Catalog<Resource> gained = board.collect(diceNum, pid);
-                   
-                    p.dealResources(gained.snapshot()); // snapshot = immutable copy
-                }
-            }
-
-            //Turn phase: each player acts onc
+            //Turn phase: each player acts once
             for (Player p : players) {
                 if (getWinner() != null) break;
                 takeTurn(p);
@@ -102,9 +91,6 @@ public class Game {
 
             //End-of-round VP print
             printVictoryPoints();
-            
-            
-            
         }
     }
 
@@ -156,17 +142,14 @@ public class Game {
         List<Action> valid;
 
         if (sourceNode != null) {
-            // When a source node is provided (i.e. choose a road from the just-placed settlement),
-            // use existing "all actions from node" helper in the validator.
             valid = validator.getAllActionsFromNode(sourceNode);
         } else {
-            // Setup: for settlements we must use setup rules (no road/resource/piece checks).
             if (type == PieceTypes.SETTLEMENT) {
                 valid = getValidSetupSettlements(staticBoard, pid);
             }
             else
             {
-            	valid = validator.getValidActions(staticBoard, pid, null, piecesOwned);
+                valid = validator.getValidActions(staticBoard, pid, null, piecesOwned);
             }
         }
 
@@ -196,49 +179,81 @@ public class Game {
     private void takeTurn(Player player) {
         PlayerID pid = player.getPlayerID();
 
-        //Cast ONLY for validator input
-        StaticBoard staticBoard = (StaticBoard) board;
+        boolean turnOver = false;
 
-        Catalog<Resource> resourcesOwned = player.getResourceCatalog();
-        Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
+        while (!turnOver && getWinner() == null) {
 
-        List<Action> valid = validator.getValidActions(staticBoard, pid, resourcesOwned, piecesOwned);
+            GameStates state = stateMachine.getCurrentState();
 
-        if (valid == null || valid.isEmpty()) {
-            printAction(pid, "No valid actions");
-            return;
+            //Cast ONLY for validator input
+            StaticBoard staticBoard = (StaticBoard) board;
+
+            Catalog<Resource> resourcesOwned = player.getResourceCatalog();
+            Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
+
+            List<Action> valid = validator.getValidActions(staticBoard, pid, resourcesOwned, piecesOwned, state);
+
+            if (valid == null || valid.isEmpty()) {
+                printAction(pid, "No valid actions");
+                return;
+            }
+
+            Action chosen = player.chooseAction(valid.toArray(new Action[0]));
+            if (chosen == null) {
+                printAction(pid, "Chose no action");
+                return;
+            }
+
+            ActionTypes actionType = chosen.getActionType();
+
+            switch (actionType) {
+
+                case ROLL:
+                    int diceNum = dice.roll();
+                    System.out.println("DICE ROLL: " + diceNum);
+
+                    if (diceNum != 7) {
+                        Catalog<Resource> gained = board.collect(diceNum, pid);
+                        player.dealResources(gained.snapshot());
+                    }
+                    break;
+
+                case LIST:
+                    printAction(pid, "List resources");
+                    break;
+
+                case BUILD:
+                    PieceTypes type = chosen.getPieceType();
+                    Node[] nodes = chosen.getNodes();
+
+                    Piece piece = player.consumePiece(type);
+                    if (piece == null) {
+                        printAction(pid, "Tried to build " + type + " but had no pieces");
+                        break;
+                    }
+
+                    //Bit of code smell here but only two types of piece so it's inconsequential
+                    if (piece.getType() == PieceTypes.ROAD) board.placePiece((Road)piece, pid, nodes[0], nodes[1]);
+                    else board.placePiece((Building)piece, pid, nodes[0]);
+
+                    //Update VP
+                    if (type != PieceTypes.ROAD) {
+                        player.addVP(1);
+                    }
+
+                    //Longest road can change after roads are placed
+                    if (type == PieceTypes.ROAD) updateLongestRoadAward();
+
+                    printAction(pid, describeAction(type, nodes));
+                    break;
+
+                case GO:
+                    turnOver = true;
+                    break;
+            }
+
+            stateMachine.read(chosen);
         }
-
-        Action chosen = player.chooseAction(valid.toArray(new Action[0]));
-        if (chosen == null) {
-            printAction(pid, "Chose no action");
-            return;
-        }
-
-        PieceTypes type = chosen.getPieceType();
-        Node[] nodes = chosen.getNodes();
-
-        //Consume returns the Piece instance to place
-        Piece piece = player.consumePiece(type);
-        if (piece == null) {
-            printAction(pid, "Tried to build " + type + " but had no pieces");
-            return;
-        }
-
-
-        //Bit of code smell here but only two types of piece so it's inconsequential
-        if (piece.getType() == PieceTypes.ROAD) board.placePiece((Road)piece, pid, nodes[0], nodes[1]);
-        else board.placePiece((Building)piece, pid, nodes[0]);
-
-        //Update VP
-        if (type != PieceTypes.ROAD) {
-            player.addVP(1);
-        }
-
-        //Longest road can change after roads are placed
-        if (type == PieceTypes.ROAD) updateLongestRoadAward();
-
-        printAction(pid, describeAction(type, nodes));
     }
 
     private void updateLongestRoadAward() {
@@ -309,7 +324,7 @@ public class Game {
     }
 
     private String nodeLabel(Node n) {
-    	if (n == null) return "null";
+        if (n == null) return "null";
         return "Node " + n.getNodeID();
     }
 }
