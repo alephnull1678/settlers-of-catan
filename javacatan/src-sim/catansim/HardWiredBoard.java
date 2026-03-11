@@ -13,6 +13,8 @@ public class HardWiredBoard implements Board {
 	
 	private Tile robberTile;
 	
+	private Tile robberTile;
+	
 	/**
 	 * 
 	 */
@@ -52,6 +54,9 @@ public class HardWiredBoard implements Board {
 	    tiles[5]  = new Tile(Resource.SHEEP, 5, 5);
 	    tiles[16] = new Tile(null, 0, 16); // DESERT
 	    robberTile = tiles[16];
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     private PlayerID longestRoadHolder = null;

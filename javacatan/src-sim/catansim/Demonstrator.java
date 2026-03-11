@@ -43,6 +43,9 @@ public class Demonstrator {
                 new Player(PlayerID.RED),
                 new Player(PlayerID.WHITE),
                 new Player(PlayerID.ORANGE)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         };
 
@@ -62,6 +65,9 @@ public class Demonstrator {
 =======
         Game game = new Game(players, board, validator, dice, maxRounds);
         game.addVisualizer(new GamePythonVisualizer(board));
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         game.run();
 
