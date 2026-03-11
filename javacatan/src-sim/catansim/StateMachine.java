@@ -43,15 +43,15 @@ public class StateMachine {
                 }
                 return null;
 
-            case WAITING_FOR_ROLL:
-                if (type == ActionTypes.ROLL) {
-                    currentState = GameStates.NEW_TURN;
+            case NEW_TURN:
+                if (type == ActionTypes.GO) {
+                    currentState = GameStates.WAITING_FOR_ROLL;
                     return currentState;
                 }
                 return null;
 
-            case NEW_TURN:
-                if (type == ActionTypes.GO) {
+            case WAITING_FOR_ROLL:
+                if (type == ActionTypes.ROLL) {
                     currentState = GameStates.PLAYER_ACTIONS;
                     return currentState;
                 }
@@ -59,7 +59,7 @@ public class StateMachine {
 
             case PLAYER_ACTIONS:
                 if (type == ActionTypes.LIST || type == ActionTypes.BUILD) {
-                    return null;
+                    return currentState; // stay in PLAYER_ACTIONS
                 }
                 if (type == ActionTypes.GO) {
                     currentState = GameStates.NEW_TURN;
@@ -72,15 +72,15 @@ public class StateMachine {
         }
     }
 
-    // Force transition back to the roll phase (used by Game when a new round starts)
+    // Force transition back to the start of a player's turn
     public GameStates goRoll() {
-        currentState = GameStates.WAITING_FOR_ROLL;
+        currentState = GameStates.NEW_TURN;
         return currentState;
     }
 
     // Switch from setup FSM to main FSM
     public GameStates goMain() {
-        currentState = GameStates.WAITING_FOR_ROLL;
+        currentState = GameStates.NEW_TURN;
         return currentState;
     }
 }

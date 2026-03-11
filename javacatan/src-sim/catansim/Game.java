@@ -105,8 +105,6 @@ public class Game {
             printVictoryPoints();
 
 
-            //Reset FSM back to roll phase for the next round
-            stateMachine.goRoll();
         }
         
         notifyVisualizer();
@@ -304,13 +302,14 @@ public class Game {
                     break;
 
                 case GO:
-                    if (state == GameStates.PLAYER_ACTIONS) {
-                        turnOver = true;
-                    }
                     break;
             }
 
             stateMachine.read(chosen);
+            
+            if (actionType == ActionTypes.GO && state == GameStates.PLAYER_ACTIONS) {
+                turnOver = true;
+            }
         }
     }
 
