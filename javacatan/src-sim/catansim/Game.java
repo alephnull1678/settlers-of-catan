@@ -194,6 +194,11 @@ public class Game {
             Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
 
             List<Action> valid = validator.getValidActions(staticBoard, pid, resourcesOwned, piecesOwned, state);
+            
+            //Make it so agent can't list
+            if (!(player instanceof HumanPlayer)) {
+                valid.removeIf(a -> a.getActionType() == ActionTypes.LIST);
+            }
 
             if (valid == null || valid.isEmpty()) {
                 printAction(pid, "No valid actions");
@@ -234,7 +239,7 @@ public class Game {
                     break;
 
                 case LIST:
-                    printAction(pid, "List resources");
+                	printAction(pid, player.listResources());
                     break;
 
                 case BUILD:
@@ -265,7 +270,9 @@ public class Game {
                     break;
 
                 case GO:
-                    turnOver = true;
+                    if (state == GameStates.PLAYER_ACTIONS) {
+                        turnOver = true;
+                    }
                     break;
             }
 

@@ -6,12 +6,22 @@ import java.util.Map;
 public class HashMapCatalog<T> implements Catalog<T> {
 
     private final Map<T, Integer> counts;
+    private final boolean readOnly;
 
     /**
      * Default constructor — starts empty
      */
     public HashMapCatalog() {
         this.counts = new HashMap<>();
+        this.readOnly = false;
+    }
+
+    /**
+     * Private constructor used for snapshots
+     */
+    private HashMapCatalog(Map<T, Integer> counts, boolean readOnly) {
+        this.counts = new HashMap<>(counts);
+        this.readOnly = readOnly;
     }
 
     @Override
@@ -27,6 +37,10 @@ public class HashMapCatalog<T> implements Catalog<T> {
      */
     @Override
     public boolean add(T unit, int amount) {
+        if (readOnly) {
+            throw new UnsupportedOperationException("Snapshot is read-only");
+        }
+
         if (unit == null || amount <= 0) {
             return false;
         }
@@ -40,6 +54,10 @@ public class HashMapCatalog<T> implements Catalog<T> {
      */
     @Override
     public boolean remove(T unit, int amount) {
+        if (readOnly) {
+            throw new UnsupportedOperationException("Snapshot is read-only");
+        }
+
         if (unit == null || amount <= 0) {
             return false;
         }
@@ -65,28 +83,7 @@ public class HashMapCatalog<T> implements Catalog<T> {
      */
     @Override
     public Catalog<T> snapshot() {
-        Map<T, Integer> copy = new HashMap<>(counts);
-
-        return new Catalog<T>() {
-            @Override
-            public int getCount(T unit) {
-                return copy.getOrDefault(unit, 0);
-            }
-
-            @Override
-            public boolean add(T unit, int amount) {
-                throw new UnsupportedOperationException("Snapshot is read-only");
-            }
-
-            @Override
-            public boolean remove(T unit, int amount) {
-                throw new UnsupportedOperationException("Snapshot is read-only");
-            }
-
-            @Override
-            public Catalog<T> snapshot() {
-                return this;
-            }
-        };
+        return new HashMapCatalog<>(counts, true);
     }
+
 }

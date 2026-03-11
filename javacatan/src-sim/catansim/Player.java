@@ -118,4 +118,18 @@ public abstract class Player {
         }
         vp -= amount;
     }
+    
+    
+    public String listResources() {
+        StringBuilder sb = new StringBuilder();
+
+        for (Resource r : Resource.values()) {
+            sb.append(r)
+              .append(": ")
+              .append(playerHand.getCount(r))
+              .append("\n");
+        }
+
+        return sb.toString().trim();
+    }
 }
