@@ -1,7 +1,3 @@
-// --------------------------------------------------------
-// Manual Implementation
-// --------------------------------------------------------
-
 package catansim;
 
 public enum PieceTypes {
@@ -9,14 +5,13 @@ public enum PieceTypes {
     ROAD(
         new CostSpec()
             .add(Resource.WOOD, 1)
-            .add(Resource.BRICK, 1)
+            .add(Resource.BRICK, 1),
+        15,
+        0
     ) {
+        @Override
         public Piece createPiece(PlayerID owner) {
             return new Road(owner);
-        }
-
-        public int maxCount() {
-            return 15;
         }
     },
 
@@ -25,58 +20,56 @@ public enum PieceTypes {
             .add(Resource.WOOD, 1)
             .add(Resource.BRICK, 1)
             .add(Resource.SHEEP, 1)
-            .add(Resource.WHEAT, 1)
+            .add(Resource.WHEAT, 1),
+        5,
+        1
     ) {
+        @Override
         public Piece createPiece(PlayerID owner) {
-            return new Settlement(owner);
-        }
-
-        
-        public int maxCount() {
-            return 5;
+            return new Building(owner, this);
         }
     },
 
     CITY(
         new CostSpec()
             .add(Resource.ORE, 3)
-            .add(Resource.WHEAT, 2)
+            .add(Resource.WHEAT, 2),
+        4,
+        2
     ) {
-        
+        @Override
         public Piece createPiece(PlayerID owner) {
-            return new City(owner);
-        }
-
-        
-        public int maxCount() {
-            return 4;
+            return new Building(owner, this);
         }
     };
 
-    // --------------------------------------------------
-    // Shared enum logic
-    // --------------------------------------------------
-
     private final Catalog<Resource> cost;
+    private final int maxCount;
+    private final int resourceAmount;
 
-    PieceTypes(CostSpec spec) {
+    PieceTypes(CostSpec spec, int maxCount, int resourceAmount) {
         this.cost = spec.toCatalogSnapshot();
+        this.maxCount = maxCount;
+        this.resourceAmount = resourceAmount;
     }
 
     public Catalog<Resource> getCost() {
         return cost;
     }
 
-    public abstract Piece createPiece(PlayerID owner);
-    public abstract int maxCount();
+    public int maxCount() {
+        return maxCount;
+    }
 
-    // --------------------------------------------------
-    // Helper builder for resource catalogs
-    // --------------------------------------------------
+    public int getResourceAmount() {
+        return resourceAmount;
+    }
+
+    public abstract Piece createPiece(PlayerID owner);
 
     private static final class CostSpec {
 
-        private final Catalog<Resource> mutable = new MapCatalog<>();
+        private final Catalog<Resource> mutable = new HashMapCatalog<>();
 
         CostSpec add(Resource r, int n) {
             mutable.add(r, n);

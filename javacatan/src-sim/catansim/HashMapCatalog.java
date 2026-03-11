@@ -1,26 +1,24 @@
-// --------------------------------------------------------
-// Manual Implementation
-// --------------------------------------------------------
-
 package catansim;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapCatalog<T> implements Catalog<T> {
+public class HashMapCatalog<T> implements Catalog<T> {
 
     private final Map<T, Integer> counts;
 
     /**
      * Default constructor — starts empty
      */
-    public MapCatalog() {
+    public HashMapCatalog() {
         this.counts = new HashMap<>();
     }
 
     @Override
     public int getCount(T unit) {
-        if (unit == null) return 0;
+        if (unit == null) {
+            return 0;
+        }
         return counts.getOrDefault(unit, 0);
     }
 
@@ -29,7 +27,9 @@ public class MapCatalog<T> implements Catalog<T> {
      */
     @Override
     public boolean add(T unit, int amount) {
-        if (unit == null || amount <= 0) return false;
+        if (unit == null || amount <= 0) {
+            return false;
+        }
 
         counts.put(unit, getCount(unit) + amount);
         return true;
@@ -40,22 +40,28 @@ public class MapCatalog<T> implements Catalog<T> {
      */
     @Override
     public boolean remove(T unit, int amount) {
-        if (unit == null || amount <= 0) return false;
+        if (unit == null || amount <= 0) {
+            return false;
+        }
 
         int current = getCount(unit);
-        if (current < amount) return false;
+        if (current < amount) {
+            return false;
+        }
 
         int newValue = current - amount;
 
-        if (newValue == 0) counts.remove(unit);
-        else counts.put(unit, newValue);
+        if (newValue == 0) {
+            counts.remove(unit);
+        } else {
+            counts.put(unit, newValue);
+        }
 
         return true;
     }
 
     /**
-     * Returns a READ-ONLY snapshot of this catalog.
-     * The returned Catalog cannot modify the original.
+     * Returns a read-only snapshot of this catalog.
      */
     @Override
     public Catalog<T> snapshot() {
@@ -79,9 +85,8 @@ public class MapCatalog<T> implements Catalog<T> {
 
             @Override
             public Catalog<T> snapshot() {
-                return this; // snapshot of snapshot
+                return this;
             }
         };
     }
-
 }

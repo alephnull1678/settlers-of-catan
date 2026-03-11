@@ -1,14 +1,9 @@
-// --------------------------------------------------------
-// Manual Implementation
-// --------------------------------------------------------
-
 package catansim;
 
 import java.util.Arrays;
 
 public class Node {
 
-    // Maximum values for Catan board geometry
     private static final int MAX_TILES = 3;
     private static final int MAX_NEIGHBORS = 3;
     private static final int MAX_ROADS = 3;
@@ -26,69 +21,42 @@ public class Node {
 
     private Building building = null;
 
-    // --------------------------------------------------
-    // Constructor
-    // --------------------------------------------------
-
     public Node(int nodeID) {
         this.nodeID = nodeID;
     }
 
-    // --------------------------------------------------
-    // Tile Handling
-    // --------------------------------------------------
-
     public void addTile(Tile tile) {
         if (tileCount >= MAX_TILES) {
-            throw new IllegalStateException(
-                "Node " + nodeID + " already has 3 tiles."
-            );
+            throw new IllegalStateException("Node " + nodeID + " already has 3 tiles.");
         }
         tiles[tileCount++] = tile;
     }
 
     public Tile[] getTiles() {
-    	return Arrays.copyOf(tiles, tileCount);
-
+        return Arrays.copyOf(tiles, tileCount);
     }
-
-    // --------------------------------------------------
-    // Neighbor Handling
-    // --------------------------------------------------
 
     public void connectNode(Node node) {
         if (neighborCount >= MAX_NEIGHBORS) {
-            throw new IllegalStateException(
-                "Node " + nodeID + " already has 3 neighbors."
-            );
+            throw new IllegalStateException("Node " + nodeID + " already has 3 neighbors.");
         }
         neighbors[neighborCount++] = node;
     }
 
     public Node[] getNeighbours() {
-    	return Arrays.copyOf(neighbors, neighborCount);
+        return Arrays.copyOf(neighbors, neighborCount);
     }
-
-    // --------------------------------------------------
-    // Road Handling
-    // --------------------------------------------------
 
     public void addRoad(Road road) {
         if (roadCount >= MAX_ROADS) {
-            throw new IllegalStateException(
-                "Node " + nodeID + " already has 3 roads."
-            );
+            throw new IllegalStateException("Node " + nodeID + " already has 3 roads.");
         }
         roads[roadCount++] = road;
     }
 
     public Road[] getConnectedRoads() {
-        return roads;
+        return Arrays.copyOf(roads, roadCount);
     }
-
-    // --------------------------------------------------
-    // Building Handling
-    // --------------------------------------------------
 
     public void placeBuilding(Building building) {
         this.building = building;
@@ -97,10 +65,6 @@ public class Node {
     public Building getBuilding() {
         return building;
     }
-
-    // --------------------------------------------------
-    // Utility
-    // --------------------------------------------------
 
     public int getNodeID() {
         return nodeID;
