@@ -8,15 +8,5 @@ package catan;
 /**
  * 
  */
-public class Action {
-	/**
-	 * 
-	 */
-	public ActionTypes enumeration1;
-
-	/**
-	 * 
-	 */
-	public void getActionType() {
-	}
+public class HashMapCatalog implements Catalog {
 }

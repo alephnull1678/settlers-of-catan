@@ -8,7 +8,7 @@ package catan;
 /**
  * 
  */
-public class Player {
+public abstract class Player {
 	/**
 	 * 
 	 */
@@ -37,6 +37,10 @@ public class Player {
 	 * 
 	 */
 	public PlayerHand playerhand;
+	/**
+	 * 
+	 */
+	public Parser parser;
 
 	/**
 	 * 
