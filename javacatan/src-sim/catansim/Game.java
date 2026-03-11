@@ -73,6 +73,7 @@ public class Game {
 
     public void run() {
         doInitialPlacements();
+        stateMachine.goMain();
         updateLongestRoadAward();
 
         while (roundNumber < maxRounds && getWinner() == null) {
@@ -87,6 +88,9 @@ public class Game {
             }
 
             printVictoryPoints();
+
+            //Reset FSM back to roll phase for the next round
+            stateMachine.goRoll();
         }
     }
 
@@ -106,6 +110,7 @@ public class Game {
         }
     }
 
+    //Setup turns also use FSM (build settlement to build road)
     private void doOneSetupTurn(Player player, StaticBoard staticBoard) {
         PlayerID pid = player.getPlayerID();
 
@@ -118,6 +123,7 @@ public class Game {
         player.addVP(1);
 
         printAction(pid, "Setup: " + describeAction(PieceTypes.SETTLEMENT, settlement.getNodes()));
+        stateMachine.read(settlement);
 
         BuildAction road = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.ROAD, settlement.getNodes()[0]);
         Piece rPiece = player.consumeFreePiece(PieceTypes.ROAD);
@@ -126,48 +132,49 @@ public class Game {
         updateLongestRoadAward();
 
         printAction(pid, "Setup: " + describeAction(PieceTypes.ROAD, road.getNodes()));
+        stateMachine.read(road);
     }
 
     private BuildAction chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<PieceTypes> piecesOwned,
-                                          PieceTypes type, Node sourceNode) {
-        PlayerID pid = player.getPlayerID();
-
-        List<Action> valid;
-
-        if (sourceNode != null) {
-            valid = validator.getAllActionsFromNode(sourceNode);
-        } else {
-            if (type == PieceTypes.SETTLEMENT) {
-                valid = getValidSetupSettlements(staticBoard, pid);
-            }
-            else
-            {
-                valid = validator.getValidActions(staticBoard, pid, null, piecesOwned);
-            }
-        }
-
-        List<Action> filtered = new ArrayList<>();
-        for (Action a : valid) {
-            if (a instanceof BuildAction) {
-                BuildAction build = (BuildAction) a;
-                if (build.getPieceType() == type) {
-                    filtered.add(build);
-                }
-            }
-        }
-
-        Action chosen = player.chooseAction(filtered.toArray(new Action[0]));
-
-        if (chosen == null) {
-            throw new IllegalStateException(
-                "Player " + pid + " chose no action during setup for type " + type
-                + ". availableOptions=" + filtered.size()
-            );
-        }
-
-        return (BuildAction) chosen;
-    }
-
+            PieceTypes type, Node sourceNode) {
+			PlayerID pid = player.getPlayerID();
+			
+			List<Action> valid;
+			GameStates state = stateMachine.getCurrentState();
+			
+			if (state == GameStates.SETUP_SETTLEMENT) {
+				valid = getValidSetupSettlements(staticBoard, pid);
+			} else if (state == GameStates.SETUP_ROAD) {
+			if (sourceNode == null) {
+				throw new IllegalStateException("sourceNode cannot be null during setup road placement");
+			}
+				valid = validator.getAllActionsFromNode(sourceNode);
+			} else {
+				throw new IllegalStateException("Invalid state for setup: " + state);
+			}
+			
+			List<Action> filtered = new ArrayList<>();
+			for (Action a : valid) {
+				if (a instanceof BuildAction) {
+						BuildAction build = (BuildAction) a;
+						if (build.getPieceType() == type) {
+								filtered.add(build);
+						}
+				}
+			}
+			
+			Action chosen = player.chooseAction(filtered.toArray(new Action[0]));
+			
+			if (chosen == null) {
+				throw new IllegalStateException(
+						"Player " + pid + " chose no action during setup for type " + type + ". availableOptions=" + filtered.size()
+						);
+			}
+			
+			return (BuildAction) chosen;
+	}
+    
+    
     // ===============================
     // Normal Turn Logic
     // ===============================
@@ -183,8 +190,6 @@ public class Game {
 
             GameStates state = stateMachine.getCurrentState();
 
-            
-
             Catalog<Resource> resourcesOwned = player.getResourceCatalog();
             Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
 
@@ -195,7 +200,20 @@ public class Game {
                 return;
             }
 
-            Action chosen = player.chooseAction(valid.toArray(new Action[0]));
+            // ---------------------------------------------------
+            // SPEC REQUIREMENT:
+            // Human player must step through agent turns.
+            // If an agent is in NEW_TURN, the human must press GO.
+            // ---------------------------------------------------
+            Player chooser = player;
+            if (state == GameStates.NEW_TURN && !(player instanceof HumanPlayer)) {
+                Player human = getHumanPlayer();
+                if (human != null) {
+                    chooser = human;
+                }
+            }
+
+            Action chosen = chooser.chooseAction(valid.toArray(new Action[0]));
             if (chosen == null) {
                 printAction(pid, "Chose no action");
                 return;
@@ -283,6 +301,16 @@ public class Game {
     private Player getPlayer(PlayerID id) {
         for (Player p : players) {
             if (p.getPlayerID() == id) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    //Helper method used for the spec requirement where the human steps through agent turns
+    private Player getHumanPlayer() {
+        for (Player p : players) {
+            if (p instanceof HumanPlayer) {
                 return p;
             }
         }
