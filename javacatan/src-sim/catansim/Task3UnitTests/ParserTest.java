@@ -1,7 +1,8 @@
-package catansim;
+package catansim.Task3UnitTests;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import catansim.*;
 
 public class ParserTest {
 
@@ -15,7 +16,7 @@ public class ParserTest {
         Action result = Parser.parse("Roll", legal);
 
         assertNotNull(result);
-        assertEquals(new Action(ActionTypes.ROLL), result);
+        assertEquals(legal[0], result);
     }
 
     @Test
@@ -27,7 +28,7 @@ public class ParserTest {
         Action result = Parser.parse("   gO   ", legal);
 
         assertNotNull(result);
-        assertEquals(new Action(ActionTypes.GO), result);
+        assertEquals(legal[0], result);
     }
 
     @Test
@@ -39,13 +40,13 @@ public class ParserTest {
         Action result = Parser.parse("List", legal);
 
         assertNotNull(result);
-        assertEquals(new Action(ActionTypes.LIST), result);
+        assertEquals(legal[0], result);
     }
 
     @Test
     public void parseBuildSettlementReturnsMatchingLegalAction() {
         Action[] legal = {
-            new BuildAction(ActionTypes.BUILD, new Node(7), PieceTypes.SETTLEMENT)
+            new BuildAction(new Node(7), PieceTypes.SETTLEMENT)
         };
 
         Action result = Parser.parse("Build settlement 7", legal);
@@ -57,7 +58,7 @@ public class ParserTest {
     @Test
     public void parseBuildCityReturnsMatchingLegalAction() {
         Action[] legal = {
-            new BuildAction(ActionTypes.BUILD, new Node(12), PieceTypes.CITY)
+            new BuildAction(new Node(12), PieceTypes.CITY)
         };
 
         Action result = Parser.parse("Build city 12", legal);
@@ -69,7 +70,7 @@ public class ParserTest {
     @Test
     public void parseBuildRoadReturnsMatchingLegalAction() {
         Action[] legal = {
-            new BuildAction(ActionTypes.BUILD, new Node(3), new Node(8), PieceTypes.ROAD)
+            new BuildAction(new Node(3), new Node(8), PieceTypes.ROAD)
         };
 
         Action result = Parser.parse("Build road 3,8", legal);
@@ -81,7 +82,7 @@ public class ParserTest {
     @Test
     public void parseBuildRoadAllowsExtraWhitespace() {
         Action[] legal = {
-            new BuildAction(ActionTypes.BUILD, new Node(10), new Node(11), PieceTypes.ROAD)
+            new BuildAction(new Node(10), new Node(11), PieceTypes.ROAD)
         };
 
         Action result = Parser.parse("  Build   road   10 , 11  ", legal);
@@ -104,7 +105,7 @@ public class ParserTest {
     @Test
     public void parseReturnsNullWhenCommandIsWellFormedButNotLegal() {
         Action[] legal = {
-            new BuildAction(ActionTypes.BUILD, new Node(4), PieceTypes.SETTLEMENT)
+            new BuildAction(new Node(4), PieceTypes.SETTLEMENT)
         };
 
         Action result = Parser.parse("Build settlement 9", legal);
@@ -120,6 +121,12 @@ public class ParserTest {
 
         Action result = Parser.parse(null, legal);
 
+        assertNull(result);
+    }
+
+    @Test
+    public void parseReturnsNullForNullLegalActions() {
+        Action result = Parser.parse("Roll", null);
         assertNull(result);
     }
 }
