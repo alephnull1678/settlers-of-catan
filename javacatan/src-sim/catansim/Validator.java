@@ -27,8 +27,12 @@ public class Validator {
 
         List<Action> actions = new ArrayList<>();
 
-        //Send in a different set of actions depending on the state
+        // Send in a different set of actions depending on the state
         switch (state) {
+
+            case SETUP_WAIT:
+                actions.add(new Action(ActionTypes.GO));
+                return actions;
 
             case WAITING_FOR_ROLL:
                 actions.add(new Action(ActionTypes.ROLL));

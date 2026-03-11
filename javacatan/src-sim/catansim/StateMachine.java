@@ -5,14 +5,14 @@ public class StateMachine {
     private GameStates currentState;
 
     public StateMachine() {
-        currentState = GameStates.SETUP_SETTLEMENT;
+        currentState = GameStates.SETUP_WAIT;
     }
 
     public GameStates getCurrentState() {
         return currentState;
     }
 
-    //Reads action, returns next action and advances through the FSM
+    // Reads action, returns next state and advances through the FSM
     public GameStates read(Action a) {
         if (a == null) {
             throw new IllegalArgumentException("action cannot be null");
@@ -21,6 +21,13 @@ public class StateMachine {
         ActionTypes type = a.getActionType();
 
         switch (currentState) {
+
+            case SETUP_WAIT:
+                if (type == ActionTypes.GO) {
+                    currentState = GameStates.SETUP_SETTLEMENT;
+                    return currentState;
+                }
+                return null;
 
             case SETUP_SETTLEMENT:
                 if (type == ActionTypes.BUILD) {
@@ -31,7 +38,7 @@ public class StateMachine {
 
             case SETUP_ROAD:
                 if (type == ActionTypes.BUILD) {
-                    currentState = GameStates.SETUP_SETTLEMENT;
+                    currentState = GameStates.SETUP_WAIT;
                     return currentState;
                 }
                 return null;
@@ -65,13 +72,13 @@ public class StateMachine {
         }
     }
 
-    //Force transition back to the roll phase (used by Game when a new round starts)
+    // Force transition back to the roll phase (used by Game when a new round starts)
     public GameStates goRoll() {
         currentState = GameStates.WAITING_FOR_ROLL;
         return currentState;
     }
 
-    //Switch from setup FSM to main FSM
+    // Switch from setup FSM to main FSM
     public GameStates goMain() {
         currentState = GameStates.WAITING_FOR_ROLL;
         return currentState;

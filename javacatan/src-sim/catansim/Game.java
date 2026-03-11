@@ -130,6 +130,9 @@ public class Game {
 
     //Setup turns also use FSM (build settlement to build road)
     private void doOneSetupTurn(Player player, StaticBoard staticBoard) {
+    	
+    	waitForSetupGo(player);
+    	
         PlayerID pid = player.getPlayerID();
 
         Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
@@ -142,6 +145,8 @@ public class Game {
 
         printAction(pid, "Setup: " + describeAction(PieceTypes.SETTLEMENT, settlement.getNodes()));
         stateMachine.read(settlement);
+        notifyVisualizer();   // NEW
+
 
         BuildAction road = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.ROAD, settlement.getNodes()[0]);
         Piece rPiece = player.consumeFreePiece(PieceTypes.ROAD);
@@ -151,6 +156,7 @@ public class Game {
 
         printAction(pid, "Setup: " + describeAction(PieceTypes.ROAD, road.getNodes()));
         stateMachine.read(road);
+        notifyVisualizer();   // NEW
     }
 
     private BuildAction chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<PieceTypes> piecesOwned,
@@ -199,6 +205,8 @@ public class Game {
 
     private void takeTurn(Player player) {
         PlayerID pid = player.getPlayerID();
+        
+        System.out.println("\n=== " + pid + "'s TURN ===");
 
         boolean turnOver = false;
         //Cast ONLY for validator input
@@ -350,6 +358,33 @@ public class Game {
         }
         return null;
     }
+    
+    
+    
+    private void waitForSetupGo(Player player) {
+
+        while (stateMachine.getCurrentState() == GameStates.SETUP_WAIT) {
+
+            Player chooser = player;
+
+            // Agents must be stepped through by the human
+            if (!(player instanceof HumanPlayer)) {
+                Player human = getHumanPlayer();
+                if (human != null) {
+                    chooser = human;
+                }
+            }
+
+            Action[] goOnly = { new Action(ActionTypes.GO) };
+
+            Action chosen = chooser.chooseAction(goOnly);
+
+            if (chosen != null && chosen.getActionType() == ActionTypes.GO) {
+                stateMachine.read(chosen);
+                notifyVisualizer();
+            }
+        }
+    }
 
     private void printAction(PlayerID pid, String actionText) {
         System.out.println("[" + roundNumber + "] / [" + pid + "]: " + actionText);
@@ -388,4 +423,6 @@ public class Game {
         if (n == null) return "null";
         return "Node " + n.getNodeID();
     }
+    
+    
 }

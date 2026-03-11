@@ -5,5 +5,6 @@ public enum GameStates {
     NEW_TURN,
     PLAYER_ACTIONS,
     SETUP_SETTLEMENT,
-    SETUP_ROAD
+    SETUP_ROAD,
+    SETUP_WAIT
 }
