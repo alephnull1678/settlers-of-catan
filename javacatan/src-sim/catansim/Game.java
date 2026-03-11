@@ -1,7 +1,3 @@
-// --------------------------------------------------------
-// Manual Implementation
-// --------------------------------------------------------
-
 package catansim;
 
 import java.util.ArrayList;
@@ -19,7 +15,7 @@ public class Game {
     private final Dice dice;
     private final StateMachine stateMachine;
 
-    private final int maxRounds;              // from config "turns"
+    private final int maxRounds;
     private int roundNumber = 0;
 
     private PlayerID longestRoadHolder = null;
@@ -37,25 +33,26 @@ public class Game {
         this.dice = dice;
         this.stateMachine = stateMachine;
 
-        if (maxRounds < 1) maxRounds = 1;
-        if (maxRounds > MAX_ROUNDS_LIMIT) maxRounds = MAX_ROUNDS_LIMIT;
+        if (maxRounds < 1) {
+            maxRounds = 1;
+        }
+        if (maxRounds > MAX_ROUNDS_LIMIT) {
+            maxRounds = MAX_ROUNDS_LIMIT;
+        }
         this.maxRounds = maxRounds;
     }
-    
+
     /**
-     * Return all settlement Actions that are legal under SETUP rules:
-     * - node not occupied
-     * - distance rule enforced (no adjacent buildings)
-     * This deliberately ignores road connectivity and piece/resource counts.
+     * Return all settlement actions that are legal under setup rules.
      */
     private List<Action> getValidSetupSettlements(StaticBoard staticBoard, PlayerID pid) {
         List<Action> actions = new ArrayList<>();
 
         for (Node n : staticBoard.getNodes()) {
-            // cannot build on occupied node
-            if (n.getBuilding() != null) continue;
+            if (n.getBuilding() != null) {
+                continue;
+            }
 
-            // distance rule: no adjacent settlements/cities
             boolean adjacentHasBuilding = false;
             for (Node neighbour : n.getNeighbours()) {
                 if (neighbour.getBuilding() != null) {
@@ -63,7 +60,9 @@ public class Game {
                     break;
                 }
             }
-            if (adjacentHasBuilding) continue;
+            if (adjacentHasBuilding) {
+                continue;
+            }
 
             // This is allowed in setup
             actions.add(new BuildAction(ActionTypes.BUILD, n, PieceTypes.SETTLEMENT));
@@ -72,12 +71,8 @@ public class Game {
         return actions;
     }
 
-
     public void run() {
-        //SETUP PHASE
         doInitialPlacements();
-
-        //In case the board starts with a longest-road holder (usually null), sync once.
         updateLongestRoadAward();
 
         while (roundNumber < maxRounds && getWinner() == null) {
@@ -85,11 +80,12 @@ public class Game {
 
             //Turn phase: each player acts once
             for (Player p : players) {
-                if (getWinner() != null) break;
+                if (getWinner() != null) {
+                    break;
+                }
                 takeTurn(p);
             }
 
-            //End-of-round VP print
             printVictoryPoints();
         }
     }
@@ -101,12 +97,10 @@ public class Game {
     private void doInitialPlacements() {
         StaticBoard staticBoard = (StaticBoard) board;
 
-        // Forward order
         for (Player p : players) {
             doOneSetupTurn(p, staticBoard);
         }
 
-        // Reverse order
         for (int i = players.length - 1; i >= 0; i--) {
             doOneSetupTurn(players[i], staticBoard);
         }
@@ -117,26 +111,25 @@ public class Game {
 
         Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
 
-        //Settlement
-        Action settlement = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.SETTLEMENT, null);
+        BuildAction settlement = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.SETTLEMENT, null);
         Piece sPiece = player.consumeFreePiece(PieceTypes.SETTLEMENT);
 
-        board.placePiece((Building)sPiece, pid, settlement.getNodes()[0]);
+        board.placePiece((Building) sPiece, pid, settlement.getNodes()[0]);
         player.addVP(1);
 
         printAction(pid, "Setup: " + describeAction(PieceTypes.SETTLEMENT, settlement.getNodes()));
 
-        //Road
-        Action road = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.ROAD, settlement.getNodes()[0]);
+        BuildAction road = chooseSetupAction(player, staticBoard, piecesOwned, PieceTypes.ROAD, settlement.getNodes()[0]);
         Piece rPiece = player.consumeFreePiece(PieceTypes.ROAD);
 
-        board.placePiece((Road)rPiece, pid, road.getNodes()[0], road.getNodes()[1]);
+        board.placePiece((Road) rPiece, pid, road.getNodes()[0], road.getNodes()[1]);
         updateLongestRoadAward();
 
         printAction(pid, "Setup: " + describeAction(PieceTypes.ROAD, road.getNodes()));
     }
 
-    private Action chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<PieceTypes> piecesOwned, PieceTypes type, Node sourceNode) {
+    private BuildAction chooseSetupAction(Player player, StaticBoard staticBoard, Catalog<PieceTypes> piecesOwned,
+                                          PieceTypes type, Node sourceNode) {
         PlayerID pid = player.getPlayerID();
 
         List<Action> valid;
@@ -155,22 +148,25 @@ public class Game {
 
         List<Action> filtered = new ArrayList<>();
         for (Action a : valid) {
-            if (a.getPieceType() == type) {
-                filtered.add(a);
+            if (a instanceof BuildAction) {
+                BuildAction build = (BuildAction) a;
+                if (build.getPieceType() == type) {
+                    filtered.add(build);
+                }
             }
         }
 
-        Action[] options = filtered.toArray(new Action[0]);
-        Action chosen = player.chooseAction(options);
-        
+        Action chosen = player.chooseAction(filtered.toArray(new Action[0]));
+
         if (chosen == null) {
-            throw new IllegalStateException("Player " + pid + " chose no action during setup for type " + type
-                    + ". availableOptions=" + filtered.size());
+            throw new IllegalStateException(
+                "Player " + pid + " chose no action during setup for type " + type
+                + ". availableOptions=" + filtered.size()
+            );
         }
 
-        return chosen;
+        return (BuildAction) chosen;
     }
-
 
     // ===============================
     // Normal Turn Logic
@@ -180,6 +176,7 @@ public class Game {
         PlayerID pid = player.getPlayerID();
 
         boolean turnOver = false;
+        StaticBoard staticBoard = (StaticBoard) board;
 
         while (!turnOver && getWinner() == null) {
 
@@ -257,18 +254,24 @@ public class Game {
     }
 
     private void updateLongestRoadAward() {
-        PlayerID newHolder = board.checkLongestRoad(); //null if nobody qualifies (>5)
+        PlayerID newHolder = board.checkLongestRoad();
 
-        if (newHolder == longestRoadHolder) return;
+        if (newHolder == longestRoadHolder) {
+            return;
+        }
 
         if (longestRoadHolder != null) {
             Player oldP = getPlayer(longestRoadHolder);
-            if (oldP != null) oldP.removeVP(LONGEST_ROAD_BONUS);
+            if (oldP != null) {
+                oldP.removeVP(LONGEST_ROAD_BONUS);
+            }
         }
 
         if (newHolder != null) {
             Player newP = getPlayer(newHolder);
-            if (newP != null) newP.addVP(LONGEST_ROAD_BONUS);
+            if (newP != null) {
+                newP.addVP(LONGEST_ROAD_BONUS);
+            }
         }
 
         longestRoadHolder = newHolder;
@@ -277,26 +280,27 @@ public class Game {
 
     private Player getPlayer(PlayerID id) {
         for (Player p : players) {
-            if (p.getPlayerID() == id) return p;
+            if (p.getPlayerID() == id) {
+                return p;
+            }
         }
         return null;
     }
 
     private Player getWinner() {
         for (Player p : players) {
-            if (p.getVP() >= WIN_VP) return p;
+            if (p.getVP() >= WIN_VP) {
+                return p;
+            }
         }
         return null;
     }
 
-    //Printing helpers
     private void printAction(PlayerID pid, String actionText) {
-        // Required format: [RoundNumber] / [PlayerID]: [Action]
         System.out.println("[" + roundNumber + "] / [" + pid + "]: " + actionText);
     }
 
     private void printVictoryPoints() {
-        //Must print current VPs at end of each round
         StringBuilder sb = new StringBuilder();
         sb.append("VPs end of round ").append(roundNumber).append(": ");
         for (Player p : players) {
@@ -306,7 +310,9 @@ public class Game {
     }
 
     private String describeAction(PieceTypes type, Node[] nodes) {
-        if (nodes == null) return "Placed " + type;
+        if (nodes == null) {
+            return "Placed " + type;
+        }
 
         if (type == PieceTypes.ROAD && nodes.length >= 2) {
             return "Built ROAD between " + nodeLabel(nodes[0]) + " and " + nodeLabel(nodes[1]);
