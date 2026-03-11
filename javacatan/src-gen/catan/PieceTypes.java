@@ -21,4 +21,9 @@ public enum PieceTypes {
 	 * 
 	 */
 	CITY;
+
+	/**
+	 * 
+	 */
+	public Catalog catalog;
 }

@@ -8,15 +8,23 @@ package catan;
 /**
  * 
  */
-public class Action {
+public class StateMachine {
 	/**
 	 * 
 	 */
-	public ActionTypes enumeration1;
+	public GameStates gamestates;
 
 	/**
 	 * 
+	 * @param state 
 	 */
-	public void getActionType() {
+	public void getCurrentState(GameStates state) {
+	}
+
+	/**
+	 * 
+	 * @param a 
+	 */
+	public void read(Action a) {
 	}
 }

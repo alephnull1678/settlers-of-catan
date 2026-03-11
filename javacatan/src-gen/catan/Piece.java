@@ -17,6 +17,10 @@ public interface Piece {
 	 * 
 	 */
 	public PieceTypes piecetypes;
+	/**
+	 * 
+	 */
+	public PlayerID playerid;
 
 	/**
 	 * 

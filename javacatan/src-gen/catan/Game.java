@@ -28,7 +28,11 @@ public class Game {
 	/**
 	 * 
 	 */
-	public State state;
+	public StateMachine state;
+	/**
+	 * 
+	 */
+	public Parser parser;
 
 	/**
 	 * 
