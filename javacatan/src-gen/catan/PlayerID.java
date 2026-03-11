@@ -20,9 +20,5 @@ public enum PlayerID {
 	/**
 	 * 
 	 */
-	GREEN,
-	/**
-	 * 
-	 */
 	YELLOW;
 }

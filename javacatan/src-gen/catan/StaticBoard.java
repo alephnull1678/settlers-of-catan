@@ -37,4 +37,10 @@ public interface StaticBoard {
 	 * @return 
 	 */
 	public boolean canPlace(Piece piece, Node nodeStart, Node nodeEnd);
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Tile getRobberTile();
 }

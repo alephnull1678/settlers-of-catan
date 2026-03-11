@@ -33,10 +33,17 @@ public class Demonstrator {
 
         //Create players
         Player[] players = new Player[] {
+<<<<<<< Updated upstream
                 new HumanPlayer(PlayerID.BLUE, scanner),
                 new AgentPlayer(PlayerID.RED),
                 new AgentPlayer(PlayerID.YELLOW),
                 new AgentPlayer(PlayerID.GREEN)
+=======
+                new Player(PlayerID.BLUE),
+                new Player(PlayerID.RED),
+                new Player(PlayerID.WHITE),
+                new Player(PlayerID.ORANGE)
+>>>>>>> Stashed changes
         };
 
         //Run the game. The game will end either when a Player reaches 10 victory points or the game reaches the max number of rounds as assigned by maxRounds.
@@ -50,7 +57,12 @@ public class Demonstrator {
         //they do not receive the necessary resources to place any pieces down. In this case, rounds may often reach the maxRounds threshold without a winner. This is to be expected.
         
         int maxRounds = 8192;
+<<<<<<< Updated upstream
         Game game = new Game(players, board, validator, dice, stateMachine, maxRounds);
+=======
+        Game game = new Game(players, board, validator, dice, maxRounds);
+        game.addVisualizer(new GamePythonVisualizer(board));
+>>>>>>> Stashed changes
         game.run();
 
         scanner.close();

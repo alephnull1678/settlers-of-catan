@@ -5,5 +5,5 @@
 package catansim;
 
 public enum PlayerID {
-	BLUE, RED, YELLOW, GREEN;
+	BLUE, RED, WHITE, ORANGE;
 }

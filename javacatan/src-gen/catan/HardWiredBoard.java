@@ -12,6 +12,11 @@ public class HardWiredBoard implements Board {
 	/**
 	 * 
 	 */
+	private Tile robberTile;
+
+	/**
+	 * 
+	 */
 	private void createBoardHardWired() {
 	}
 }

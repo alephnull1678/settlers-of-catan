@@ -5,6 +5,7 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_uqZv4ASEEfGlO7CguFpanQ" name="HardWiredBoard">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_W1FQ0Bz_EfGAgPgAP_v3zg" name="robberTile" visibility="private" type="_zIGrYAViEfG4lNxHNfwBoQ"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_To4wwAY5EfGfDvnfcKXpVw" name="Implements" client="_uqZv4ASEEfGlO7CguFpanQ" supplier="__uMj8AY4EfGfDvnfcKXpVw" contract="__uMj8AY4EfGfDvnfcKXpVw"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ElC84BprEfGtXtTo0_BenA" name="createBoardHardWired" visibility="private"/>
     </packagedElement>
@@ -165,6 +166,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_zOZsQBz-EfGAgPgAP_v3zg" name="getRobberTile">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_3bO5EBz-EfGAgPgAP_v3zg" name="robberTile" type="_zIGrYAViEfG4lNxHNfwBoQ" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_DqI6UAVjEfG4lNxHNfwBoQ" name="Piece">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_1gB64AX4EfGRf-tqN1BwGw" name="ownerPlayerID" visibility="private" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>
@@ -228,8 +232,8 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_s-W0AAVkEfG4lNxHNfwBoQ" name="PlayerID">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4kXucAYgEfGKxpR3uqh_6Q" name="BLUE"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_809Z4AYgEfGKxpR3uqh_6Q" name="RED"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9pw68AYgEfGKxpR3uqh_6Q" name="GREEN"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-VoicAYgEfGKxpR3uqh_6Q" name="YELLOW"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-VoicAYgEfGKxpR3uqh_6Q" name="WHITE"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ydiEcB0IEfGAgPgAP_v3zg" name="ORANGE"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_te58UAVkEfG4lNxHNfwBoQ" name="Resource">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ARnG8AYhEfGKxpR3uqh_6Q" name="Wood"/>
@@ -329,7 +333,6 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_THy3sAX-EfGRf-tqN1BwGw" name="LiteralInteger1" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_THzewAX-EfGRf-tqN1BwGw" name="LiteralUnlimitedNatural1" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_lYCQ0Bp2EfGhR_rpMFG30w" name="robberTile" visibility="private" type="_zIGrYAViEfG4lNxHNfwBoQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ENA4oAY5EfGfDvnfcKXpVw" name="createNodes">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_GJz8gAY5EfGfDvnfcKXpVw" name="nodes" type="_xL-88AViEfG4lNxHNfwBoQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HcDngAY5EfGfDvnfcKXpVw" name="LiteralInteger1" value="1"/>

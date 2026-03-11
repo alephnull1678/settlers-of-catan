@@ -11,6 +11,8 @@ package catansim;
 public interface StaticBoard {
 	
 	
+	public Tile getRobberTile();
+	
 	/**
 	 * 
 	 * @return 

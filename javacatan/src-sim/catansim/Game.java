@@ -13,7 +13,11 @@ public class Game {
     private final Board board;
     private final Validator validator;
     private final Dice dice;
+<<<<<<< Updated upstream
     private final StateMachine stateMachine;
+=======
+    private Visualizer visualizer;
+>>>>>>> Stashed changes
 
     private final int maxRounds;
     private int roundNumber = 0;
@@ -41,7 +45,22 @@ public class Game {
         }
         this.maxRounds = maxRounds;
     }
+<<<<<<< Updated upstream
 
+=======
+    
+    public void addVisualizer(Visualizer visualizer) {
+    	this.visualizer = visualizer;
+    }
+    
+    private void notifyVisualizer() {
+    	if (visualizer != null) {
+    		visualizer.onStateChange();
+    	}
+    }
+    
+    
+>>>>>>> Stashed changes
     /**
      * Return all settlement actions that are legal under setup rules.
      */
@@ -85,13 +104,19 @@ public class Game {
                     break;
                 }
                 takeTurn(p);
+                notifyVisualizer();
             }
 
             printVictoryPoints();
+<<<<<<< Updated upstream
 
             //Reset FSM back to roll phase for the next round
             stateMachine.goRoll();
+=======
+>>>>>>> Stashed changes
         }
+        
+        notifyVisualizer();
     }
 
     // ===============================

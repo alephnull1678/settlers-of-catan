@@ -17,10 +17,6 @@ public interface Board extends StaticBoard {
 	 * 
 	 */
 	public Tile[] tile;
-	/**
-	 * 
-	 */
-	public Tile robberTile;
 
 	/**
 	 * 
