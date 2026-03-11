@@ -92,4 +92,22 @@ public class BuildAction extends Action {
     public int hashCode() {
         return Objects.hash(super.hashCode(), pieceType, Arrays.hashCode(nodes));
     }
+    
+    @Override
+    public String toString() {
+
+        if (pieceType == PieceTypes.SETTLEMENT) {
+            return "Build settlement " + nodes[0].getNodeID();
+        }
+
+        if (pieceType == PieceTypes.CITY) {
+            return "Build city " + nodes[0].getNodeID();
+        }
+
+        if (pieceType == PieceTypes.ROAD && nodes.length >= 2) {
+            return "Build road " + nodes[0].getNodeID() + ", " + nodes[1].getNodeID();
+        }
+
+        return "Build " + pieceType;
+    }
 }

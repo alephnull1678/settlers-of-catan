@@ -37,4 +37,19 @@ public class Action {
     public int hashCode() {
         return Objects.hash(actionType);
     }
+    
+    @Override
+    public String toString() {
+
+        switch (actionType) {
+            case ROLL:
+                return "Roll";
+            case GO:
+                return "Go";
+            case LIST:
+                return "List";
+            default:
+                return actionType.toString();
+        }
+    }
 }
