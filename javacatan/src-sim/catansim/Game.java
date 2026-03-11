@@ -176,14 +176,14 @@ public class Game {
         PlayerID pid = player.getPlayerID();
 
         boolean turnOver = false;
+        //Cast ONLY for validator input
         StaticBoard staticBoard = (StaticBoard) board;
 
         while (!turnOver && getWinner() == null) {
 
             GameStates state = stateMachine.getCurrentState();
 
-            //Cast ONLY for validator input
-            StaticBoard staticBoard = (StaticBoard) board;
+            
 
             Catalog<Resource> resourcesOwned = player.getResourceCatalog();
             Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
@@ -220,8 +220,10 @@ public class Game {
                     break;
 
                 case BUILD:
-                    PieceTypes type = chosen.getPieceType();
-                    Node[] nodes = chosen.getNodes();
+                    BuildAction build = (BuildAction) chosen;
+
+                    PieceTypes type = build.getPieceType();
+                    Node[] nodes = build.getNodes();
 
                     Piece piece = player.consumePiece(type);
                     if (piece == null) {

@@ -9,7 +9,8 @@ public class Validator {
             StaticBoard board,
             PlayerID playerID,
             Catalog<Resource> resourcesOwned,
-            Catalog<PieceTypes> piecesOwned
+            Catalog<PieceTypes> piecesOwned,
+            GameStates state
     ) {
         if (board == null) {
             throw new IllegalArgumentException("board cannot be null");
@@ -20,27 +21,49 @@ public class Validator {
         if (piecesOwned == null) {
             throw new IllegalArgumentException("piecesOwned cannot be null");
         }
+        if (state == null) {
+            throw new IllegalArgumentException("state cannot be null");
+        }
 
         List<Action> actions = new ArrayList<>();
 
-        for (PieceTypes type : PieceTypes.values()) {
+        //Send in a different set of actions depending on the state
+        switch (state) {
 
-            if (resourcesOwned != null && !canAfford(type, resourcesOwned)) {
-                continue;
-            }
+            case WAITING_FOR_ROLL:
+                actions.add(new Action(ActionTypes.ROLL));
+                return actions;
 
-            if (piecesOwned.getCount(type) <= 0) {
-                continue;
-            }
+            case NEW_TURN:
+                actions.add(new Action(ActionTypes.GO));
+                return actions;
 
-            if (type == PieceTypes.ROAD) {
-                addValidRoadActions(board, playerID, actions);
-            } else {
-                addValidBuildingActions(board, playerID, type, actions);
-            }
+            case PLAYER_ACTIONS:
+                actions.add(new Action(ActionTypes.LIST));
+                actions.add(new Action(ActionTypes.GO));
+
+                for (PieceTypes type : PieceTypes.values()) {
+
+                    if (resourcesOwned != null && !canAfford(type, resourcesOwned)) {
+                        continue;
+                    }
+
+                    if (piecesOwned.getCount(type) <= 0) {
+                        continue;
+                    }
+
+                    if (type == PieceTypes.ROAD) {
+                        addValidRoadActions(board, playerID, actions);
+                    } else {
+                        addValidBuildingActions(board, playerID, type, actions);
+                    }
+                }
+
+                return actions;
+
+            default:
+                return actions;
         }
-
-        return actions;
     }
 
     private boolean canAfford(PieceTypes type, Catalog<Resource> resourcesOwned) {
