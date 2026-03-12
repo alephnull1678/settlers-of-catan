@@ -28,15 +28,20 @@ jobs:
           OUT_DIR="javacatan/bin"
           mkdir -p "$OUT_DIR"
 
-          FILES=$(find "$SRC_DIR" -name "*.java" \
-            ! -path "*/catansim.Task1/*")
+          find "$SRC_DIR" -name "*.java" \
+            ! -path "*/catansim/Task1/*" \
+            ! -path "*/catansim/Task3UnitTests/*" \
+            > sources.txt
 
-          if [ -z "$FILES" ]; then
-            echo "No .java files found under $SRC_DIR"
+          echo "Compiling these files:"
+          cat sources.txt
+
+          if [ ! -s sources.txt ]; then
+            echo "No .java files found under $SRC_DIR after exclusions"
             exit 1
           fi
 
-          javac -encoding UTF-8 -d "$OUT_DIR" $FILES
+          javac -encoding UTF-8 -d "$OUT_DIR" @sources.txt
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
