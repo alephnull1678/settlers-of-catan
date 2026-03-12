@@ -1,10 +1,16 @@
 package catansim;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /************************************************************/
 /**
  * Hard-wired implementation of the default Catan board.
  */
 public class HardWiredBoard implements Board {
+	
+	final private Random random = new Random();
 	
 	private Tile robberTile;
 	
@@ -1023,7 +1029,7 @@ public class HardWiredBoard implements Board {
 			if (curNode.getBuilding() != null) {
 				if (curNode.getBuilding().getOwnerPlayerID() == playerID) {
 					for (Tile tile : curNode.getTiles()) {
-						if (tile.getDiceNum() == diceNum) {
+						if (tile.getDiceNum() == diceNum && tile != robberTile) {
 							buildingCollection.add(tile.getResource(), curNode.getBuilding().getResourceAmount());
 						}
 					}
@@ -1059,5 +1065,37 @@ public class HardWiredBoard implements Board {
 	@Override
 	public Tile getRobberTile() {
 		return robberTile;
+	}
+	
+	public PlayerID moveRobber(PlayerID player) {
+	    // Pick a new tile different from the current robber tile
+	    Tile moveTile = tiles[random.nextInt(tiles.length)];
+	    while (moveTile == robberTile) {
+	    	moveTile = tiles[random.nextInt(tiles.length)];
+	    }
+	    
+	    robberTile = moveTile;
+
+	    // Collect all nodes adjacent to the new robber tile
+	    List<Node> robberTileNodes = new ArrayList<>();
+	    for (Node curNode : nodes) {
+	        for (Tile nodeTile : curNode.getTiles()) {
+	            if (nodeTile == robberTile) {
+	                robberTileNodes.add(curNode);
+	            }
+	        }
+	    }
+
+	    // Try to steal from a random opponent
+	    while (!robberTileNodes.isEmpty()) {
+	        Node randomStolenNode = robberTileNodes.remove(random.nextInt(robberTileNodes.size()));
+	        if (randomStolenNode.getBuilding() != null &&
+	            randomStolenNode.getBuilding().getOwnerPlayerID() != player) {
+	            return randomStolenNode.getBuilding().getOwnerPlayerID();
+	        }
+	    }
+
+	    // No opponent to steal from
+	    return null;
 	}
 }

@@ -267,6 +267,33 @@ public class Game {
                     if (diceNum != 7) {
                         Catalog<Resource> gained = board.collect(diceNum, pid);
                         player.dealResources(gained.snapshot());
+                    } else {
+                    	// ROBBER TRIGGERED
+                    	PlayerID stolenPlayerID = board.moveRobber(player.getPlayerID());
+                    	System.out.println("ROBBER HAS BEEN MOVED TO " + board.getRobberTile().getResource().toString() + " " + board.getRobberTile().getDiceNum() + ".");
+                    	
+                    	// STEAL
+                    	if (stolenPlayerID != null) {
+                    		for (Player stolenPlayer : players) {
+                        		if (stolenPlayerID == stolenPlayer.getPlayerID()) {
+                        			Catalog<Resource> stolenResourceCatalog = new HashMapCatalog<Resource>();
+                        			
+                        			Resource stolenResource = stolenPlayer.stealRandom();
+                        			
+                        			if (stolenResource != null) {
+                        				stolenResourceCatalog.add(stolenResource, 1);
+                        				player.dealResources(stolenResourceCatalog);
+                            			System.out.println("ROBBER HAS STOLEN FROM " + stolenPlayerID.toString() +".");
+                        			} else {
+                        				System.out.println("ROBBER DID NOT STEAL!");
+                        			}
+                        			
+                        			break;
+                        		}
+                        	}
+                    	} else {
+                    		System.out.println("ROBBER DID NOT STEAL!");
+                    	}
                     }
                     break;
 

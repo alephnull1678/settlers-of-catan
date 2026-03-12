@@ -1,5 +1,8 @@
 package catansim;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /************************************************************/
@@ -14,6 +17,7 @@ public abstract class Player {
     private final PlayerHand playerHand;
 
     private int vp = 0;
+    
 
     public Player(PlayerID playerID) {
         if (playerID == null) {
@@ -28,6 +32,22 @@ public abstract class Player {
     // Getters
     public PlayerID getPlayerID() {
         return playerID;
+    }
+    
+    public Resource stealRandom() {
+        List<Resource> allResources = new ArrayList<>(Arrays.asList(Resource.values()));
+
+        Random rand = new Random();
+
+        while (!allResources.isEmpty()) {
+            Resource removedResource = allResources.remove(rand.nextInt(allResources.size()));
+
+            if (playerHand.remove(removedResource, 1)) {
+                return removedResource;
+            }
+        }
+
+        return null;
     }
     
     

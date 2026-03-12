@@ -10,6 +10,8 @@ package catansim;
  */
 public interface Board extends StaticBoard {
 	
+	public PlayerID moveRobber(PlayerID player);
+	
 	/**
 	 * @param road The road piece being placed.
 	 * @param playerID The player who owns the road.
