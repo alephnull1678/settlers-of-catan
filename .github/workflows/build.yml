@@ -28,7 +28,9 @@ jobs:
           OUT_DIR="javacatan/bin"
           mkdir -p "$OUT_DIR"
 
-          FILES=$(find "$SRC_DIR" -name "*.java")
+          FILES=$(find "$SRC_DIR" -name "*.java" \
+            ! -path "*/catansim.Task1/*")
+
           if [ -z "$FILES" ]; then
             echo "No .java files found under $SRC_DIR"
             exit 1
