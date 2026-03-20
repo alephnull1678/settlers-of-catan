@@ -169,6 +169,15 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_zOZsQBz-EfGAgPgAP_v3zg" name="getRobberTile">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_3bO5EBz-EfGAgPgAP_v3zg" name="robberTile" type="_zIGrYAViEfG4lNxHNfwBoQ" direction="return"/>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_4d1f0CP0EfGRpq_Ibt4xpQ" name="getLongestRoadLength" concurrency="concurrent">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7ZRWMCP0EfGRpq_Ibt4xpQ" name="length" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_A6VyECP1EfGRpq_Ibt4xpQ" name="canConnectRoads">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_HJQ1oCP5EfGRpq_Ibt4xpQ" name="action" type="_oY8IEAVkEfG4lNxHNfwBoQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fo5y8CP1EfGRpq_Ibt4xpQ" name="playerID" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_DqI6UAVjEfG4lNxHNfwBoQ" name="Piece">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_1gB64AX4EfGRf-tqN1BwGw" name="ownerPlayerID" visibility="private" type="_s-W0AAVkEfG4lNxHNfwBoQ"/>

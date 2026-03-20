@@ -43,4 +43,17 @@ public interface StaticBoard {
 	 * @return 
 	 */
 	public Tile getRobberTile();
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public int getLongestRoadLength();
+
+	/**
+	 * 
+	 * @param action 
+	 * @param playerID 
+	 */
+	public void canConnectRoads(Action action, PlayerID playerID);
 }
