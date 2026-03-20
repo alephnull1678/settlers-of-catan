@@ -9,4 +9,26 @@ package catan;
  * 
  */
 public class GameOriginator {
+	/**
+	 * 
+	 */
+	public Board board;
+	/**
+	 * 
+	 */
+	public Player[] player;
+
+	/**
+	 * 
+	 * @param memento 
+	 */
+	public void restore(GameMemento memento) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public GameMemento Operation1() {
+	}
 }

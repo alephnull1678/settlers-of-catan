@@ -607,6 +607,10 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dU_DYCQZEfGUO7J8pVIQbQ" name="GameCaretaker">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_-Csk0CQbEfGUO7J8pVIQbQ" name="gamememento" type="_lvXj0CQbEfGUO7J8pVIQbQ" aggregation="shared" association="_-Cr9wCQbEfGUO7J8pVIQbQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_N1PZciR9EfGU0vC07brctQ" name="gameoriginator" type="_W30j8CQfEfGUO7J8pVIQbQ" association="_N1OyYCR9EfGU0vC07brctQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v15bYCR9EfGU0vC07brctQ" name="LiteralInteger1" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v16CcCR9EfGU0vC07brctQ" name="LiteralUnlimitedNatural1" value="1"/>
+      </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Ixqo8CQcEfGUO7J8pVIQbQ" client="_dU_DYCQZEfGUO7J8pVIQbQ" supplier="_FtTgECQcEfGUO7J8pVIQbQ" contract="_FtTgECQcEfGUO7J8pVIQbQ">
         <name xsi:nil="true"/>
       </interfaceRealization>
@@ -638,6 +642,12 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KqkMAASmEfGBxYf1fTqBJA" name="LiteralInteger1" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KqkMAQSmEfGBxYf1fTqBJA" name="LiteralUnlimitedNatural1" value="4"/>
       </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_TDAe0CR9EfGU0vC07brctQ" name="restore">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_VT0q4CR9EfGU0vC07brctQ" name="memento" type="_lvXj0CQbEfGUO7J8pVIQbQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_mVA7ACR9EfGU0vC07brctQ" name="Operation1">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zLT4ACR9EfGU0vC07brctQ" name="memento" type="_lvXj0CQbEfGUO7J8pVIQbQ" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_krUwECQfEfGUO7J8pVIQbQ" memberEnd="_krVXISQfEfGUO7J8pVIQbQ _krVXIiQfEfGUO7J8pVIQbQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_krUwESQfEfGUO7J8pVIQbQ" source="org.eclipse.papyrus">
@@ -675,6 +685,13 @@
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_4xq10CR4EfGU0vC07brctQ" client="_jyftMCR4EfGU0vC07brctQ" supplier="_QNCQ4CR1EfGU0vC07brctQ" contract="_QNCQ4CR1EfGU0vC07brctQ">
         <name xsi:nil="true"/>
       </interfaceRealization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N1OyYCR9EfGU0vC07brctQ" memberEnd="_N1PZciR9EfGU0vC07brctQ _N1PZcyR9EfGU0vC07brctQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_N1PZcCR9EfGU0vC07brctQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N1PZcSR9EfGU0vC07brctQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_N1PZcyR9EfGU0vC07brctQ" name="gamecaretaker" type="_dU_DYCQZEfGUO7J8pVIQbQ" association="_N1OyYCR9EfGU0vC07brctQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FKB-oASFEfGlO7CguFpanQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FKFB8ASFEfGlO7CguFpanQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
