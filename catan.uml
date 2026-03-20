@@ -587,32 +587,52 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_MtWXACP-EfGPFr6AfOaDkA" name="Command">
       <nestedClassifier xmi:type="uml:Interface" xmi:id="_T07dsCP-EfGPFr6AfOaDkA" name="Interface1"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_7gSYoCP-EfGPFr6AfOaDkA" name="execute"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_-hv-gCP-EfGPFr6AfOaDkA" name="undo"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_lcmpkCP_EfGPFr6AfOaDkA" name="BuildRoadCommand"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_XZuIMCQAEfGPFr6AfOaDkA" name="BuildSettlementCommand"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_aOk1cCQAEfGPFr6AfOaDkA" name="BuyDevCardCommand"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_rxocgCQAEfGPFr6AfOaDkA" name="CommandManager">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_sV9cICQBEfGPFr6AfOaDkA" name="undoStack" visibility="private"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="__7AwICQBEfGPFr6AfOaDkA" name="redoStack" visibility="private"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_xDxrkCQAEfGPFr6AfOaDkA" name="executeCommand">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_HCUmgCQBEfGPFr6AfOaDkA" name="c" type="_MtWXACP-EfGPFr6AfOaDkA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bsE4wCQBEfGPFr6AfOaDkA" name="LiteralInteger1" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bsGG4CQBEfGPFr6AfOaDkA" name="LiteralUnlimitedNatural1" value="1"/>
-        </ownedParameter>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hFzncCQKEfGPFr6AfOaDkA" name="command" type="_MtWXACP-EfGPFr6AfOaDkA" aggregation="composite" association="_hFxyQCQKEfGPFr6AfOaDkA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_z6TMwCQAEfGPFr6AfOaDkA" name="getCommand">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_J-obECQLEfGPFr6AfOaDkA" name="c" type="_MtWXACP-EfGPFr6AfOaDkA" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_z6TMwCQAEfGPFr6AfOaDkA" name="undo"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_g77BwCQBEfGPFr6AfOaDkA" name="redo"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_g77BwCQBEfGPFr6AfOaDkA" name="registCommand">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_EuVmICQLEfGPFr6AfOaDkA" name="c" type="_MtWXACP-EfGPFr6AfOaDkA"/>
+      </ownedOperation>
       <nestedClassifier xmi:type="uml:DataType" xmi:id="_m3PJoCQBEfGPFr6AfOaDkA" name="DataType1"/>
       <nestedClassifier xmi:type="uml:DataType" xmi:id="_nNXKoCQBEfGPFr6AfOaDkA" name="DataType2"/>
       <nestedClassifier xmi:type="uml:PrimitiveType" xmi:id="_ou2ykCQBEfGPFr6AfOaDkA" name="PrimitiveType1"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_aXwUsCQCEfGPFr6AfOaDkA" name="CommandFactory">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_fNYm4CQCEfGPFr6AfOaDkA" name="fromAction">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_hjYN4CQCEfGPFr6AfOaDkA" name="a" type="_oY8IEAVkEfG4lNxHNfwBoQ"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kEEB8CQCEfGPFr6AfOaDkA" name="g" type="_-eS44ASkEfGBxYf1fTqBJA"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uWVtkCQDEfGPFr6AfOaDkA" name="" type="_MtWXACP-EfGPFr6AfOaDkA" direction="return"/>
-      </ownedOperation>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hFxyQCQKEfGPFr6AfOaDkA" memberEnd="_hFzncCQKEfGPFr6AfOaDkA _hF0OgCQKEfGPFr6AfOaDkA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hFzAYCQKEfGPFr6AfOaDkA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hFzAYSQKEfGPFr6AfOaDkA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_hF0OgCQKEfGPFr6AfOaDkA" name="commandmanager" type="_rxocgCQAEfGPFr6AfOaDkA" association="_hFxyQCQKEfGPFr6AfOaDkA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yDgesCQKEfGPFr6AfOaDkA" name="Invoker">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Q3eiMyQLEfGPFr6AfOaDkA" name="command" type="_MtWXACP-EfGPFr6AfOaDkA" association="_Q3eiMCQLEfGPFr6AfOaDkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Td9cQyQLEfGPFr6AfOaDkA" name="commandmanager" type="_rxocgCQAEfGPFr6AfOaDkA" association="_Td9cQCQLEfGPFr6AfOaDkA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1rJTwCQKEfGPFr6AfOaDkA" name="execute"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Q3eiMCQLEfGPFr6AfOaDkA" memberEnd="_Q3eiMyQLEfGPFr6AfOaDkA _Q3fJQCQLEfGPFr6AfOaDkA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Q3eiMSQLEfGPFr6AfOaDkA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Q3eiMiQLEfGPFr6AfOaDkA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Q3fJQCQLEfGPFr6AfOaDkA" name="invoker" type="_yDgesCQKEfGPFr6AfOaDkA" association="_Q3eiMCQLEfGPFr6AfOaDkA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Td9cQCQLEfGPFr6AfOaDkA" memberEnd="_Td9cQyQLEfGPFr6AfOaDkA _Td-qYCQLEfGPFr6AfOaDkA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Td9cQSQLEfGPFr6AfOaDkA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Td9cQiQLEfGPFr6AfOaDkA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Td-qYCQLEfGPFr6AfOaDkA" name="invoker" type="_yDgesCQKEfGPFr6AfOaDkA" association="_Td9cQCQLEfGPFr6AfOaDkA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tBcdkCQLEfGPFr6AfOaDkA" name="ActionCommand">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_mun_MCQMEfGPFr6AfOaDkA" name="action" type="_oY8IEAVkEfG4lNxHNfwBoQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_CD6KwCQMEfGPFr6AfOaDkA" client="_tBcdkCQLEfGPFr6AfOaDkA" supplier="_MtWXACP-EfGPFr6AfOaDkA" contract="_MtWXACP-EfGPFr6AfOaDkA">
+        <name xsi:nil="true"/>
+      </interfaceRealization>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FKB-oASFEfGlO7CguFpanQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FKFB8ASFEfGlO7CguFpanQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
