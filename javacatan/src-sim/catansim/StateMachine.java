@@ -12,6 +12,13 @@ public class StateMachine {
         return currentState;
     }
 
+    public void setState(GameStates state) {
+        if (state == null) {
+            throw new IllegalArgumentException("state cannot be null");
+        }
+        currentState = state;
+    }
+
     // Reads action, returns next state and advances through the FSM
     public GameStates read(Action a) {
         if (a == null) {
@@ -27,11 +34,17 @@ public class StateMachine {
                     currentState = GameStates.SETUP_SETTLEMENT;
                     return currentState;
                 }
+                if (type == ActionTypes.UNDO || type == ActionTypes.REDO) {
+                    return currentState;
+                }
                 return null;
 
             case SETUP_SETTLEMENT:
                 if (type == ActionTypes.BUILD) {
                     currentState = GameStates.SETUP_ROAD;
+                    return currentState;
+                }
+                if (type == ActionTypes.UNDO || type == ActionTypes.REDO) {
                     return currentState;
                 }
                 return null;
@@ -41,6 +54,9 @@ public class StateMachine {
                     currentState = GameStates.SETUP_WAIT;
                     return currentState;
                 }
+                if (type == ActionTypes.UNDO || type == ActionTypes.REDO) {
+                    return currentState;
+                }
                 return null;
 
             case NEW_TURN:
@@ -48,11 +64,17 @@ public class StateMachine {
                     currentState = GameStates.WAITING_FOR_ROLL;
                     return currentState;
                 }
+                if (type == ActionTypes.UNDO || type == ActionTypes.REDO) {
+                    return currentState;
+                }
                 return null;
 
             case WAITING_FOR_ROLL:
                 if (type == ActionTypes.ROLL) {
                     currentState = GameStates.PLAYER_ACTIONS;
+                    return currentState;
+                }
+                if (type == ActionTypes.UNDO || type == ActionTypes.REDO) {
                     return currentState;
                 }
                 return null;
@@ -63,6 +85,9 @@ public class StateMachine {
                 }
                 if (type == ActionTypes.GO) {
                     currentState = GameStates.NEW_TURN;
+                    return currentState;
+                }
+                if (type == ActionTypes.UNDO || type == ActionTypes.REDO) {
                     return currentState;
                 }
                 return null;

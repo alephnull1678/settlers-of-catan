@@ -4,5 +4,7 @@ public enum ActionTypes {
     BUILD,
     ROLL,
     LIST,
-    GO
+    GO,
+    UNDO,
+    REDO
 }
