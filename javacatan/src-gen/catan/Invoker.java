@@ -8,30 +8,15 @@ package catan;
 /**
  * 
  */
-public class StateMachine {
+public class Invoker {
 	/**
 	 * 
 	 */
-	public GameStates gamestates;
+	public CommandManager commandmanager;
 
 	/**
 	 * 
-	 * @param state 
 	 */
-	public void getCurrentState(GameStates state) {
-	}
-
-	/**
-	 * 
-	 * @param a 
-	 */
-	public void read(Action a) {
-	}
-
-	/**
-	 * 
-	 * @param a 
-	 */
-	public void setState(GameStates a) {
+	public void execute() {
 	}
 }

@@ -12,15 +12,7 @@ public class Game {
 	/**
 	 * 
 	 */
-	public Board board;
-	/**
-	 * 
-	 */
 	public Validator validator;
-	/**
-	 * 
-	 */
-	public Player[] player;
 	/**
 	 * 
 	 */
@@ -33,6 +25,14 @@ public class Game {
 	 * 
 	 */
 	public Parser parser;
+	/**
+	 * 
+	 */
+	public GameOriginator gameoriginator;
+	/**
+	 * 
+	 */
+	public GameCaretaker gamecaretaker;
 
 	/**
 	 * 
