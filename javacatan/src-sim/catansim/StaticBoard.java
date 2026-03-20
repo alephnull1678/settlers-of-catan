@@ -33,6 +33,8 @@ public interface StaticBoard {
 	
 	public int getLongestRoadLength();
 	
+	public int getLongestRoadLength(PlayerID playerID);
+	
 	public boolean canConnectRoads(Action action, PlayerID playerID);
 	
 	/**

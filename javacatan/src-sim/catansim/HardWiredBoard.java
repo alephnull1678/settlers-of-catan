@@ -970,6 +970,25 @@ public class HardWiredBoard implements Board {
 	public int getLongestRoadLength() {
 		return longestRoadLength;
 	}
+	
+	public int getLongestRoadLength(PlayerID playerID)
+	{
+	    if (playerID == null) {
+	        throw new IllegalArgumentException("playerID cannot be null");
+	    }
+
+	    int playerMax = 0;
+
+	    for (Node node : getNodes()) {
+	        int length = dfsLongest(node, playerID, new HashSet<Road>());
+	        if (length > playerMax) {
+	            playerMax = length;
+	        }
+	    }
+
+	    return playerMax;
+	}
+
 
 	public boolean canConnectRoads(Action action, PlayerID playerID) {
 

@@ -89,7 +89,6 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_7cgGYwSlEfGBxYf1fTqBJA" name="gameoriginator" type="_W30j8CQfEfGUO7J8pVIQbQ" association="_7cgGYASlEfGBxYf1fTqBJA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_t4OtMAViEfG4lNxHNfwBoQ" name="PieceHandler">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_dM6uwAiJEfGwgKLZBoPIFQ" name="catalog" type="_E-f2gASlEfGBxYf1fTqBJA" aggregation="composite" association="_dM3rcAiJEfGwgKLZBoPIFQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_OPTqsAY-EfGfDvnfcKXpVw" name="sendPieceOfType">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_GYG6MAiJEfGwgKLZBoPIFQ" name="buildingType" type="_rY-BIAZBEfGfDvnfcKXpVw"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_JcYjgAiJEfGwgKLZBoPIFQ" name="piece" type="_DqI6UAVjEfG4lNxHNfwBoQ" direction="return"/>
@@ -378,12 +377,6 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ulOhwAZBEfGfDvnfcKXpVw" name="CITY"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_7RHW0AZHEfGfDvnfcKXpVw" name="T" templateParameter="_tv-tEAZHEfGfDvnfcKXpVw"/>
-    <packagedElement xmi:type="uml:Association" xmi:id="_dM3rcAiJEfGwgKLZBoPIFQ" name="Holds" memberEnd="_dM6uwAiJEfGwgKLZBoPIFQ _dM7V0AiJEfGwgKLZBoPIFQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dM5goAiJEfGwgKLZBoPIFQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dM6HsAiJEfGwgKLZBoPIFQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_dM7V0AiJEfGwgKLZBoPIFQ" name="piecehandler" type="_t4OtMAViEfG4lNxHNfwBoQ" association="_dM3rcAiJEfGwgKLZBoPIFQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_CRQnUAiOEfGwgKLZBoPIFQ" name="Has" memberEnd="_CRROYgiOEfGwgKLZBoPIFQ _CRR1cAiOEfGwgKLZBoPIFQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CRROYAiOEfGwgKLZBoPIFQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CRROYQiOEfGwgKLZBoPIFQ" key="nature" value="UML_Nature"/>

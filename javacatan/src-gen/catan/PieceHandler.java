@@ -11,11 +11,6 @@ package catan;
 public class PieceHandler {
 	/**
 	 * 
-	 */
-	public Catalog catalog;
-
-	/**
-	 * 
 	 * @param buildingType 
 	 * @return 
 	 */

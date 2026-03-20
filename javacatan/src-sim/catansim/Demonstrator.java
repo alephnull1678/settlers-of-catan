@@ -33,11 +33,11 @@ public class Demonstrator {
 
         //Create players
         Player[] players = new Player[] {
-                new HumanPlayer(PlayerID.BLUE, scanner),
-                new AgentPlayer(PlayerID.RED),
-                new AgentPlayer(PlayerID.WHITE),
-                new AgentPlayer(PlayerID.ORANGE)
-        };
+        	    new HumanPlayer(PlayerID.BLUE, scanner),
+        	    new AgentPlayer(PlayerID.RED, new IntelligentDecisionStrategy()),
+        	    new AgentPlayer(PlayerID.WHITE, new IntelligentDecisionStrategy()),
+        	    new AgentPlayer(PlayerID.ORANGE, new IntelligentDecisionStrategy())
+        	};
 
         //Run the game. The game will end either when a Player reaches 10 victory points or the game reaches the max number of rounds as assigned by maxRounds.
         //Every round, the game will output to the terminal:

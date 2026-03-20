@@ -3,6 +3,6 @@ import java.util.List;
 
 public interface DecisionStrategy{
 	
-	public Action decideAction(List<Action> actions, StaticBoard board);
+	public Action decideAction(Player player, List<Action> actions, StaticBoard board);
 	
 }

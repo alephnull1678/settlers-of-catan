@@ -17,7 +17,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_d781kASEEfGlO7CguFpanQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1774025834919">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1774046542212">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']"/>
         <target xmi:type="uml:Model" href="catan.uml#_d6y_AASEEfGlO7CguFpanQ"/>
       </ownedRepresentationDescriptors>
@@ -2300,22 +2300,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Qv8_WgY6EfGfDvnfcKXpVw" id="(0.37197018104366353,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Qv8_WwY6EfGfDvnfcKXpVw" id="(0.30429594272076377,0.7636363636363636)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_dPCOoAiJEfGwgKLZBoPIFQ" type="4001" element="_dNLNcAiJEfGwgKLZBoPIFQ" source="_t6UX4AViEfG4lNxHNfwBoQ" target="_E_O2UASlEfGBxYf1fTqBJA">
-          <children xmi:type="notation:Node" xmi:id="_dPeTgAiJEfGwgKLZBoPIFQ" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dPeTgQiJEfGwgKLZBoPIFQ" x="-73" y="-23"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_dPe6kAiJEfGwgKLZBoPIFQ" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dPe6kQiJEfGwgKLZBoPIFQ" x="2" y="-17"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_dPe6kgiJEfGwgKLZBoPIFQ" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dPe6kwiJEfGwgKLZBoPIFQ" x="-29" y="-16"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_dPCOoQiJEfGwgKLZBoPIFQ"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_dPCOogiJEfGwgKLZBoPIFQ" fontName="Segoe UI"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dPCOowiJEfGwgKLZBoPIFQ" points="[3, 10, -239, -107]$[26, -3, -216, -120]$[103, -3, -139, -120]$[103, 117, -139, 0]$[242, 117, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dPgIsAiJEfGwgKLZBoPIFQ" id="(0.9885931558935361,0.9329268292682927)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dPgIsQiJEfGwgKLZBoPIFQ" id="(0.0,0.09259259259259259)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_CSrjoAiOEfGwgKLZBoPIFQ" type="4001" element="_CRfQ0AiOEfGwgKLZBoPIFQ" source="_-fxfkASkEfGBxYf1fTqBJA" target="_uoipMAX5EfGRf-tqN1BwGw">
           <children xmi:type="notation:Node" xmi:id="_CSrjpAiOEfGwgKLZBoPIFQ" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CSrjpQiOEfGwgKLZBoPIFQ" x="3" y="-26"/>
@@ -3112,7 +3096,7 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_E-kvAASlEfGBxYf1fTqBJA" name="«interface»&#xA;Catalog" tooltipText="catan::Catalog" incomingEdges="_yTnXgAYfEfGKxpR3uqh_6Q _dNLNcAiJEfGwgKLZBoPIFQ _D5KIQBpgEfGtXtTo0_BenA _dUdH0BppEfGtXtTo0_BenA" width="10" height="10" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_E-kvAASlEfGBxYf1fTqBJA" name="«interface»&#xA;Catalog" tooltipText="catan::Catalog" incomingEdges="_yTnXgAYfEfGKxpR3uqh_6Q _D5KIQBpgEfGtXtTo0_BenA _dUdH0BppEfGtXtTo0_BenA" width="10" height="10" childrenPresentation="VerticalStack">
       <target xmi:type="uml:Interface" href="catan.uml#_E-f2gASlEfGBxYf1fTqBJA"/>
       <semanticElements xmi:type="uml:Interface" href="catan.uml#_E-f2gASlEfGBxYf1fTqBJA"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_E-kvAQSlEfGBxYf1fTqBJA" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
@@ -3182,7 +3166,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_t4pj8AViEfG4lNxHNfwBoQ" name="PieceHandler" tooltipText="catan::PieceHandler" outgoingEdges="_GRPKQAYlEfGKxpR3uqh_6Q _dNLNcAiJEfGwgKLZBoPIFQ" width="10" height="10" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_t4pj8AViEfG4lNxHNfwBoQ" name="PieceHandler" tooltipText="catan::PieceHandler" outgoingEdges="_GRPKQAYlEfGKxpR3uqh_6Q" width="10" height="10" childrenPresentation="VerticalStack">
       <target xmi:type="uml:Class" href="catan.uml#_t4OtMAViEfG4lNxHNfwBoQ"/>
       <semanticElements xmi:type="uml:Class" href="catan.uml#_t4OtMAViEfG4lNxHNfwBoQ"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_t4qLAAViEfG4lNxHNfwBoQ" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
@@ -4253,19 +4237,6 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Enumeration']/@subContainerMappings[name='CD_EnumerationLiteralsCompartment']/@subNodeMappings[name='CD_EnumerationLiteralLabelNode']"/>
         </ownedElements>
       </ownedDiagramElements>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_dNLNcAiJEfGwgKLZBoPIFQ" name="Holds" sourceNode="_t4pj8AViEfG4lNxHNfwBoQ" targetNode="_E-kvAASlEfGBxYf1fTqBJA" beginLabel="+ piecehandler 1" endLabel="+ catalog 1">
-      <target xmi:type="uml:Association" href="catan.uml#_dM3rcAiJEfGwgKLZBoPIFQ"/>
-      <semanticElements xmi:type="uml:Association" href="catan.uml#_dM3rcAiJEfGwgKLZBoPIFQ"/>
-      <semanticElements xmi:type="ecore:EAnnotation" href="catan.uml#_dM5goAiJEfGwgKLZBoPIFQ"/>
-      <semanticElements xmi:type="uml:Property" href="catan.uml#_dM7V0AiJEfGwgKLZBoPIFQ"/>
-      <semanticElements xmi:type="uml:Property" href="catan.uml#_dM6uwAiJEfGwgKLZBoPIFQ"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_e8eo6AlCEfGvdLR-yn1lxw" description="_Yt0HIAlCEfGvdLR-yn1lxw" sourceArrow="FillDiamond" strokeColor="0,0,0">
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_e8eo6QlCEfGvdLR-yn1lxw" labelSize="9" showIcon="false"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_e8eo6wlCEfGvdLR-yn1lxw" labelSize="9" showIcon="false"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_e8eo6glCEfGvdLR-yn1lxw" labelSize="9" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_CRfQ0AiOEfGwgKLZBoPIFQ" name="Has" sourceNode="_-ewL4ASkEfGBxYf1fTqBJA" targetNode="_unkY0AX5EfGRf-tqN1BwGw" beginLabel="+ game 1" endLabel="+ dice 1">
       <target xmi:type="uml:Association" href="catan.uml#_CRQnUAiOEfGwgKLZBoPIFQ"/>
