@@ -44,10 +44,11 @@ public abstract class Player {
 
 	/**
 	 * 
-	 * @param Parameter1 
+	 * @param actions 
 	 * @return 
+	 * @param board 
 	 */
-	public Action choose(Action[] Parameter1) {
+	public Action choose(Action[] actions, StaticBoard board) {
 	}
 
 	/**

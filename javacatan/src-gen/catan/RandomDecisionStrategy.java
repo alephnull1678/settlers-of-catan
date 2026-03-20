@@ -8,16 +8,5 @@ package catan;
 /**
  * 
  */
-public class AgentPlayer extends Player {
-	/**
-	 * 
-	 */
-	public DecisionStrategy decisionstrategy;
-
-	/**
-	 * 
-	 * @param strategy 
-	 */
-	public void Operation1(DecisionStrategy strategy) {
-	}
+public class RandomDecisionStrategy implements DecisionStrategy {
 }

@@ -31,11 +31,12 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_UCoXIhppEfGtXtTo0_BenA" name="playerhand" type="_MjmZwBppEfGtXtTo0_BenA" aggregation="composite" association="_UCnwEBppEfGtXtTo0_BenA"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_SGva8BqlEfGvsrbesE-g3A" name="parser" type="_9PmM8BqkEfGvsrbesE-g3A" association="_SGuz4BqlEfGvsrbesE-g3A"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_gl7esAYoEfGKxpR3uqh_6Q" name="choose">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kdaGkAYoEfGKxpR3uqh_6Q" name="Parameter1" type="_oY8IEAVkEfG4lNxHNfwBoQ">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kdaGkAYoEfGKxpR3uqh_6Q" name="actions" type="_oY8IEAVkEfG4lNxHNfwBoQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n46kIAYoEfGKxpR3uqh_6Q" name="LiteralInteger1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n47LMAYoEfGKxpR3uqh_6Q" name="LiteralUnlimitedNatural1" value="*"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ojo8IAYoEfGKxpR3uqh_6Q" name="action" type="_oY8IEAVkEfG4lNxHNfwBoQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_EaoScCR4EfGU0vC07brctQ" name="board" type="__vqBwAViEfG4lNxHNfwBoQ"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_FHZ3kAYpEfGKxpR3uqh_6Q" name="dealResources">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_PKaNkAYpEfGKxpR3uqh_6Q" name="catalog" type="_E-f2gASlEfGBxYf1fTqBJA"/>
@@ -582,6 +583,10 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_zkogIBzsEfGAgPgAP_v3zg" name="AgentPlayer">
       <generalization xmi:type="uml:Generalization" xmi:id="_44bVABzsEfGAgPgAP_v3zg" general="_A23SwASlEfGBxYf1fTqBJA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YVJngCR1EfGU0vC07brctQ" name="decisionstrategy" type="_QNCQ4CR1EfGU0vC07brctQ" association="_YVHyUCR1EfGU0vC07brctQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_M40uICR1EfGU0vC07brctQ" name="Operation1">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xzSZUCR2EfGU0vC07brctQ" name="strategy" type="_QNCQ4CR1EfGU0vC07brctQ"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_0-mjwBzsEfGAgPgAP_v3zg" name="HumanPlayer">
       <generalization xmi:type="uml:Generalization" xmi:id="_55OqsBzsEfGAgPgAP_v3zg" general="_A23SwASlEfGBxYf1fTqBJA"/>
@@ -643,6 +648,33 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_JsCpsCQgEfGUO7J8pVIQbQ" client="_W30j8CQfEfGUO7J8pVIQbQ" supplier="_lvXj0CQbEfGUO7J8pVIQbQ">
       <name xsi:nil="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_QNCQ4CR1EfGU0vC07brctQ" name="DecisionStrategy">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-AZr4CR1EfGU0vC07brctQ" name="decideAction">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FmfTgCR2EfGU0vC07brctQ" name="actions" type="_oY8IEAVkEfG4lNxHNfwBoQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HUH6ACR2EfGU0vC07brctQ" name="LiteralInteger1" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HUIhECR2EfGU0vC07brctQ" name="LiteralUnlimitedNatural1" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hgh-UCR2EfGU0vC07brctQ" name="board" type="__vqBwAViEfG4lNxHNfwBoQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_K755ACR2EfGU0vC07brctQ" name="chosenAction" type="_oY8IEAVkEfG4lNxHNfwBoQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_YVHyUCR1EfGU0vC07brctQ" memberEnd="_YVJAcSR1EfGU0vC07brctQ _YVJngCR1EfGU0vC07brctQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YVIZYCR1EfGU0vC07brctQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YVJAcCR1EfGU0vC07brctQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_YVJAcSR1EfGU0vC07brctQ" name="agentplayer" type="_zkogIBzsEfGAgPgAP_v3zg" association="_YVHyUCR1EfGU0vC07brctQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V65EMCR4EfGU0vC07brctQ" name="RandomDecisionStrategy">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_81CkoCR4EfGU0vC07brctQ" client="_V65EMCR4EfGU0vC07brctQ" supplier="_QNCQ4CR1EfGU0vC07brctQ" contract="_QNCQ4CR1EfGU0vC07brctQ">
+        <name xsi:nil="true"/>
+      </interfaceRealization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jyftMCR4EfGU0vC07brctQ" name="IntelligentDecisionStrategy">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_4xq10CR4EfGU0vC07brctQ" client="_jyftMCR4EfGU0vC07brctQ" supplier="_QNCQ4CR1EfGU0vC07brctQ" contract="_QNCQ4CR1EfGU0vC07brctQ">
+        <name xsi:nil="true"/>
+      </interfaceRealization>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FKB-oASFEfGlO7CguFpanQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FKFB8ASFEfGlO7CguFpanQ" source="http://www.eclipse.org/uml2/2.0.0/UML">

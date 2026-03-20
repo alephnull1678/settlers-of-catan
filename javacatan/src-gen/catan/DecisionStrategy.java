@@ -8,16 +8,12 @@ package catan;
 /**
  * 
  */
-public class AgentPlayer extends Player {
+public interface DecisionStrategy {
 	/**
 	 * 
+	 * @param actions 
+	 * @param board 
+	 * @return 
 	 */
-	public DecisionStrategy decisionstrategy;
-
-	/**
-	 * 
-	 * @param strategy 
-	 */
-	public void Operation1(DecisionStrategy strategy) {
-	}
+	public Action decideAction(Action[] actions, StaticBoard board);
 }
