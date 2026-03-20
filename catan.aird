@@ -17,7 +17,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_d781kASEEfGlO7CguFpanQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1773968844050">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1773973425273">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']"/>
         <target xmi:type="uml:Model" href="catan.uml#_d6y_AASEEfGlO7CguFpanQ"/>
       </ownedRepresentationDescriptors>
@@ -1684,6 +1684,322 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_0_91sRzsEfGAgPgAP_v3zg" fontName="Segoe UI"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0_91shzsEfGAgPgAP_v3zg" x="396" y="648"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_MuQ9ACP-EfGPFr6AfOaDkA" type="2002" element="_MtaocyP-EfGPFr6AfOaDkA">
+          <children xmi:type="notation:Node" xmi:id="_MuRkECP-EfGPFr6AfOaDkA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_MuRkESP-EfGPFr6AfOaDkA" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_MuSLICP-EfGPFr6AfOaDkA" type="3009" element="_Mt6XuSP-EfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_MuSyMCP-EfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_MuSyMSP-EfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_MuSyMiP-EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_MuSyMyP-EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_MuSyNCP-EfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_MuSLISP-EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MuSLIiP-EfGPFr6AfOaDkA" width="167" height="8"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_MuSyNSP-EfGPFr6AfOaDkA" type="3009" element="_Mt6XvSP-EfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_MuSyOCP-EfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_MuSyOSP-EfGPFr6AfOaDkA" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_7g9uECP-EfGPFr6AfOaDkA" type="3010" element="_7gS_sCP-EfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_7g9uESP-EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_7g9uEiP-EfGPFr6AfOaDkA"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_-iWbcCP-EfGPFr6AfOaDkA" type="3010" element="_-hwlkCP-EfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_-iWbcSP-EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-iWbciP-EfGPFr6AfOaDkA"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_MuSyOiP-EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_MuSyOyP-EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_MuSyPCP-EfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_MuSyNiP-EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MuSyNyP-EfGPFr6AfOaDkA" y="8" width="167" height="36"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_MuSyPSP-EfGPFr6AfOaDkA" type="3009" element="_Mt6XwSP-EfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_MuSyQCP-EfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_MuTZQCP-EfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_MuTZQSP-EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_MuTZQiP-EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_MuTZQyP-EfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_MuSyPiP-EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MuSyPyP-EfGPFr6AfOaDkA" y="44" width="167" height="8"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_MuRkEiP-EfGPFr6AfOaDkA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_MuRkEyP-EfGPFr6AfOaDkA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_MuQ9ASP-EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MuQ9AiP-EfGPFr6AfOaDkA" x="-240" y="-359"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ldgBcCP_EfGPFr6AfOaDkA" type="2002" element="_lcq7ASP_EfGPFr6AfOaDkA">
+          <children xmi:type="notation:Node" xmi:id="_ldgogCP_EfGPFr6AfOaDkA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_ldgogSP_EfGPFr6AfOaDkA" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_ldgohCP_EfGPFr6AfOaDkA" type="3009" element="_ldA5aiP_EfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ldgohyP_EfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ldgoiCP_EfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ldgoiSP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ldgoiiP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ldh2oCP_EfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ldgohSP_EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ldgohiP_EfGPFr6AfOaDkA" width="167" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ldh2oSP_EfGPFr6AfOaDkA" type="3009" element="_ldCHYiP_EfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ldh2pCP_EfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ldh2pSP_EfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ldh2piP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ldh2pyP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ldh2qCP_EfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ldh2oiP_EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ldh2oyP_EfGPFr6AfOaDkA" y="17" width="167" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ldh2qSP_EfGPFr6AfOaDkA" type="3009" element="_ldCHZiP_EfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ldh2rCP_EfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ldh2rSP_EfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ldh2riP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ldh2ryP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ldh2sCP_EfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ldh2qiP_EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ldh2qyP_EfGPFr6AfOaDkA" y="34" width="167" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ldh2sSP_EfGPFr6AfOaDkA" type="3009" element="_ldCHaiP_EfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ldh2tCP_EfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ldidsCP_EfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ldidsSP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ldidsiP_EfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ldidsyP_EfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ldh2siP_EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ldh2syP_EfGPFr6AfOaDkA" y="51" width="167" height="19"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_ldgogiP_EfGPFr6AfOaDkA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_ldgogyP_EfGPFr6AfOaDkA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ldgBcSP_EfGPFr6AfOaDkA" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ldgBciP_EfGPFr6AfOaDkA" x="-420" y="-192"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_XaUlICQAEfGPFr6AfOaDkA" type="2002" element="_XZwkcyQAEfGPFr6AfOaDkA">
+          <children xmi:type="notation:Node" xmi:id="_XaUlIyQAEfGPFr6AfOaDkA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_XaVMMCQAEfGPFr6AfOaDkA" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_XaVMMyQAEfGPFr6AfOaDkA" type="3009" element="_XaCRZSQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_XaVMNiQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_XaVMNyQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_XaVMOCQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_XaVMOSQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_XaVMOiQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_XaVMNCQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XaVMNSQAEfGPFr6AfOaDkA" width="167" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_XaVMOyQAEfGPFr6AfOaDkA" type="3009" element="_XaCRaSQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_XaVMPiQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_XaVMPyQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_XaVMQCQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_XaVMQSQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_XaVMQiQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_XaVMPCQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XaVMPSQAEfGPFr6AfOaDkA" y="17" width="167" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_XaVMQyQAEfGPFr6AfOaDkA" type="3009" element="_XaCRbSQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_XaVMRiQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_XaVMRyQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_XaVMSCQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_XaVMSSQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_XaVMSiQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_XaVMRCQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XaVMRSQAEfGPFr6AfOaDkA" y="34" width="167" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_XaVMSyQAEfGPFr6AfOaDkA" type="3009" element="_XaCRcSQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_XaVMTiQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_XaVMTyQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_XaVMUCQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_XaVMUSQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_XaWaUCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_XaVMTCQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XaVMTSQAEfGPFr6AfOaDkA" y="51" width="167" height="19"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_XaVMMSQAEfGPFr6AfOaDkA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_XaVMMiQAEfGPFr6AfOaDkA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_XaUlISQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XaUlIiQAEfGPFr6AfOaDkA" x="-240" y="-192"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_aPRZACQAEfGPFr6AfOaDkA" type="2002" element="_aOof0CQAEfGPFr6AfOaDkA">
+          <children xmi:type="notation:Node" xmi:id="_aPRZAyQAEfGPFr6AfOaDkA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_aPRZBCQAEfGPFr6AfOaDkA" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_aPRZByQAEfGPFr6AfOaDkA" type="3009" element="_aO7bBSQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aPSnICQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aPSnISQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aPSnIiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aPSnIyQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aPSnJCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aPRZCCQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aPRZCSQAEfGPFr6AfOaDkA" width="168" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_aPSnJSQAEfGPFr6AfOaDkA" type="3009" element="_aO8B0yQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aPSnKCQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aPSnKSQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aPSnKiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aPSnKyQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aPSnLCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aPSnJiQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aPSnJyQAEfGPFr6AfOaDkA" y="17" width="168" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_aPSnLSQAEfGPFr6AfOaDkA" type="3009" element="_aO8B1yQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aPSnMCQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aPSnMSQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aPSnMiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aPSnMyQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aPSnNCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aPSnLiQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aPSnLyQAEfGPFr6AfOaDkA" y="34" width="168" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_aPSnNSQAEfGPFr6AfOaDkA" type="3009" element="_aO8B2yQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aPTOMCQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aPTOMSQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aPTOMiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aPTOMyQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aPTONCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aPSnNiQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aPSnNyQAEfGPFr6AfOaDkA" y="51" width="168" height="19"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_aPRZBSQAEfGPFr6AfOaDkA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_aPRZBiQAEfGPFr6AfOaDkA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_aPRZASQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aPRZAiQAEfGPFr6AfOaDkA" x="-60" y="-192"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ryUZACQAEfGPFr6AfOaDkA" type="2002" element="_rxrf0CQAEfGPFr6AfOaDkA">
+          <children xmi:type="notation:Node" xmi:id="_ryUZAyQAEfGPFr6AfOaDkA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_ryUZBCQAEfGPFr6AfOaDkA" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_ryVnICQAEfGPFr6AfOaDkA" type="3009" element="_ryDTQiQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ryVnIyQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ryVnJCQAEfGPFr6AfOaDkA" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_sWiD4CQBEfGPFr6AfOaDkA" type="3010" element="_sV9cISQBEfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_sWiD4SQBEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_sWiD4iQBEfGPFr6AfOaDkA"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="__7hGcCQBEfGPFr6AfOaDkA" type="3010" element="__7AwISQBEfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__7hGcSQBEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__7hGciQBEfGPFr6AfOaDkA"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ryVnJSQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ryVnJiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ryVnJyQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ryVnISQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ryVnIiQAEfGPFr6AfOaDkA" width="299" height="58"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ryVnKCQAEfGPFr6AfOaDkA" type="3009" element="_ryDTRiQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ryVnKyQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ryVnLCQAEfGPFr6AfOaDkA" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_xESo8CQAEfGPFr6AfOaDkA" type="3010" element="_xDySoCQAEfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xESo8SQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xESo8iQAEfGPFr6AfOaDkA"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_z6zjECQAEfGPFr6AfOaDkA" type="3010" element="_z6TMwSQAEfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_z6zjESQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_z6zjEiQAEfGPFr6AfOaDkA"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_g8cmMCQBEfGPFr6AfOaDkA" type="3010" element="_g77BwSQBEfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_g8cmMSQBEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_g8cmMiQBEfGPFr6AfOaDkA"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ryVnLSQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ryVnLiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ryWOMCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ryVnKSQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ryVnKiQAEfGPFr6AfOaDkA" y="58" width="299" height="71"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ryWOMSQAEfGPFr6AfOaDkA" type="3009" element="_ryDTSiQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ryWONCQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ryWONSQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ryWONiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ryWONyQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ryWOOCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ryWOMiQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ryWOMyQAEfGPFr6AfOaDkA" y="129" width="299" height="24"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ryWOOSQAEfGPFr6AfOaDkA" type="3009" element="_ryDTTiQAEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_ryWOPCQAEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_ryWOPSQAEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_ryWOPiQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_ryWOPyQAEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_ryWOQCQAEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ryWOOiQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ryWOOyQAEfGPFr6AfOaDkA" y="153" width="299" height="25"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_ryUZBSQAEfGPFr6AfOaDkA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_ryUZBiQAEfGPFr6AfOaDkA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ryUZASQAEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ryUZAiQAEfGPFr6AfOaDkA" x="-768" y="-300"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_aYX_wCQCEfGPFr6AfOaDkA" type="2002" element="_aXz_ECQCEfGPFr6AfOaDkA">
+          <children xmi:type="notation:Node" xmi:id="_aYX_wyQCEfGPFr6AfOaDkA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_aYX_xCQCEfGPFr6AfOaDkA" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_aYX_xyQCEfGPFr6AfOaDkA" type="3009" element="_aYFr6yQCEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aYX_yiQCEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aYZN4CQCEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aYZN4SQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aYZN4iQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aYZN4yQCEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aYX_yCQCEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aYX_ySQCEfGPFr6AfOaDkA" width="299" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_aYZN5CQCEfGPFr6AfOaDkA" type="3009" element="_aYFr7yQCEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aYZN5yQCEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aYZN6CQCEfGPFr6AfOaDkA" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_fN49MCQCEfGPFr6AfOaDkA" type="3010" element="_fNZN8CQCEfGPFr6AfOaDkA">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_fN49MSQCEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_fN49MiQCEfGPFr6AfOaDkA"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aYZN6SQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aYZN6iQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aYZN6yQCEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aYZN5SQCEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aYZN5iQCEfGPFr6AfOaDkA" y="17" width="299" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_aYZN7CQCEfGPFr6AfOaDkA" type="3009" element="_aYFr8yQCEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aYZN7yQCEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aYZN8CQCEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aYZN8SQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aYZN8iQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aYZN8yQCEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aYZN7SQCEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aYZN7iQCEfGPFr6AfOaDkA" y="34" width="299" height="17"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_aYZN9CQCEfGPFr6AfOaDkA" type="3009" element="_aYFr9yQCEfGPFr6AfOaDkA">
+              <children xmi:type="notation:Node" xmi:id="_aYZN9yQCEfGPFr6AfOaDkA" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_aYZN-CQCEfGPFr6AfOaDkA" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_aYZN-SQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_aYZN-iQCEfGPFr6AfOaDkA"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_aYZN-yQCEfGPFr6AfOaDkA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_aYZN9SQCEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aYZN9iQCEfGPFr6AfOaDkA" y="51" width="299" height="41"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_aYX_xSQCEfGPFr6AfOaDkA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_aYX_xiQCEfGPFr6AfOaDkA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_aYX_wSQCEfGPFr6AfOaDkA" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aYX_wiQCEfGPFr6AfOaDkA" x="-768" y="-35"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_eF_iYgSEEfGlO7CguFpanQ"/>
         <edges xmi:type="notation:Edge" xmi:id="_7dJmoASlEfGBxYf1fTqBJA" type="4001" element="_7cm0EASlEfGBxYf1fTqBJA" source="_A3tAQASlEfGBxYf1fTqBJA" target="_-fxfkASkEfGBxYf1fTqBJA">
@@ -4428,6 +4744,301 @@
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_55dUMRzsEfGAgPgAP_v3zg" labelSize="9" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@edgeMappings[name='CD_Generalization']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_MtaocyP-EfGPFr6AfOaDkA" name="«interface»&#xA;Command" tooltipText="catan::Command" width="10" height="10" childrenPresentation="VerticalStack">
+      <target xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+      <semanticElements xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_MtbPgCP-EfGPFr6AfOaDkA" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Interface']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_Mt6XuSP-EfGPFr6AfOaDkA" name="attributes">
+        <target xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_Mt6XvCP-EfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Mt6XuiP-EfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Interface']/@subContainerMappings[name='CD_InterfaceAttributesCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Interface']/@subContainerMappings[name='CD_InterfaceAttributesCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_Mt6XvSP-EfGPFr6AfOaDkA" name="operations">
+        <target xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_Mt6XwCP-EfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Mt6XviP-EfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Interface']/@subContainerMappings[name='CD_InterfaceOperationsCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Interface']/@subContainerMappings[name='CD_InterfaceOperationsCompartment']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_7gS_sCP-EfGPFr6AfOaDkA" name="+ execute()">
+          <target xmi:type="uml:Operation" href="catan.uml#_7gSYoCP-EfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Operation" href="catan.uml#_7gSYoCP-EfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_7gTmwCP-EfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" labelAlignment="LEFT" description="_zVVIewX5EfGRf-tqN1BwGw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedOperation']/@subNodeMappings[name='CD_OperationLabelNode']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_-hwlkCP-EfGPFr6AfOaDkA" name="+ undo()">
+          <target xmi:type="uml:Operation" href="catan.uml#_-hv-gCP-EfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Operation" href="catan.uml#_-hv-gCP-EfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_-hwlkSP-EfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" labelAlignment="LEFT" description="_zVVIewX5EfGRf-tqN1BwGw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedOperation']/@subNodeMappings[name='CD_OperationLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_Mt6XwSP-EfGPFr6AfOaDkA" name="nested classifiers">
+        <target xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Interface" href="catan.uml#_MtWXACP-EfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_Mt7l0iP-EfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Mt7l0CP-EfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Interface']/@subContainerMappings[name='CD_InterfaceNestedClassifiersCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Interface']/@subContainerMappings[name='CD_InterfaceNestedClassifiersCompartment']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_lcq7ASP_EfGPFr6AfOaDkA" name="BuildRoadCommand" tooltipText="catan::BuildRoadCommand" width="10" height="10" childrenPresentation="VerticalStack">
+      <target xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+      <semanticElements xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_lcq7AiP_EfGPFr6AfOaDkA" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ldA5aiP_EfGPFr6AfOaDkA" name="attributes">
+        <target xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ldCHYSP_EfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ldA5ayP_EfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ldCHYiP_EfGPFr6AfOaDkA" name="operations">
+        <target xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ldCHZSP_EfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ldCHYyP_EfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ldCHZiP_EfGPFr6AfOaDkA" name="receptions">
+        <target xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ldCHaSP_EfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ldCHZyP_EfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ldCHaiP_EfGPFr6AfOaDkA" name="nested classifiers">
+        <target xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_lcmpkCP_EfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ldCHbSP_EfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ldCHayP_EfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_XZwkcyQAEfGPFr6AfOaDkA" name="BuildSettlementCommand" tooltipText="catan::BuildSettlementCommand" width="10" height="10" childrenPresentation="VerticalStack">
+      <target xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+      <semanticElements xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_XZwkdCQAEfGPFr6AfOaDkA" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_XaCRZSQAEfGPFr6AfOaDkA" name="attributes">
+        <target xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_XaCRaCQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_XaCRZiQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_XaCRaSQAEfGPFr6AfOaDkA" name="operations">
+        <target xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_XaCRbCQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_XaCRaiQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_XaCRbSQAEfGPFr6AfOaDkA" name="receptions">
+        <target xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_XaCRcCQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_XaCRbiQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_XaCRcSQAEfGPFr6AfOaDkA" name="nested classifiers">
+        <target xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_XZuIMCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_XaCRdCQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_XaCRciQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_aOof0CQAEfGPFr6AfOaDkA" name="BuyDevCardCommand" tooltipText="catan::BuyDevCardCommand" width="10" height="10" childrenPresentation="VerticalStack">
+      <target xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+      <semanticElements xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aOpG4CQAEfGPFr6AfOaDkA" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aO7bBSQAEfGPFr6AfOaDkA" name="attributes">
+        <target xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aO8B0iQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aO8B0CQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aO8B0yQAEfGPFr6AfOaDkA" name="operations">
+        <target xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aO8B1iQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aO8B1CQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aO8B1yQAEfGPFr6AfOaDkA" name="receptions">
+        <target xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aO8B2iQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aO8B2CQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aO8B2yQAEfGPFr6AfOaDkA" name="nested classifiers">
+        <target xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aOk1cCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aO8o4SQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aO8B3CQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_rxrf0CQAEfGPFr6AfOaDkA" name="CommandManager" tooltipText="catan::CommandManager" width="10" height="10" childrenPresentation="VerticalStack">
+      <target xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+      <semanticElements xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_rxrf0SQAEfGPFr6AfOaDkA" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ryDTQiQAEfGPFr6AfOaDkA" name="attributes">
+        <target xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ryDTRSQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ryDTQyQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_sV9cISQBEfGPFr6AfOaDkA" name="- undoStack: &lt;Undefined> [1]">
+          <target xmi:type="uml:Property" href="catan.uml#_sV9cICQBEfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Property" href="catan.uml#_sV9cICQBEfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_sV-DMCQBEfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedAttribute']/@subNodeMappings[name='CD_PropertyLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedAttribute']/@subNodeMappings[name='CD_PropertyLabelNode']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="__7AwISQBEfGPFr6AfOaDkA" name="- redoStack: &lt;Undefined> [1]">
+          <target xmi:type="uml:Property" href="catan.uml#__7AwICQBEfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Property" href="catan.uml#__7AwICQBEfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="__7AwIiQBEfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedAttribute']/@subNodeMappings[name='CD_PropertyLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedAttribute']/@subNodeMappings[name='CD_PropertyLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ryDTRiQAEfGPFr6AfOaDkA" name="operations">
+        <target xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ryDTSSQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ryDTRyQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_xDySoCQAEfGPFr6AfOaDkA" name="+ executeCommand(in c: Command)">
+          <target xmi:type="uml:Operation" href="catan.uml#_xDxrkCQAEfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Operation" href="catan.uml#_xDxrkCQAEfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_xDySoSQAEfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" labelAlignment="LEFT" description="_zVVIewX5EfGRf-tqN1BwGw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedOperation']/@subNodeMappings[name='CD_OperationLabelNode']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_z6TMwSQAEfGPFr6AfOaDkA" name="+ undo()">
+          <target xmi:type="uml:Operation" href="catan.uml#_z6TMwCQAEfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Operation" href="catan.uml#_z6TMwCQAEfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_z6TMwiQAEfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" labelAlignment="LEFT" description="_zVVIewX5EfGRf-tqN1BwGw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedOperation']/@subNodeMappings[name='CD_OperationLabelNode']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_g77BwSQBEfGPFr6AfOaDkA" name="+ redo()">
+          <target xmi:type="uml:Operation" href="catan.uml#_g77BwCQBEfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Operation" href="catan.uml#_g77BwCQBEfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_g77o0CQBEfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" labelAlignment="LEFT" description="_zVVIewX5EfGRf-tqN1BwGw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedOperation']/@subNodeMappings[name='CD_OperationLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ryDTSiQAEfGPFr6AfOaDkA" name="receptions">
+        <target xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ryDTTSQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ryDTSyQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ryDTTiQAEfGPFr6AfOaDkA" name="nested classifiers">
+        <target xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_rxocgCQAEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ryDTUSQAEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ryDTTyQAEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_aXz_ECQCEfGPFr6AfOaDkA" name="CommandFactory" tooltipText="catan::CommandFactory" width="10" height="10" childrenPresentation="VerticalStack">
+      <target xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+      <semanticElements xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aXz_ESQCEfGPFr6AfOaDkA" labelSize="9" description="_uq7UUASEEfGlO7CguFpanQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="195,215,221"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aYFr6yQCEfGPFr6AfOaDkA" name="attributes">
+        <target xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aYFr7iQCEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aYFr7CQCEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassAttributesCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aYFr7yQCEfGPFr6AfOaDkA" name="operations">
+        <target xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aYFr8iQCEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aYFr8CQCEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_fNZN8CQCEfGPFr6AfOaDkA" name="+ fromAction(in a: Action, in g: Game): Command">
+          <target xmi:type="uml:Operation" href="catan.uml#_fNYm4CQCEfGPFr6AfOaDkA"/>
+          <semanticElements xmi:type="uml:Operation" href="catan.uml#_fNYm4CQCEfGPFr6AfOaDkA"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_fNZN8SQCEfGPFr6AfOaDkA" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" labelAlignment="LEFT" description="_zVVIewX5EfGRf-tqN1BwGw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_SHARED_OwnedOperation']/@subNodeMappings[name='CD_OperationLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aYFr8yQCEfGPFr6AfOaDkA" name="receptions">
+        <target xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aYFr9iQCEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aYFr9CQCEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassReceptionCompartment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_aYFr9yQCEfGPFr6AfOaDkA" name="nested classifiers">
+        <target xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <semanticElements xmi:type="uml:Class" href="catan.uml#_aXwUsCQCEfGPFr6AfOaDkA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_aYFr-iQCEfGPFr6AfOaDkA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_aYFr-CQCEfGPFr6AfOaDkA" labelSize="9" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" foregroundColor="195,215,221">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassNestedClassifiersCompartment']"/>
+      </ownedDiagramElements>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_eFOGUASEEfGlO7CguFpanQ"/>

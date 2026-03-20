@@ -584,6 +584,36 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_0-mjwBzsEfGAgPgAP_v3zg" name="HumanPlayer">
       <generalization xmi:type="uml:Generalization" xmi:id="_55OqsBzsEfGAgPgAP_v3zg" general="_A23SwASlEfGBxYf1fTqBJA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_MtWXACP-EfGPFr6AfOaDkA" name="Command">
+      <nestedClassifier xmi:type="uml:Interface" xmi:id="_T07dsCP-EfGPFr6AfOaDkA" name="Interface1"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7gSYoCP-EfGPFr6AfOaDkA" name="execute"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-hv-gCP-EfGPFr6AfOaDkA" name="undo"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lcmpkCP_EfGPFr6AfOaDkA" name="BuildRoadCommand"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XZuIMCQAEfGPFr6AfOaDkA" name="BuildSettlementCommand"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aOk1cCQAEfGPFr6AfOaDkA" name="BuyDevCardCommand"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rxocgCQAEfGPFr6AfOaDkA" name="CommandManager">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_sV9cICQBEfGPFr6AfOaDkA" name="undoStack" visibility="private"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__7AwICQBEfGPFr6AfOaDkA" name="redoStack" visibility="private"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xDxrkCQAEfGPFr6AfOaDkA" name="executeCommand">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_HCUmgCQBEfGPFr6AfOaDkA" name="c" type="_MtWXACP-EfGPFr6AfOaDkA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bsE4wCQBEfGPFr6AfOaDkA" name="LiteralInteger1" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bsGG4CQBEfGPFr6AfOaDkA" name="LiteralUnlimitedNatural1" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_z6TMwCQAEfGPFr6AfOaDkA" name="undo"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_g77BwCQBEfGPFr6AfOaDkA" name="redo"/>
+      <nestedClassifier xmi:type="uml:DataType" xmi:id="_m3PJoCQBEfGPFr6AfOaDkA" name="DataType1"/>
+      <nestedClassifier xmi:type="uml:DataType" xmi:id="_nNXKoCQBEfGPFr6AfOaDkA" name="DataType2"/>
+      <nestedClassifier xmi:type="uml:PrimitiveType" xmi:id="_ou2ykCQBEfGPFr6AfOaDkA" name="PrimitiveType1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aXwUsCQCEfGPFr6AfOaDkA" name="CommandFactory">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fNYm4CQCEfGPFr6AfOaDkA" name="fromAction">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_hjYN4CQCEfGPFr6AfOaDkA" name="a" type="_oY8IEAVkEfG4lNxHNfwBoQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kEEB8CQCEfGPFr6AfOaDkA" name="g" type="_-eS44ASkEfGBxYf1fTqBJA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uWVtkCQDEfGPFr6AfOaDkA" name="" type="_MtWXACP-EfGPFr6AfOaDkA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FKB-oASFEfGlO7CguFpanQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FKFB8ASFEfGlO7CguFpanQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
