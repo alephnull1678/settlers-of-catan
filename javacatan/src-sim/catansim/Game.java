@@ -193,7 +193,7 @@ public class Game {
 				}
 			}
 			
-			Action chosen = player.chooseAction(filtered.toArray(new Action[0]));
+			Action chosen = player.chooseAction(filtered.toArray(new Action[0]), (StaticBoard)board);
 			
 			if (chosen == null) {
 				throw new IllegalStateException(
@@ -250,7 +250,7 @@ public class Game {
                 }
             }
 
-            Action chosen = chooser.chooseAction(valid.toArray(new Action[0]));
+            Action chosen = chooser.chooseAction(valid.toArray(new Action[0]), (StaticBoard)board);
             if (chosen == null) {
                 printAction(pid, "Chose no action");
                 return;
@@ -411,7 +411,7 @@ public class Game {
 
             Action[] goOnly = { new Action(ActionTypes.GO) };
 
-            Action chosen = chooser.chooseAction(goOnly);
+            Action chosen = chooser.chooseAction(goOnly, (StaticBoard)board);
 
             if (chosen != null && chosen.getActionType() == ActionTypes.GO) {
                 stateMachine.read(chosen);

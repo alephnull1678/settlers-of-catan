@@ -14,7 +14,7 @@ public class HumanPlayer extends Player {
 
     @Override
     //Choose action using parser
-    public Action chooseAction(Action[] actions) {
+    public Action chooseAction(Action[] actions, StaticBoard board) {
         if (actions == null || actions.length == 0) return null;
 
         while (true) {

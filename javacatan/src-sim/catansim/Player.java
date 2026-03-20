@@ -53,7 +53,7 @@ public abstract class Player {
     
     
     //PICKING RANDOM ACTION from list of actions
-    public abstract Action chooseAction(Action[] actions);
+    public abstract Action chooseAction(Action[] actions, StaticBoard board);
     
     
     //DEAL RESOURCE

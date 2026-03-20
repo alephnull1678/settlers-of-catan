@@ -12,7 +12,7 @@ public class AgentPlayer extends Player {
     }
 	
 	//Overwriting abstract choose method to randomly choose from list of actions
-	public Action chooseAction(Action[] actions)
+	public Action chooseAction(Action[] actions, StaticBoard board)
 	{
 	if (actions == null || actions.length == 0) return null;
 	        return actions[rng.nextInt(actions.length)];
