@@ -31,6 +31,10 @@ public interface StaticBoard {
 	 */
 	public PlayerID checkLongestRoad();
 	
+	public int getLongestRoadLength();
+	
+	public boolean canConnectRoads(Action action, PlayerID playerID);
+	
 	/**
 	 * 
 	 * @param road 
