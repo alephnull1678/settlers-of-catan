@@ -3,6 +3,8 @@ package catansim;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.HashSet;
+import java.util.Set;
 
 /************************************************************/
 /**
@@ -832,6 +834,61 @@ public class HardWiredBoard implements Board {
 	    nodes[53].addTile(tiles[18]);
 		
 	}
+	
+	private boolean areNeighbours(Node a, Node b) {
+	    for (Node n : a.getNeighbours()) {
+	        if (n == b) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
+	private Road getRoadBetween(Node a, Node b) {
+	    for (Road ra : a.getConnectedRoads()) {
+	        if (ra == null) continue;
+	        for (Road rb : b.getConnectedRoads()) {
+	            if (ra == rb) {
+	                return ra;
+	            }
+	        }
+	    }
+	    return null;
+	}
+
+	private Set<Road> getRoadsTouching(Node node) {
+	    Set<Road> roads = new HashSet<>();
+	    for (Road road : node.getConnectedRoads()) {
+	        if (road != null) {
+	            roads.add(road);
+	        }
+	    }
+	    return roads;
+	}
+
+	private Set<Node> getEndpoints(Road road) {
+	    Set<Node> endpoints = new HashSet<>();
+	    for (Node node : nodes) {
+	        for (Road r : node.getConnectedRoads()) {
+	            if (r == road) {
+	                endpoints.add(node);
+	            }
+	        }
+	    }
+	    return endpoints;
+	}
+
+	private Set<Road> getAdjacentRoads(Road road) {
+	    Set<Road> adjacent = new HashSet<>();
+	    for (Node endpoint : getEndpoints(road)) {
+	        for (Road r : endpoint.getConnectedRoads()) {
+	            if (r != null && r != road) {
+	                adjacent.add(r);
+	            }
+	        }
+	    }
+	    return adjacent;
+	}
 
 	
 	private int dfsLongest(Node node, PlayerID playerID, java.util.Set<Road> visited) {
@@ -909,7 +966,57 @@ public class HardWiredBoard implements Board {
 
 	    return longestRoadHolder;
 	}
+	
+	public int getLongestRoadLength() {
+		return longestRoadLength;
+	}
 
+	public boolean canConnectRoads(Action action, PlayerID playerID) {
+
+	    if (!(action instanceof BuildAction)) return false;
+
+	    BuildAction build = (BuildAction) action;
+
+	    if (build.getPieceType() != PieceTypes.ROAD) return false;
+
+	    Node[] nodes = build.getNodes();
+	    if (nodes.length < 2) return false;
+
+	    Node start = nodes[0];
+	    Node end = nodes[1];
+
+	    // Must be a valid edge
+	    if (!areNeighbours(start, end)) return false;
+
+	    // Cannot already exist
+	    if (getRoadBetween(start, end) != null) return false;
+
+	    // --- 1-hop roads (touching proposed road)
+	    Set<Road> firstRing = new HashSet<>();
+	    firstRing.addAll(getRoadsTouching(start));
+	    firstRing.addAll(getRoadsTouching(end));
+
+	    // --- 2-hop roads
+	    Set<Road> secondRing = new HashSet<>();
+	    Set<Road> visited = new HashSet<>(firstRing);
+
+	    for (Road r : firstRing) {
+	        for (Road adj : getAdjacentRoads(r)) {
+	            if (visited.add(adj)) {
+	                secondRing.add(adj);
+	            }
+	        }
+	    }
+
+	    // Check if any belong to player
+	    for (Road r : secondRing) {
+	        if (r.getOwnerPlayerID() == playerID) {
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
 
 	private boolean canPlaceBuilding(PieceTypes buildingType, PlayerID playerID, Node node) {
 
