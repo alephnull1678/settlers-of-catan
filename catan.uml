@@ -586,7 +586,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_zkogIBzsEfGAgPgAP_v3zg" name="AgentPlayer">
       <generalization xmi:type="uml:Generalization" xmi:id="_44bVABzsEfGAgPgAP_v3zg" general="_A23SwASlEfGBxYf1fTqBJA"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_YVJngCR1EfGU0vC07brctQ" name="decisionstrategy" type="_QNCQ4CR1EfGU0vC07brctQ" association="_YVHyUCR1EfGU0vC07brctQ"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_M40uICR1EfGU0vC07brctQ" name="Operation1">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_M40uICR1EfGU0vC07brctQ" name="setDecisionStrategy">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_xzSZUCR2EfGU0vC07brctQ" name="strategy" type="_QNCQ4CR1EfGU0vC07brctQ"/>
       </ownedOperation>
     </packagedElement>
