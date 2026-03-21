@@ -218,4 +218,11 @@ public class NodeTest {
 
         scanner.close();
     }
+    
+    @Test
+    public void testRestore() {
+    	board = new HardWiredBoard();
+    	
+        board.restore(board.createMemento());
+    }
 }
