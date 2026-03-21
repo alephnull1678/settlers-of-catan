@@ -56,4 +56,11 @@ public interface StaticBoard {
 	 * @param playerID 
 	 */
 	public void canConnectRoads(Action action, PlayerID playerID);
+
+	/**
+	 * 
+	 * @param playerID 
+	 * @return 
+	 */
+	public int getLongestRoadLength(PlayerID playerID);
 }

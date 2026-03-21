@@ -66,4 +66,11 @@ public class PlayerHand {
 	 */
 	public Catalog snapshot() {
 	}
+
+	/**
+	 * 
+	 * @param catalog 
+	 */
+	public void restoreFromCatalog(Catalog catalog) {
+	}
 }

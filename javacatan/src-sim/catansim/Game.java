@@ -102,7 +102,7 @@ public class Game {
 
                 // Only create a new undo point if we did NOT just restore one.
                 if (!restoredThisTurn) {
-                    caretaker.save(createSnapshot());
+                	caretaker.pushUndo(createSnapshot());
                 }
 
                 // Clear the flag before the turn starts.
@@ -514,14 +514,14 @@ public class Game {
     
     
     //MEMENTO OPS
-    private Caretaker.GameSnapshot createSnapshot() {
+    private GameSnapshot createSnapshot() {
         PlayerMemento[] playerMementos = new PlayerMemento[players.length];
 
         for (int i = 0; i < players.length; i++) {
             playerMementos[i] = players[i].createMemento();
         }
 
-        return new Caretaker.GameSnapshot(
+        return new GameSnapshot(
             board.createMemento(),
             playerMementos,
             roundNumber,
@@ -530,7 +530,7 @@ public class Game {
         );
     }
     
-    private void restoreSnapshot(Caretaker.GameSnapshot snapshot) {
+    private void restoreSnapshot(GameSnapshot snapshot) {
         if (snapshot == null) {
             throw new IllegalArgumentException("snapshot cannot be null");
         }
@@ -556,10 +556,10 @@ public class Game {
             return false;
         }
 
-        Caretaker.GameSnapshot currentSnapshot = caretaker.popUndo();
+        GameSnapshot currentSnapshot = caretaker.popUndo();
         caretaker.pushRedo(currentSnapshot);
 
-        Caretaker.GameSnapshot previousSnapshot = caretaker.peekUndo();
+        GameSnapshot previousSnapshot = caretaker.peekUndo();
         restoreSnapshot(previousSnapshot);
         
         visualizer.onStateChange();
@@ -571,7 +571,7 @@ public class Game {
             return false;
         }
 
-        Caretaker.GameSnapshot nextSnapshot = caretaker.popRedo();
+        GameSnapshot nextSnapshot = caretaker.popRedo();
         caretaker.pushUndo(nextSnapshot);
         restoreSnapshot(nextSnapshot);
         
