@@ -57,5 +57,12 @@ public class NodeTest {
 		}
 		assertTrue(found);
 	}
+	
+	// 4: Test that HardWiredBoard Works
+	@Test
+	public void testHardWiredBoard() {
+		Board board = new HardWiredBoard();
+		assertTrue(board != null);
+	}
 
 }
