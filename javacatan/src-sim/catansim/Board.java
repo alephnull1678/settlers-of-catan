@@ -42,10 +42,7 @@ public interface Board extends StaticBoard {
 	 * @return 
 	 */
 	public Catalog<Resource> collectFirst(PlayerID playerID, Node node);
-	
-	public BoardMemento createMemento();
-	
-	public void restore(BoardMemento memento);
+
 	
 
 }

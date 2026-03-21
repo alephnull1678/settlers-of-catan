@@ -8,7 +8,7 @@ package catansim;
 /**
  * 
  */
-public interface StaticBoard {
+public interface StaticBoard extends Originator {
 	
 	
 	public Tile getRobberTile();

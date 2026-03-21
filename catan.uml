@@ -7,9 +7,6 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_uqZv4ASEEfGlO7CguFpanQ" name="HardWiredBoard">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_W1FQ0Bz_EfGAgPgAP_v3zg" name="robberTile" visibility="private" type="_zIGrYAViEfG4lNxHNfwBoQ"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_To4wwAY5EfGfDvnfcKXpVw" name="Implements" client="_uqZv4ASEEfGlO7CguFpanQ" supplier="__uMj8AY4EfGfDvnfcKXpVw" contract="__uMj8AY4EfGfDvnfcKXpVw"/>
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_qIvBcCTDEfGBxroX7I1xPA" client="_uqZv4ASEEfGlO7CguFpanQ" supplier="_sI6l8CTCEfGBxroX7I1xPA" contract="_sI6l8CTCEfGBxroX7I1xPA">
-        <name xsi:nil="true"/>
-      </interfaceRealization>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ElC84BprEfGtXtTo0_BenA" name="createBoardHardWired" visibility="private"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_-eS44ASkEfGBxYf1fTqBJA" name="Game">
@@ -151,6 +148,7 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="__vqBwAViEfG4lNxHNfwBoQ" name="StaticBoard">
+      <generalization xmi:type="uml:Generalization" xmi:id="_IWXLwCTGEfGBxroX7I1xPA" general="_sI6l8CTCEfGBxroX7I1xPA"/>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_b1UOYAYzEfGfDvnfcKXpVw" name="board"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_3xhFMAbQEfG3KN_q_NOcew" name="checkLongestRoad">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_-ltV0AbQEfG3KN_q_NOcew" name="playerID" type="_s-W0AAVkEfG4lNxHNfwBoQ" direction="return"/>

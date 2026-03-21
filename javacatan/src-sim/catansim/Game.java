@@ -518,11 +518,11 @@ public class Game {
         PlayerMemento[] playerMementos = new PlayerMemento[players.length];
 
         for (int i = 0; i < players.length; i++) {
-            playerMementos[i] = players[i].createMemento();
+            playerMementos[i] = (PlayerMemento) players[i].createMemento();
         }
 
         return new GameSnapshot(
-            board.createMemento(),
+        		(BoardMemento) board.createMemento(),
             playerMementos,
             roundNumber,
             currentPlayerIndex,
@@ -535,10 +535,10 @@ public class Game {
             throw new IllegalArgumentException("snapshot cannot be null");
         }
 
-        board.restore(snapshot.getBoardMemento());
+        board.restore((BoardMemento)snapshot.getBoardMemento());
 
         for (int i = 0; i < players.length; i++) {
-            players[i].restore(snapshot.getPlayerMemento(i));
+            players[i].restore((PlayerMemento)snapshot.getPlayerMemento(i));
         }
 
         this.roundNumber = snapshot.getRoundNumber();

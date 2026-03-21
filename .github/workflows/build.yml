@@ -22,18 +22,30 @@ jobs:
           distribution: temurin
           java-version: "21"
 
-      - name: Compile (javac)
+      - name: Download JUnit and JaCoCo
+        run: |
+          mkdir -p libs
+      
+          # JUnit
+          curl -L -o libs/junit-4.13.2.jar https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar
+          curl -L -o libs/hamcrest-core-1.3.jar https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+      
+          # JaCoCo (FIXED URLs)
+          curl -L -o libs/jacocoagent.jar https://repo1.maven.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar
+          curl -L -o libs/jacococli.jar https://repo1.maven.org/maven2/org/jacoco/org.jacoco.cli/0.8.11/org.jacoco.cli-0.8.11-nodeps.jar
+
+      - name: Compile main sources (javac)
         run: |
           SRC_DIR="javacatan/src-sim"
-          OUT_DIR="javacatan/bin"
-          mkdir -p "$OUT_DIR"
+          MAIN_OUT="javacatan/bin/main"
+          mkdir -p "$MAIN_OUT"
 
           find "$SRC_DIR" -name "*.java" \
             ! -path "*/catansim/Task1/*" \
             ! -path "*/catansim/Task3UnitTests/*" \
             > sources.txt
 
-          echo "Compiling these files:"
+          echo "Compiling main files:"
           cat sources.txt
 
           if [ ! -s sources.txt ]; then
@@ -41,9 +53,51 @@ jobs:
             exit 1
           fi
 
-          javac -encoding UTF-8 -d "$OUT_DIR" @sources.txt
+          javac -encoding UTF-8 -d "$MAIN_OUT" @sources.txt
+
+      - name: Compile tests
+        run: |
+          TEST_OUT="javacatan/bin/test"
+          mkdir -p "$TEST_OUT"
+
+          find javacatan/src-sim/catansim/Task1 javacatan/src-sim/catansim/Task3UnitTests -name "*.java" > test-sources.txt
+
+          echo "Compiling test files:"
+          cat test-sources.txt
+
+          if [ ! -s test-sources.txt ]; then
+            echo "No test .java files found"
+            exit 1
+          fi
+
+          javac -encoding UTF-8 -cp "javacatan/bin/main:libs/*" -d "$TEST_OUT" @test-sources.txt
+
+      - name: Run JUnit tests with coverage
+        run: |
+          TEST_CLASSES=$(find javacatan/bin/test -name "*Test.class" \
+            | sed 's#javacatan/bin/test/##' \
+            | sed 's#/#.#g' \
+            | sed 's/\.class$//' \
+            | sort)
+
+          echo "Running tests:"
+          echo "$TEST_CLASSES"
+
+          java -javaagent:libs/jacocoagent.jar=destfile=jacoco.exec \
+            -cp "javacatan/bin/main:javacatan/bin/test:libs/*" \
+            org.junit.runner.JUnitCore $TEST_CLASSES
+
+      - name: Generate JaCoCo XML report
+        run: |
+          java -jar libs/jacococli.jar report jacoco.exec \
+            --classfiles javacatan/bin/main \
+            --sourcefiles javacatan/src-sim \
+            --xml jacoco.xml
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.coverage.jacoco.xmlReportPaths=jacoco.xml

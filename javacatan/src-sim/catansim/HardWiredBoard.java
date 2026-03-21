@@ -1232,7 +1232,7 @@ public class HardWiredBoard implements Board {
 	
 	
 	
-	public BoardMemento createMemento() {
+	public Memento createMemento() {
 	    BoardMemento.NodeSnapshot[] snapshots = new BoardMemento.NodeSnapshot[nodes.length];
 
 	    for (int i = 0; i < nodes.length; i++) {
@@ -1246,99 +1246,100 @@ public class HardWiredBoard implements Board {
 	}
 	
 	
-	public void restore(BoardMemento memento) {
-	    if (memento == null) {
-	        throw new IllegalArgumentException("memento cannot be null");
-	    }
+	public void restore(Memento memento) {
+		BoardMemento bm = (BoardMemento)memento;
+		if (bm == null) {
+		    throw new IllegalArgumentException("memento cannot be null");
+		}
 
-	    if (memento.size() != nodes.length) {
-	        throw new IllegalArgumentException("memento size does not match board node count");
-	    }
+		if (bm.size() != nodes.length) {
+		    throw new IllegalArgumentException("memento size does not match board node count");
+		}
 
-	    // --------------------------------
-	    // 1. Clear all mutable node state
-	    // --------------------------------
-	    for (Node node : nodes) {
-	        node.clearOccupancy();
-	    }
+		// --------------------------------
+		// 1. Clear all mutable node state
+		// --------------------------------
+		for (Node node : nodes) {
+		    node.clearOccupancy();
+		}
 
-	    // --------------------------------
-	    // 2. Restore buildings
-	    // --------------------------------
-	    for (int i = 0; i < nodes.length; i++) {
-	        BoardMemento.NodeSnapshot snapshot = memento.getNodeSnapshot(i);
-	        Building building = snapshot.getBuilding();
+		// --------------------------------
+		// 2. Restore buildings
+		// --------------------------------
+		for (int i = 0; i < nodes.length; i++) {
+		    BoardMemento.NodeSnapshot snapshot = bm.getNodeSnapshot(i);
+		    Building building = snapshot.getBuilding();
 
-	        if (building != null) {
-	            nodes[i].placeBuilding(building);
-	        }
-	    }
+		    if (building != null) {
+		        nodes[i].placeBuilding(building);
+		    }
+		}
 
-	    // --------------------------------
-	    // 3. Restore roads (deduplicate)
-	    // --------------------------------
-	    Set<String> restoredEdges = new HashSet<>();
+		// --------------------------------
+		// 3. Restore roads (deduplicate)
+		// --------------------------------
+		Set<String> restoredEdges = new HashSet<>();
 
-	    for (int i = 0; i < nodes.length; i++) {
-	        BoardMemento.NodeSnapshot snapshot = memento.getNodeSnapshot(i);
-	        Road[] roads = snapshot.getRoads();
+		for (int i = 0; i < nodes.length; i++) {
+		    BoardMemento.NodeSnapshot snapshot = bm.getNodeSnapshot(i);
+		    Road[] roads = snapshot.getRoads();
 
-	        for (Road road : roads) {
-	            if (road == null) {
-	                continue;
-	            }
+		    for (Road road : roads) {
+		        if (road == null) {
+		            continue;
+		        }
 
-	            Node otherEndpoint = null;
+		        Node otherEndpoint = null;
 
-	            for (Node neighbour : nodes[i].getNeighbours()) {
-	                BoardMemento.NodeSnapshot neighbourSnapshot =
-	                    memento.getNodeSnapshot(neighbour.getNodeID());
+		        for (Node neighbour : nodes[i].getNeighbours()) {
+		            BoardMemento.NodeSnapshot neighbourSnapshot =
+		                bm.getNodeSnapshot(neighbour.getNodeID());
 
-	                for (Road neighbourRoad : neighbourSnapshot.getRoads()) {
-	                    if (neighbourRoad == road) {
-	                        otherEndpoint = neighbour;
-	                        break;
-	                    }
-	                }
+		            for (Road neighbourRoad : neighbourSnapshot.getRoads()) {
+		                if (neighbourRoad == road) {
+		                    otherEndpoint = neighbour;
+		                    break;
+		                }
+		            }
 
-	                if (otherEndpoint != null) {
-	                    break;
-	                }
-	            }
+		            if (otherEndpoint != null) {
+		                break;
+		            }
+		        }
 
-	            if (otherEndpoint == null) {
-	                throw new IllegalStateException(
-	                    "Could not find second endpoint for road touching node " + nodes[i].getNodeID()
-	                );
-	            }
+		        if (otherEndpoint == null) {
+		            throw new IllegalStateException(
+		                "Could not find second endpoint for road touching node " + nodes[i].getNodeID()
+		            );
+		        }
 
-	            int a = Math.min(nodes[i].getNodeID(), otherEndpoint.getNodeID());
-	            int b = Math.max(nodes[i].getNodeID(), otherEndpoint.getNodeID());
-	            String edgeKey = a + "-" + b;
+		        int a = Math.min(nodes[i].getNodeID(), otherEndpoint.getNodeID());
+		        int b = Math.max(nodes[i].getNodeID(), otherEndpoint.getNodeID());
+		        String edgeKey = a + "-" + b;
 
-	            if (!restoredEdges.contains(edgeKey)) {
-	                restoredEdges.add(edgeKey);
-	                placePiece(road, road.getOwnerPlayerID(), nodes[a], nodes[b]);
-	            }
-	        }
-	    }
+		        if (!restoredEdges.contains(edgeKey)) {
+		            restoredEdges.add(edgeKey);
+		            placePiece(road, road.getOwnerPlayerID(), nodes[a], nodes[b]);
+		        }
+		    }
+		}
 
-	    // --------------------------------
-	    // 4. Restore robber
-	    // --------------------------------
-	    int robberTileID = memento.getRobberTileID();
+		// --------------------------------
+		// 4. Restore robber
+		// --------------------------------
+		int robberTileID = bm.getRobberTileID();
 
-	    if (robberTileID < 0 || robberTileID >= tiles.length) {
-	        throw new IllegalArgumentException("invalid robberTileID in memento");
-	    }
+		if (robberTileID < 0 || robberTileID >= tiles.length) {
+		    throw new IllegalArgumentException("invalid robberTileID in memento");
+		}
 
-	    robberTile = tiles[robberTileID];
+		robberTile = tiles[robberTileID];
 
-	    // --------------------------------
-	    // 5. Recompute longest road cache
-	    // --------------------------------
-	    longestRoadHolder = null;
-	    longestRoadLength = 0;
-	    checkLongestRoad();
+		// --------------------------------
+		// 5. Recompute longest road cache
+		// --------------------------------
+		longestRoadHolder = null;
+		longestRoadLength = 0;
+		checkLongestRoad();
 	}
 }
