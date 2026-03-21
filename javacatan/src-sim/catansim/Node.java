@@ -82,4 +82,11 @@ public class Node {
     public int hashCode() {
         return Integer.hashCode(nodeID);
     }
+    
+    
+    public void clearOccupancy() {
+        this.roads = new Road[MAX_ROADS];
+        this.roadCount = 0;
+        this.building = null;
+    }
 }

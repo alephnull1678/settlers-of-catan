@@ -152,4 +152,30 @@ public abstract class Player {
 
         return sb.toString().trim();
     }
+    
+    
+    
+    public PlayerMemento createMemento() {
+        return new PlayerMemento(
+            getPieceCatalog(),
+            getResourceCatalog(),
+            getVP()
+        );
+    }
+    
+    
+    public void restore(PlayerMemento memento) {
+        if (memento == null) {
+            throw new IllegalArgumentException("memento cannot be null");
+        }
+
+        // Restore piece availability
+        pieceHandler.restoreFromCatalog(memento.getPieceCatalog());
+
+        // Restore resource hand
+        playerHand.restoreFromCatalog(memento.getResourceCatalog());
+
+        // Restore victory points
+        this.vp = memento.getVictoryPoints();
+    }
 }

@@ -6,6 +6,11 @@ import java.util.regex.Pattern;
 public final class Parser {
 
 	//All regex patterns to check off of
+	private static final Pattern UNDO_PATTERN =
+	        Pattern.compile("^\\s*Undo\\s*$", Pattern.CASE_INSENSITIVE);
+
+	private static final Pattern REDO_PATTERN =
+	        Pattern.compile("^\\s*Redo\\s*$", Pattern.CASE_INSENSITIVE);
     private static final Pattern ROLL_PATTERN =
             Pattern.compile("^\\s*Roll\\s*$", Pattern.CASE_INSENSITIVE);
 
@@ -63,6 +68,14 @@ public final class Parser {
 
         if (LIST_PATTERN.matcher(input).matches()) {
             return new Action(ActionTypes.LIST);
+        }
+        
+        if (UNDO_PATTERN.matcher(input).matches()) {
+            return new Action(ActionTypes.UNDO);
+        }
+
+        if (REDO_PATTERN.matcher(input).matches()) {
+            return new Action(ActionTypes.REDO);
         }
 
         matcher = BUILD_SETTLEMENT_PATTERN.matcher(input);

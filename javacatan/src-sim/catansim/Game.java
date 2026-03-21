@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
+	
+	private final Caretaker caretaker = new Caretaker();
+	private int currentPlayerIndex = 0;
+	private boolean restoredThisTurn = false;
 
     private static final int WIN_VP = 10;
     private static final int MAX_ROUNDS_LIMIT = 8192;
@@ -92,21 +96,30 @@ public class Game {
 
         while (roundNumber < maxRounds && getWinner() == null) {
             roundNumber++;
+            currentPlayerIndex = 0;
 
-            //Turn phase: each player acts once
-            for (Player p : players) {
-                if (getWinner() != null) {
-                    break;
+            while (currentPlayerIndex < players.length && getWinner() == null) {
+
+                // Only create a new undo point if we did NOT just restore one.
+                if (!restoredThisTurn) {
+                    caretaker.save(createSnapshot());
                 }
-                takeTurn(p);
+
+                // Clear the flag before the turn starts.
+                restoredThisTurn = false;
+
+                takeTurn(players[currentPlayerIndex]);
                 notifyVisualizer();
+
+                // If no undo/redo happened, move to next player.
+                if (!restoredThisTurn) {
+                    currentPlayerIndex++;
+                }
             }
 
             printVictoryPoints();
-
-
         }
-        
+
         notifyVisualizer();
     }
 
@@ -226,13 +239,8 @@ public class Game {
             Catalog<PieceTypes> piecesOwned = player.getPieceCatalog();
 
             List<Action> valid = validator.getValidActions(staticBoard, pid, resourcesOwned, piecesOwned, state);
-            
-            //Make it so agent can't list
-            if (!(player instanceof HumanPlayer)) {
-                valid.removeIf(a -> a.getActionType() == ActionTypes.LIST);
-            }
 
-            if (valid == null || valid.isEmpty()) {
+            if (valid == null) {
                 printAction(pid, "No valid actions");
                 return;
             }
@@ -241,6 +249,7 @@ public class Game {
             // SPEC REQUIREMENT:
             // Human player must step through agent turns.
             // If an agent is in NEW_TURN, the human must press GO.
+            // Also: only the human may UNDO/REDO at the start of a turn.
             // ---------------------------------------------------
             Player chooser = player;
             if (state == GameStates.NEW_TURN && !(player instanceof HumanPlayer)) {
@@ -250,7 +259,30 @@ public class Game {
                 }
             }
 
-            Action chosen = chooser.chooseAction(valid.toArray(new Action[0]), (StaticBoard)board);
+            // Build chooser-specific action list
+            List<Action> chooserValid = new ArrayList<>(valid);
+
+            // Agents should not see LIST
+            if (!(chooser instanceof HumanPlayer)) {
+                chooserValid.removeIf(a -> a.getActionType() == ActionTypes.LIST);
+            }
+
+            // Human at start-of-turn may also UNDO / REDO
+            if (state == GameStates.NEW_TURN && chooser instanceof HumanPlayer) {
+                if (caretaker.undoSize() >= 2) {
+                    chooserValid.add(new Action(ActionTypes.UNDO));
+                }
+                if (caretaker.canRedo()) {
+                    chooserValid.add(new Action(ActionTypes.REDO));
+                }
+            }
+
+            if (chooserValid.isEmpty()) {
+                printAction(pid, "No valid actions");
+                return;
+            }
+
+            Action chosen = chooser.chooseAction(chooserValid.toArray(new Action[0]), (StaticBoard)board);
             if (chosen == null) {
                 printAction(pid, "Chose no action");
                 return;
@@ -330,6 +362,21 @@ public class Game {
 
                 case GO:
                     break;
+                case UNDO:
+                    if (undo()) {
+                        printAction(pid, "Undo");
+                    } else {
+                        printAction(pid, "Nothing to undo");
+                    }
+                    return;
+
+                case REDO:
+                    if (redo()) {
+                        printAction(pid, "Redo");
+                    } else {
+                        printAction(pid, "Nothing to redo");
+                    }
+                    return;
             }
 
             stateMachine.read(chosen);
@@ -456,6 +503,74 @@ public class Game {
     private String nodeLabel(Node n) {
         if (n == null) return "null";
         return "Node " + n.getNodeID();
+    }
+    
+    
+    
+    
+    
+    //MEMENTO OPS
+    private Caretaker.GameSnapshot createSnapshot() {
+        PlayerMemento[] playerMementos = new PlayerMemento[players.length];
+
+        for (int i = 0; i < players.length; i++) {
+            playerMementos[i] = players[i].createMemento();
+        }
+
+        return new Caretaker.GameSnapshot(
+            board.createMemento(),
+            playerMementos,
+            roundNumber,
+            currentPlayerIndex,
+            longestRoadHolder
+        );
+    }
+    
+    private void restoreSnapshot(Caretaker.GameSnapshot snapshot) {
+        if (snapshot == null) {
+            throw new IllegalArgumentException("snapshot cannot be null");
+        }
+
+        board.restore(snapshot.getBoardMemento());
+
+        for (int i = 0; i < players.length; i++) {
+            players[i].restore(snapshot.getPlayerMemento(i));
+        }
+
+        this.roundNumber = snapshot.getRoundNumber();
+        this.currentPlayerIndex = snapshot.getCurrentPlayerIndex();
+        this.longestRoadHolder = snapshot.getLongestRoadHolder();
+
+        stateMachine.goRoll();
+        restoredThisTurn = true;
+
+        notifyVisualizer();
+    }
+    
+    public boolean undo() {
+        if (caretaker.undoSize() < 2) {
+            return false;
+        }
+
+        Caretaker.GameSnapshot currentSnapshot = caretaker.popUndo();
+        caretaker.pushRedo(currentSnapshot);
+
+        Caretaker.GameSnapshot previousSnapshot = caretaker.peekUndo();
+        restoreSnapshot(previousSnapshot);
+
+        return true;
+    }
+
+    public boolean redo() {
+        if (!caretaker.canRedo()) {
+            return false;
+        }
+
+        Caretaker.GameSnapshot nextSnapshot = caretaker.popRedo();
+        caretaker.pushUndo(nextSnapshot);
+        restoreSnapshot(nextSnapshot);
+
+        return true;
     }
     
     

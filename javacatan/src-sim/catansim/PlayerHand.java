@@ -83,4 +83,28 @@ public class PlayerHand {
     public Catalog<Resource> snapshot() {
         return catalog.snapshot();
     }
+    
+    
+    
+    public void restoreFromCatalog(Catalog<Resource> restoredCatalog) {
+        if (restoredCatalog == null) {
+            throw new IllegalArgumentException("restoredCatalog cannot be null");
+        }
+
+        // Clear current hand
+        for (Resource resource : Resource.values()) {
+            int current = catalog.getCount(resource);
+            if (current > 0) {
+                catalog.remove(resource, current);
+            }
+        }
+
+        // Rebuild from snapshot
+        for (Resource resource : Resource.values()) {
+            int amount = restoredCatalog.getCount(resource);
+            if (amount > 0) {
+                catalog.add(resource, amount);
+            }
+        }
+    }
 }

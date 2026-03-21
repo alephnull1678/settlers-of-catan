@@ -69,4 +69,24 @@ public class PieceHandler {
         }
         return avail.get(type);
     }
+    
+    
+    public void restoreFromCatalog(Catalog<PieceTypes> restoredCatalog) {
+        if (restoredCatalog == null) {
+            throw new IllegalArgumentException("restoredCatalog cannot be null");
+        }
+
+        for (PieceTypes type : PieceTypes.values()) {
+            int restoredCount = restoredCatalog.getCount(type);
+            int max = buckets.get(type).length;
+
+            if (restoredCount < 0 || restoredCount > max) {
+                throw new IllegalArgumentException(
+                    "invalid restored count for " + type + ": " + restoredCount
+                );
+            }
+
+            avail.put(type, restoredCount);
+        }
+    }
 }
