@@ -18,6 +18,6 @@ public class AgentPlayer extends Player {
 	 * 
 	 * @param strategy 
 	 */
-	public void Operation1(DecisionStrategy strategy) {
+	public void setDecisionStrategy(DecisionStrategy strategy) {
 	}
 }

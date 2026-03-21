@@ -17,7 +17,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_d781kASEEfGlO7CguFpanQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1774056903671">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eFcv0ASEEfGlO7CguFpanQ" name="New Class Diagram" repPath="#_eFHYoASEEfGlO7CguFpanQ" changeId="1774062156293">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']"/>
         <target xmi:type="uml:Model" href="catan.uml#_d6y_AASEEfGlO7CguFpanQ"/>
       </ownedRepresentationDescriptors>
@@ -5031,7 +5031,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.clazz/description/papyrus_class.odesign#//@ownedViewpoints[name='ClassDiagram']/@ownedRepresentations[name='ClassDiagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subContainerMappings[name='CD_ClassOperationsCompartment']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_M41VMCR1EfGU0vC07brctQ" name="+ Operation1(in strategy: DecisionStrategy)">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_M41VMCR1EfGU0vC07brctQ" name="+ setDecisionStrategy(in strategy: DecisionStrategy)">
           <target xmi:type="uml:Operation" href="catan.uml#_M40uICR1EfGU0vC07brctQ"/>
           <semanticElements xmi:type="uml:Operation" href="catan.uml#_M40uICR1EfGU0vC07brctQ"/>
           <ownedStyle xmi:type="diagram:Square" uid="_M42jUCR1EfGU0vC07brctQ" labelSize="9" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" labelAlignment="LEFT" description="_zVVIewX5EfGRf-tqN1BwGw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="16" height="5" color="195,215,221"/>
