@@ -3,7 +3,7 @@ package catansim.Task1;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import catansim.MapCatalog;
+import catansim.HashMapCatalog;
 import catansim.Catalog;
 
 /**
@@ -16,7 +16,7 @@ public class MapCatalogTest {
     @Test
     public void test_add_increasesCount() {
 
-        MapCatalog<String> catalog = new MapCatalog<>();
+    	HashMapCatalog<String> catalog = new HashMapCatalog<String>();
 
         catalog.add("Wood", 3);
 
@@ -27,7 +27,7 @@ public class MapCatalogTest {
     @Test
     public void test_remove_success() {
 
-        MapCatalog<String> catalog = new MapCatalog<>();
+        HashMapCatalog<String> catalog = new HashMapCatalog<String>();
 
         catalog.add("Brick", 4);
 
@@ -41,7 +41,7 @@ public class MapCatalogTest {
     @Test
     public void test_remove_failure_whenNotEnough() {
 
-        MapCatalog<String> catalog = new MapCatalog<>();
+        HashMapCatalog<String> catalog = new HashMapCatalog<String>();
 
         catalog.add("Ore", 1);
 
@@ -55,7 +55,7 @@ public class MapCatalogTest {
     @Test
     public void test_remove_exactAmount_removesEntry() {
 
-        MapCatalog<String> catalog = new MapCatalog<>();
+        HashMapCatalog<String> catalog = new HashMapCatalog<String>();
 
         catalog.add("Sheep", 3);
         
@@ -69,7 +69,7 @@ public class MapCatalogTest {
     @Test(expected = UnsupportedOperationException.class)
     public void test_snapshot_isReadOnly() {
 
-        MapCatalog<String> catalog = new MapCatalog<>();
+        HashMapCatalog<String> catalog = new HashMapCatalog<String>();
 
         catalog.add("Wood", 2);
 
@@ -82,7 +82,7 @@ public class MapCatalogTest {
     @Test
     public void test_snapshot_preservesCounts() {
 
-        MapCatalog<String> catalog = new MapCatalog<>();
+    	HashMapCatalog<String> catalog = new HashMapCatalog<>();
 
         catalog.add("Wheat", 5);
 
