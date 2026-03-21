@@ -302,7 +302,11 @@ public class Game {
                     } else {
                     	// ROBBER TRIGGERED
                     	PlayerID stolenPlayerID = board.moveRobber(player.getPlayerID());
-                    	System.out.println("ROBBER HAS BEEN MOVED TO " + board.getRobberTile().getResource().toString() + " " + board.getRobberTile().getDiceNum() + ".");
+                    	if (board.getRobberTile().getResource() == null) {
+                    		System.out.println("ROBBER HAS BEEN MOVED TO THE DESERT.");
+                    	} else {
+                    		System.out.println("ROBBER HAS BEEN MOVED TO " + board.getRobberTile().getResource().toString() + " " + board.getRobberTile().getDiceNum() + ".");
+                    	}
                     	
                     	// STEAL
                     	if (stolenPlayerID != null) {
@@ -557,7 +561,8 @@ public class Game {
 
         Caretaker.GameSnapshot previousSnapshot = caretaker.peekUndo();
         restoreSnapshot(previousSnapshot);
-
+        
+        visualizer.onStateChange();
         return true;
     }
 
@@ -569,7 +574,8 @@ public class Game {
         Caretaker.GameSnapshot nextSnapshot = caretaker.popRedo();
         caretaker.pushUndo(nextSnapshot);
         restoreSnapshot(nextSnapshot);
-
+        
+        visualizer.onStateChange();
         return true;
     }
     
