@@ -8,7 +8,7 @@ package catan;
 /**
  * 
  */
-public interface StaticBoard {
+public interface StaticBoard extends Originator {
 	/**
 	 * 
 	 */

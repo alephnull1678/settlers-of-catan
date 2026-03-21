@@ -9,7 +9,7 @@ import java.util.Random;
 /**
  * Represents a player in the game.
  */
-public abstract class Player {
+public abstract class Player implements Originator {
 	
 	
 	private final PlayerID playerID;
@@ -155,7 +155,7 @@ public abstract class Player {
     
     
     
-    public PlayerMemento createMemento() {
+    public Memento createMemento() {
         return new PlayerMemento(
             getPieceCatalog(),
             getResourceCatalog(),
@@ -164,18 +164,19 @@ public abstract class Player {
     }
     
     
-    public void restore(PlayerMemento memento) {
+    public void restore(Memento memento) {
+    	PlayerMemento pm = (PlayerMemento) memento;
         if (memento == null) {
             throw new IllegalArgumentException("memento cannot be null");
         }
 
         // Restore piece availability
-        pieceHandler.restoreFromCatalog(memento.getPieceCatalog());
+        pieceHandler.restoreFromCatalog(pm.getPieceCatalog());
 
         // Restore resource hand
-        playerHand.restoreFromCatalog(memento.getResourceCatalog());
+        playerHand.restoreFromCatalog(pm.getResourceCatalog());
 
         // Restore victory points
-        this.vp = memento.getVictoryPoints();
+        this.vp = pm.getVictoryPoints();
     }
 }

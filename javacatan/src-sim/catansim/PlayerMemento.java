@@ -1,6 +1,6 @@
 package catansim;
 
-public final class PlayerMemento {
+public final class PlayerMemento implements Memento {
 
     private final Catalog<PieceTypes> pieceCatalog;
     private final Catalog<Resource> resourceCatalog;

@@ -8,7 +8,7 @@ package catan;
 /**
  * 
  */
-public class HardWiredBoard implements Board, Originator {
+public class HardWiredBoard implements Board {
 	/**
 	 * 
 	 */

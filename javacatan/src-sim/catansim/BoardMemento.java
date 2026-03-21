@@ -1,6 +1,6 @@
 package catansim;
 
-public final class BoardMemento {
+public final class BoardMemento implements Memento {
 
     public static final class NodeSnapshot {
         private final Building building;
