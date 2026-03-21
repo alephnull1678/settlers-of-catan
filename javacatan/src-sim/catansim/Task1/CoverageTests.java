@@ -105,5 +105,10 @@ public class CoverageTests {
     }
 	
 	
-	
+    @Test
+    public void testRestore() {
+    	board = new HardWiredBoard();
+    	
+        board.restore(board.createMemento());
+    }
 }
