@@ -29,8 +29,6 @@ jobs:
           mkdir -p "$OUT_DIR"
 
           find "$SRC_DIR" -name "*.java" \
-            ! -path "*/catansim/Task1/*" \
-            ! -path "*/catansim/Task3UnitTests/*" \
             > sources.txt
 
           echo "Compiling these files:"
@@ -42,6 +40,26 @@ jobs:
           fi
 
           javac -encoding UTF-8 -d "$OUT_DIR" @sources.txt
+
+      - name: Run JUnit tests
+        run: |
+          echo "Running JUnit tests..."
+      
+          # Find all test classes (adjust if needed)
+          TEST_CLASSES=$(find javacatan/bin -name "*Test.class" \
+            | sed 's#javacatan/bin/##' \
+            | sed 's#/#.#g' \
+            | sed 's/.class$//')
+      
+          if [ -z "$TEST_CLASSES" ]; then
+            echo "No test classes found"
+            exit 1
+          fi
+      
+          echo "Test classes:"
+          echo "$TEST_CLASSES"
+      
+          java -cp "javacatan/bin:libs/*" org.junit.runner.JUnitCore $TEST_CLASSES
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
