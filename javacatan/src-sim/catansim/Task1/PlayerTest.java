@@ -17,10 +17,10 @@ public class PlayerTest {
 	@Test
 	public void testPlayerHoldsResources() {
 		// Create Player
-		Player player = new Player(PlayerID.BLUE);
+		Player player = new AgentPlayer(PlayerID.BLUE);
 		
 		// Add resources into a catalog
-		MapCatalog<Resource> gained = new MapCatalog<>();
+		HashMapCatalog<Resource> gained = new HashMapCatalog<>();
 		gained.add(Resource.WOOD, 2);
 		gained.add(Resource.ORE, 1);
 		
@@ -38,25 +38,26 @@ public class PlayerTest {
 	// 2: Test that players hand updates when dealt resources 
 	@Test
 	public void testChooseAction() {
-		Player player = new Player(PlayerID.BLUE);
+		Player player = new AgentPlayer(PlayerID.BLUE);
+		Board board = new HardWiredBoard();
 		
 		// Create a list of no possible actions
-		assertNull(player.chooseAction(new Action[0]));
+		assertNull(player.chooseAction(new Action[0], (StaticBoard) board));
 		// ChooseAction should return null if it correctly identifies there are no possible actions
-		assertNull(player.chooseAction(null));
+		assertNull(player.chooseAction(null, (StaticBoard) board));
 	}
 	
 	// 3: Test to make sure constructor can handle a null player
 	@Test(expected = IllegalArgumentException.class)
 	public void testHandleNullPlayer() {
-		new Player(null);
+		new AgentPlayer(null);
 	}
 	
 	// 4: Test to see that a piece purchase fails when the player has insufficient resources
 	@Test
 	public void testPieceConsumptionWithoutResources() {
 		// Default player has no resources
-		Player player = new Player(PlayerID.BLUE);
+		Player player = new AgentPlayer(PlayerID.BLUE);
 		
 		// Attempt to purchase road
 		Piece piece = player.consumePiece(PieceTypes.ROAD);

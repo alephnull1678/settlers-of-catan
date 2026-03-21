@@ -27,7 +27,7 @@ public class NodeTest {
 	@Test
 	public void testNodeStoresBuilding() {
 		Node node = new Node(10);
-		Settlement settlement = new Settlement(PlayerID.BLUE);
+		Building settlement = new Building(PlayerID.BLUE, PieceTypes.SETTLEMENT);
 		
 		node.placeBuilding(settlement); //Places building on node
 		

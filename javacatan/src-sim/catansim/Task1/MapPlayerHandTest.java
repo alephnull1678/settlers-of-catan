@@ -3,8 +3,8 @@ package catansim.Task1;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import catansim.MapPlayerHand;
-import catansim.MapCatalog;
+import catansim.HashMapCatalog;
+import catansim.PlayerHand;
 import catansim.Resource;
 
 /**
@@ -18,7 +18,7 @@ public class MapPlayerHandTest {
     @Test
     public void test_addCard_increasesCount() {
 
-        MapPlayerHand hand = new MapPlayerHand();
+        PlayerHand hand = new PlayerHand();
 
         hand.addCard(Resource.WOOD, 2);
 
@@ -29,7 +29,7 @@ public class MapPlayerHandTest {
     @Test
     public void test_addCard_invalidInput_returnsFalse() {
 
-        MapPlayerHand hand = new MapPlayerHand();
+    	PlayerHand hand = new PlayerHand();
 
         boolean added = hand.addCard(null, 2);
 
@@ -40,7 +40,7 @@ public class MapPlayerHandTest {
     @Test
     public void test_removeCard_success() {
 
-        MapPlayerHand hand = new MapPlayerHand();
+    	PlayerHand hand = new PlayerHand();
 
         hand.addCard(Resource.BRICK, 3);
 
@@ -54,7 +54,7 @@ public class MapPlayerHandTest {
     @Test
     public void test_removeCard_failure_whenNotEnough() {
 
-        MapPlayerHand hand = new MapPlayerHand();
+    	PlayerHand hand = new PlayerHand();
 
         hand.addCard(Resource.ORE, 1);
 
@@ -69,12 +69,12 @@ public class MapPlayerHandTest {
     @Test
     public void test_removeHand_atomicFailure() {
 
-        MapPlayerHand hand = new MapPlayerHand();
+    	PlayerHand hand = new PlayerHand();
 
         hand.addCard(Resource.WOOD, 2);
         hand.addCard(Resource.BRICK, 1);
 
-        MapCatalog<Resource> cost = new MapCatalog<>();
+        HashMapCatalog<Resource> cost = new HashMapCatalog<>();
         cost.add(Resource.WOOD, 2);
         cost.add(Resource.BRICK, 3);
 
@@ -90,9 +90,9 @@ public class MapPlayerHandTest {
     @Test
     public void test_addHand_multipleResources() {
 
-        MapPlayerHand hand = new MapPlayerHand();
+    	PlayerHand hand = new PlayerHand();
 
-        MapCatalog<Resource> incoming = new MapCatalog<>();
+    	HashMapCatalog<Resource> incoming = new HashMapCatalog<Resource>();
         incoming.add(Resource.WOOD, 2);
         incoming.add(Resource.BRICK, 1);
 

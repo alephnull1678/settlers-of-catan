@@ -21,11 +21,11 @@ public class PieceHandlerTest {
 
         PieceHandler handler = new PieceHandler(PlayerID.BLUE);
 
-        assertEquals("Roads should start at maximum", PieceHandler.MAX_ROADS, handler.getAvailable(PieceTypes.ROAD));
+        assertEquals("Roads should start at maximum", PieceTypes.ROAD.maxCount(), handler.getAvailable(PieceTypes.ROAD));
         
-        assertEquals("Settlements should start at maximum", PieceHandler.MAX_SETTLEMENTS, handler.getAvailable(PieceTypes.SETTLEMENT));
+        assertEquals("Settlements should start at maximum", PieceTypes.SETTLEMENT.maxCount(), handler.getAvailable(PieceTypes.SETTLEMENT));
 
-        assertEquals("Cities should start at maximum", PieceHandler.MAX_CITIES, handler.getAvailable(PieceTypes.CITY));
+        assertEquals("Cities should start at maximum", PieceTypes.CITY.maxCount(), handler.getAvailable(PieceTypes.CITY));
     }
 
     // Tests that using a piece decreases the available count by one
