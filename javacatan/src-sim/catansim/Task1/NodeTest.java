@@ -223,6 +223,18 @@ public class NodeTest {
     public void testRestore() {
     	board = new HardWiredBoard();
     	
+        Node node0 = board.getNodes()[0];
+        Node node1 = node0.getNeighbours()[0];
+        Road road = new Road(playerA);
+        board.placePiece(road, playerA, node0, node1);
+
+        int length = board.getLongestRoadLength(playerA);
+        assertEquals(1, length);
+
+        PlayerID holder = board.checkLongestRoad();
+        
+        assertNull(holder);
+    	
         board.restore(board.createMemento());
     }
 }
