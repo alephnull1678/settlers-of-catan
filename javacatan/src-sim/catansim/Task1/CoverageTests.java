@@ -78,32 +78,6 @@ public class CoverageTests {
         assertFalse(board.canPlace(PieceTypes.CITY, playerA, node));
     }
 
-//    @Test
-//    public void testPlaceRoadAndCanConnectRoads() {
-//    	board = new HardWiredBoard();
-//    	
-//        Node start = board.getNodes()[0];
-//        Node end = start.getNeighbours()[0];
-//
-//        BuildAction action = new BuildAction(start, end, PieceTypes.ROAD);
-//
-//        // Cannot place road before any existing road (needs connection)
-//        assertFalse(board.canConnectRoads(action, playerA));
-//
-//        // Create a settlement to allow road connection
-//        board.placePiece(new Building(playerA, PieceTypes.SETTLEMENT), playerA, start);
-//        assertFalse(board.canConnectRoads(action, playerA)); // still fails without 2-hop check?
-//
-//        // Place a road manually to allow second hop connection
-//        Road road = new Road(playerA);
-//        board.placePiece(road, playerA, start, end);
-//
-//        // Now a road between connected nodes should be detected
-//        Node start2 = end;
-//        Node end2 = end.getNeighbours()[0];
-//        BuildAction nextRoad = new BuildAction(start2, end2, PieceTypes.ROAD);
-//        assertTrue(board.canConnectRoads(nextRoad, playerA));
-//    }
 
     @Test
     public void testLongestRoad() {
@@ -122,35 +96,6 @@ public class CoverageTests {
         assertNull(holder);
     }
 
-//    @Test
-//    public void testMoveRobber() {
-//    	board = new HardWiredBoard();
-//    	
-//        PlayerID playerWithBuilding = playerB;
-//        Node node = board.getNodes()[0];
-//        board.placePiece(new Building(playerWithBuilding, PieceTypes.SETTLEMENT), playerWithBuilding, node);
-//
-//        PlayerID robbed = board.moveRobber(playerA);
-//        // Could be null if random selects tile with no opponent, or playerB if correct
-//        assertTrue(robbed == null || robbed == playerWithBuilding);
-//        assertNotEquals(board.getRobberTile(), board.getRobberTile()); // The tile should move
-//    }
-
-//    @Test
-//    public void testCollectFirst() {
-//    	board = new HardWiredBoard();
-//    	
-//        Node node = board.getNodes()[0];
-//        Building settlement = new Building(playerA, PieceTypes.SETTLEMENT);
-//        board.placePiece(settlement, playerA, node);
-//
-//        Catalog<Resource> first = board.collectFirst(playerA, node);
-//        int totalResources = 0;
-//        for (Resource r : Resource.values()) {
-//            totalResources += first.getCount(r);
-//        }
-//        assertEquals(6, totalResources); // Each node touches 6 tiles
-//    }
 
     @Test
     public void testIllegalArguments() {
