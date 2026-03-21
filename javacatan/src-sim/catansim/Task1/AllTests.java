@@ -11,7 +11,8 @@ import org.junit.runners.Suite;
     DiceTest.class,
     MapCatalogTest.class,
     MapPlayerHandTest.class,
-    PieceHandlerTest.class
+    PieceHandlerTest.class,
+    CoverageTests.class
 })
 public class AllTests {
 
