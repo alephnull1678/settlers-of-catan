@@ -8,13 +8,16 @@ package catan;
 /**
  * 
  */
-public interface DecisionStrategy {
+public interface Originator {
 	/**
 	 * 
-	 * @param player 
-	 * @param actions 
-	 * @param board 
 	 * @return 
 	 */
-	public Action decideAction(Player player, Action[] actions, StaticBoard board);
+	public Memento createMemento();
+
+	/**
+	 * 
+	 * @param memento 
+	 */
+	public void restore(Memento memento);
 }

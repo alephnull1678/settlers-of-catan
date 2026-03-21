@@ -28,11 +28,15 @@ public class Game {
 	/**
 	 * 
 	 */
-	public GameOriginator gameoriginator;
+	public Caretaker gamecaretaker;
 	/**
 	 * 
 	 */
-	public GameCaretaker gamecaretaker;
+	public Board board;
+	/**
+	 * 
+	 */
+	public Player player;
 
 	/**
 	 * 
@@ -57,5 +61,17 @@ public class Game {
 	 * 
 	 */
 	private void notifyVisualizers() {
+	}
+
+	/**
+	 * 
+	 */
+	private void undo() {
+	}
+
+	/**
+	 * 
+	 */
+	private void redo() {
 	}
 }

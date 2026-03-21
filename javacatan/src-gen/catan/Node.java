@@ -44,4 +44,10 @@ public class Node {
 	 */
 	public void connectNode(Node node) {
 	}
+
+	/**
+	 * 
+	 */
+	public void clearOccupancy() {
+	}
 }

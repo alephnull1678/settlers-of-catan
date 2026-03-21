@@ -8,13 +8,5 @@ package catan;
 /**
  * 
  */
-public interface DecisionStrategy {
-	/**
-	 * 
-	 * @param player 
-	 * @param actions 
-	 * @param board 
-	 * @return 
-	 */
-	public Action decideAction(Player player, Action[] actions, StaticBoard board);
+public class BoardMemento implements Memento {
 }

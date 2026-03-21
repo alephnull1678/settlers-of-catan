@@ -13,8 +13,4 @@ public class GameCaretaker implements Caretaker {
 	 * 
 	 */
 	public GameMemento gamememento;
-	/**
-	 * 
-	 */
-	public GameOriginator gameoriginator;
 }

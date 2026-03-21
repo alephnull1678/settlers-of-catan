@@ -37,4 +37,11 @@ public class PieceHandler {
 	 */
 	public void refundPiece(PieceTypes Piece) {
 	}
+
+	/**
+	 * 
+	 * @param catalog 
+	 */
+	public void restoreFromCatalog(Catalog catalog) {
+	}
 }

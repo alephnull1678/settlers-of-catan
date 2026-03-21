@@ -8,7 +8,7 @@ package catan;
 /**
  * 
  */
-public abstract class Player {
+public abstract class Player implements Originator {
 	/**
 	 * 
 	 */
@@ -41,6 +41,10 @@ public abstract class Player {
 	 * 
 	 */
 	public Parser parser;
+	/**
+	 * 
+	 */
+	public PlayerMemento playermemento;
 
 	/**
 	 * 
